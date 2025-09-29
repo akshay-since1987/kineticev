@@ -19,7 +19,26 @@ function renderModals($include_test_drive = true, $include_video_playlist = true
             <div class="overlay overlay--transparent" id="popup-test-drive">
                 <div class="popup">
                     <button class="close-btn">&times;</button>
-                    <form action="/api/submit-test-drive" method="post" ajax-updated="true">
+                    <?php
+                    // Get the base URL for absolute form action
+                    // Enhanced HTTPS detection for various server configurations
+                    $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+                               (!empty($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443) ||
+                               (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ||
+                               (!empty($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] === 'on');
+                    
+                    $host = $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? 'localhost';
+                    
+                    // For production domains, always use HTTPS
+                    if ($host === 'kineticev.in' || $host === 'www.kineticev.in') {
+                        $protocol = 'https://';
+                    } else {
+                        $protocol = $isHttps ? 'https://' : 'http://';
+                    }
+                    
+                    $base_url = $protocol . $host;
+                    ?>
+                    <form action="<?php echo $base_url; ?>/api/submit-test-drive" method="post" ajax-updated="true">
                         <div class="popup-header">
                             <h2 class="heading">Book your <strong>Kinetic Test Ride</strong></h2>
                         </div>

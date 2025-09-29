@@ -1,3 +1,23 @@
+/**
+ * =======================
+ * Base URL Utility Function
+ * =======================
+ * Gets the current base URL for absolute form submissions
+ * Ensures HTTPS is used when the current page is loaded over HTTPS
+ */
+function getBaseUrl() {
+    // Use the same protocol as the current page to avoid mixed content issues
+    const protocol = window.location.protocol;
+    const host = window.location.host;
+    
+    // For production environments, always use HTTPS if available
+    if (window.location.protocol === 'https:' || host === 'kineticev.in' || host === 'www.kineticev.in') {
+        return `https://${host}`;
+    }
+    
+    return `${protocol}//${host}`;
+}
+
 // Import booking form handler
 import { BookingFormHandler } from './booking-form.js';
 // Import EMI calculator
@@ -1674,6 +1694,7 @@ window.URLHashScrollHandler = URLHashScrollHandler;
 window.PincodeAddressAutocomplete = PincodeAddressAutocomplete;
 window.PincodeCityRestriction = PincodeCityRestriction;
 window.BookingFormHandler = BookingFormHandler;
+window.getBaseUrl = getBaseUrl;
 
 // =======================
 // Fallback for --features timeline-driven animations (for all devices without animation-timeline support)
@@ -2631,7 +2652,7 @@ const PincodeCityRestriction = {
             // this.showValidationLoader();
 
             // Use our PHP proxy API instead of direct Google API call
-            const response = await fetch(`/api/distance-check.php?pincode=${encodeURIComponent(pincode)}`);
+            const response = await fetch(`${getBaseUrl()}/api/distance-check.php?pincode=${encodeURIComponent(pincode)}`);
             const data = await response.json();
 
             if (data.success && data.isAllowed !== undefined) {
@@ -2678,7 +2699,7 @@ const PincodeCityRestriction = {
             // this.showValidationLoader();
 
             // Use our PHP proxy API instead of direct Google API call
-            const response = await fetch(`/api/distance-check.php?pincode=${encodeURIComponent(pincode)}`);
+            const response = await fetch(`${getBaseUrl()}/api/distance-check.php?pincode=${encodeURIComponent(pincode)}`);
             const data = await response.json();
 
             if (data.success && data.isAllowed !== undefined) {
@@ -2773,7 +2794,7 @@ const PincodeCityRestriction = {
             <div style="color: #856404; background: #fff3cd; padding: 4px 8px; border-radius: 3px; display: block; ">
                 Bookings open for Mumbai and Pune. 
                 <br/>
-                From another city? <a href="/contact-us?phone=${sanitizedPhone}&name=${name}&email=${email}&intent=${intent}${verifiedParam}">Register your interest.</a>
+                From another city? <a href="${getBaseUrl()}/contact-us?phone=${sanitizedPhone}&name=${name}&email=${email}&intent=${intent}${verifiedParam}">Register your interest.</a>
             </div>
         `;
 

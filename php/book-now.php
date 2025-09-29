@@ -119,7 +119,26 @@ if ($showBookingForm) {
     <div class="side-screen-2 show-logo">
         <div class="side-page-content">
             <div class="form-container">
-                <form class="legend-form" action="/api/process-payment" method="post">
+                <?php
+                // Get the base URL for absolute form action
+                // Enhanced HTTPS detection for various server configurations
+                $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+                           (!empty($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443) ||
+                           (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ||
+                           (!empty($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] === 'on');
+                
+                $host = $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? 'localhost';
+                
+                // For production domains, always use HTTPS
+                if ($host === 'kineticev.in' || $host === 'www.kineticev.in') {
+                    $protocol = 'https://';
+                } else {
+                    $protocol = $isHttps ? 'https://' : 'http://';
+                }
+                
+                $base_url = $protocol . $host;
+                ?>
+                <form class="legend-form" action="<?php echo $base_url; ?>/api/process-payment" method="post">
                     <?php if ($error_message): ?>
                         <div class="error-message"
                             style="background: #f8d7da; color: #721c24; padding: 15px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #f5c6cb;">
@@ -295,10 +314,29 @@ if ($showBookingForm) {
     </div>
     <?php else: ?>
     <!-- VARIANT SELECTION MODE -->
+    <?php
+    // Get the base URL for absolute form action
+    // Enhanced HTTPS detection for various server configurations
+    $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+               (!empty($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443) ||
+               (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ||
+               (!empty($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] === 'on');
+    
+    $host = $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? 'localhost';
+    
+    // For production domains, always use HTTPS
+    if ($host === 'kineticev.in' || $host === 'www.kineticev.in') {
+        $protocol = 'https://';
+    } else {
+        $protocol = $isHttps ? 'https://' : 'http://';
+    }
+    
+    $base_url = $protocol . $host;
+    ?>
     <div class="side-screen-1 show-logo">
         <div class="side-page-content">
             <div class="form-container">
-                <form class="legend-form" action="/book-now" method="get">
+                <form class="legend-form" action="<?php echo $base_url; ?>/book-now" method="get">
                     <div class="legend-wrapper">
                         <div class="form-variant-selector">
                             <div class="heading">

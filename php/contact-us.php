@@ -475,7 +475,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         $_SESSION['contact_success_message'] = $success_message;
 
                                         // Redirect to clean contact-us URL
-                                        header('Location: /contact-us?success=1');
+                                        header('Location: ' . $base_url . '/contact-us?success=1');
                                         exit;
                                     }
 
@@ -514,7 +514,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         $_SESSION['contact_success_message'] = $success_message;
 
                                         // Redirect to clean contact-us URL
-                                        header('Location: /contact-us?success=1');
+                                        header('Location: ' . $base_url . '/contact-us?success=1');
                                         exit;
                                     }
 
@@ -573,6 +573,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
     header('Content-Type: application/json');
 
+    // Get the base URL for absolute redirect URLs in AJAX response
+    // Enhanced HTTPS detection for various server configurations
+    $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+               (!empty($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443) ||
+               (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ||
+               (!empty($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] === 'on');
+    
+    $host = $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? 'localhost';
+    
+    // For production domains, always use HTTPS
+    if ($host === 'kineticev.in' || $host === 'www.kineticev.in') {
+        $protocol = 'https://';
+    } else {
+        $protocol = $isHttps ? 'https://' : 'http://';
+    }
+    
+    $base_url = $protocol . $host;
+
     if (!empty($success_message)) {
         // Store success message in session for display after redirect (same as regular form)
         if (!isset($_SESSION)) {
@@ -583,7 +601,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SERVER['HTTP_X_REQUESTED_W
         echo json_encode([
             'success' => true,
             'message' => $success_message,
-            'redirect' => '/contact-us?success=1'  // Add redirect URL for AJAX
+            'redirect' => $base_url . '/contact-us?success=1'  // Add redirect URL for AJAX
         ]);
     } else {
         // Send detailed validation errors for AJAX requests
@@ -701,7 +719,26 @@ startLayout("Contact Kinetic EV for Queries and Support Today", [
                             </div>
                         <?php endif; ?>
 
-                        <form method="POST" action="" ajax-updated="true" <?php if ($verified === '1'): ?>data-skip-otp="true" <?php endif; ?>>
+                        <?php
+                        // Get the base URL for absolute form action
+                        // Enhanced HTTPS detection for various server configurations
+                        $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+                                   (!empty($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443) ||
+                                   (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ||
+                                   (!empty($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] === 'on');
+                        
+                        $host = $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? 'localhost';
+                        
+                        // For production domains, always use HTTPS
+                        if ($host === 'kineticev.in' || $host === 'www.kineticev.in') {
+                            $protocol = 'https://';
+                        } else {
+                            $protocol = $isHttps ? 'https://' : 'http://';
+                        }
+                        
+                        $base_url = $protocol . $host;
+                        ?>
+                        <form method="POST" action="<?php echo $base_url; ?>/contact-us" ajax-updated="true" <?php if ($verified === '1'): ?>data-skip-otp="true" <?php endif; ?>>
                             <?php if ($verified === '1'): ?>
                                 <div class="verification-status-message"
                                     style="background: #d4edda; color: #155724; padding: 12px 16px; margin-bottom: 15px; border-radius: 4px; border: 1px solid #c3e6cb; font-size: 14px;">

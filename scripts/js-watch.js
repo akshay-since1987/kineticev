@@ -21,28 +21,12 @@ function build(filePath) {
         target: "es2017",
     }).then(() => {
         console.log(`✅ JS → ${fileName}.min.js`);
-        
-        // Copy to PHP directory after successful build
-        copyToPHP();
     }).catch((err) => {
         console.error(`❌ JS Error in ${filePath}\n`, err.message);
     });
 }
 
-function copyToPHP() {
-    const copyScript = path.join(__dirname, "copy-main-js.js");
-    exec(`node ${copyScript}`, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`❌ Error running copy script: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.error(`⚠️ Copy script stderr: ${stderr}`);
-            return;
-        }
-        console.log(stdout);
-    });
-}
+
 
 if (fs.existsSync(inputDir + "/main.js")) {
     build(path.join(inputDir, "main.js"));

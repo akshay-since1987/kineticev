@@ -1,4 +1,67 @@
 // @ts-nocheck
+
+/**
+ * =======================
+ * Base URL Utility Function
+ * =======================
+ * Gets the current base URL for absolute form submissions
+ * Ensures HTTPS is used when the current page is loaded over HTTPS
+ */
+function getBaseUrl() {
+    // Use the same protocol as the current page to avoid mixed content issues
+    const protocol = window.location.protocol;
+    const host = window.location.host;
+    
+    // For production environments, always use HTTPS if available
+    if (window.location.protocol === 'https:' || host === 'kineticev.in' || host === 'www.kineticev.in') {
+        return `https://${host}`;
+    }
+    
+    return `${protocol}//${host}`;
+}
+
+/**
+ * =======================
+ * API Base URL Utility Function
+ * =======================
+ * Gets the correct API base URL based on the current host
+ */
+function getApiBaseUrl() {
+    const host = window.location.host;
+    
+    // Production domains - use www.kineticev.in as API base
+    if (host === 'kineticev.in' || host === 'www.kineticev.in' || host === 'blog.kineticev.in') {
+        const apiUrl = 'https://www.kineticev.in/api';
+        console.log('🔗 getApiBaseUrl (production):', host, '->', apiUrl);
+        return apiUrl;
+    }
+    
+    // Development domains - use dev.kineticev.in as API base
+    if (host === 'dev.kineticev.in' || host === 'dev.blog.kineticev.in') {
+        const apiUrl = 'http://dev.kineticev.in/api';
+        console.log('🔗 getApiBaseUrl (development):', host, '->', apiUrl);
+        return apiUrl;
+    }
+    
+    // Fallback for other domains - use current host with HTTPS detection
+    const protocol = window.location.protocol;
+    let baseUrl;
+    if (window.location.protocol === 'https:' || host === 'kineticev.in' || host === 'www.kineticev.in') {
+        baseUrl = `https://${host}`;
+    } else {
+        baseUrl = `${protocol}//${host}`;
+    }
+    
+    const apiUrl = `${baseUrl}/api`;
+    console.log('🔗 getApiBaseUrl (fallback):', host, '->', apiUrl);
+    return apiUrl;
+}
+
+// Export utility functions immediately after definition
+window.getBaseUrl = getBaseUrl;
+window.getApiBaseUrl = getApiBaseUrl;
+console.log('🔧 Utility functions exported early:', { getBaseUrl: typeof window.getBaseUrl, getApiBaseUrl: typeof window.getApiBaseUrl });
+
 /**
  * =======================
  * OTP Verification Module
@@ -450,7 +513,7 @@ const OtpVerification = {
             requestBody.force_new = true;
         }
         
-        fetch('/api/generate-otp', {
+        fetch(`${getApiBaseUrl()}/generate-otp`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -511,7 +574,7 @@ const OtpVerification = {
         this.showStatus(otpContainer, 'Verifying OTP...', 'info');
         this.disableOtpInputs(otpContainer, true);
         
-        fetch('/api/verify-otp', {
+        fetch(`${getApiBaseUrl()}/verify-otp`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -959,5 +1022,15 @@ if (document.readyState === 'loading') {
     OtpVerification.init();
 }
 
-// Export for manual usage
+// Export for global access
+console.log('📤 Exporting OTP verification functions to window object...');
 window.OtpVerification = OtpVerification;
+window.getBaseUrl = getBaseUrl;
+window.getApiBaseUrl = getApiBaseUrl;
+
+// Debug: Verify exports
+console.log('✅ Exported functions:', {
+    OtpVerification: typeof window.OtpVerification,
+    getBaseUrl: typeof window.getBaseUrl,
+    getApiBaseUrl: typeof window.getApiBaseUrl
+});

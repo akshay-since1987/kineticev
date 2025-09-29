@@ -10,6 +10,8 @@ php/css/
 php/js/
 build/
 dist/
+blogs/
+blog/
 *.min.css
 *.min.js
 *.map
