@@ -1,0 +1,433 @@
+
+.screen-3 {
+    position: relative;
+    aspect-ratio: 16/9;
+    width: 100%;
+
+    .model-relative {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .feature-list-images {
+        display: none;
+        margin: 0 auto;
+        width: 60%;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .content {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        height: 100%;
+        overflow-x: clip;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .section-slider {
+            scroll-snap-align: start;
+            width: 100%;
+            aspect-ratio: 16/9;
+            position: relative;
+
+            .slider-wrapper {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: auto;
+
+            }
+        }
+    }
+
+    .custom-dots {
+        // display: none;
+        width: 200px;
+        background: #EAEAEA;
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+
+        .slick-dots {
+            position: relative;
+            bottom: 0;
+            padding: 15px 0;
+            box-sizing: border-box;
+
+            li {
+                position: relative;
+                width: auto;
+                height: auto;
+
+                &.slick-active {
+                    button {
+                        border-radius: 5px;
+                        background: #FFFFFF;
+                    }
+                }
+
+                &:nth-child(2) {
+                    button {
+                        &:before {
+                            content: "DX+";
+                        }
+                    }
+                }
+
+                button {
+                    width: auto;
+                    height: auto;
+                    padding: 5px 20px;
+
+                    &:before {
+                        position: static;
+                        font-size: 18px;
+                        font-weight: 700;
+                        content: "DX";
+                    }
+                }
+            }
+        }
+    }
+
+    .ribbon {
+        --book-button-width: 200px;
+        --red: #DD0000;
+        --blue: #12589F;
+        --white: #FFFFFF;
+        --black: #000000;
+        --gray: #848484;
+        // position: absolute;
+        // display: none;
+        width: 80%;
+        margin: auto;
+
+        .menu-data {
+            position: relative;
+            top: -20%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .book-now {
+            width: var(--book-button-width);
+            background: #000000;
+            color: #FFFFFF;
+            padding: 20px 30px;
+            font-size: 24px;
+            font-weight: 700;
+            text-align: left;
+            border-radius: 10px;
+            border: 0 none;
+
+
+            &:before {
+                content: "";
+            }
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        ul {
+            width: calc(100% - var(--book-button-width));
+        }
+
+        li {
+            display: inline-block;
+        }
+
+        .data {
+            ul {
+                width: 100%;
+                display: inline-block;
+
+                &:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+            }
+
+            li {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                margin: 5px;
+                border-radius: 50%;
+                border: 1px solid #000;
+                float: left;
+
+                &.red {
+                    background: var(--red);
+                }
+
+                &.black {
+                    background: var(--black);
+                }
+
+                &.blue {
+                    background: var(--blue);
+                }
+
+                &.white {
+                    background: var(--white);
+                }
+
+                &.gray {
+                    background: var(--gray);
+                }
+            }
+        }
+    }
+
+    .see-comparison {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .model-container {
+        width: 100%;
+        height: 100vh;
+        scroll-snap-align: start;
+    }
+
+    .model-viewer {
+        position: absolute;
+        width: 80%;
+        left: 10%;
+        bottom: 0;
+        overflow: hidden;
+        isolation: isolate;
+
+        .model {
+            width: 100%;
+            height: auto;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .features-list {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        display: grid;
+        grid-template-rows: auto auto 1fr;
+        pointer-events: none;
+
+        .title {
+            margin-top: 60px;
+            font-size: 54px;
+            font-weight: 900;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .subtitle {
+            font-size: 28px;
+            font-weight: 700;
+            color: #6e6e6e;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .features {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            align-items: center;
+            list-style: none;
+            pointer-events: none;
+            margin: auto;
+        }
+
+        .feature {
+            list-style: none;
+            font-size: 18px;
+            color: #333;
+            width: 30ch;
+
+
+            &:nth-child(even) {
+                text-align: right;
+            }
+
+            &:nth-child(odd) {
+                text-align: left;
+            }
+        }
+    }
+
+    .telekinetic-features {
+
+        width: 100%;
+        height: 100vh;
+        scroll-snap-align: start;
+        aspect-ratio: 16/9;
+        position: relative;
+
+        .card-body {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .icon {
+            img {
+                width: 100%;
+            }
+        }
+        
+        .telekinetic-features-wrapper {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .tilting-card-body {
+            display: grid;
+            place-content: center;
+            text-align: center;
+        }
+
+        .mouse-position-tracker {
+            position: absolute;
+            width: calc(100% / 3);
+            height: calc(100% / 3);
+            z-index: 2;
+        }
+
+        /* 1st, 4th, 7th */
+        .mouse-position-tracker:nth-child(3n - 2) {
+            left: 0;
+        }
+
+        /* 2nd, 5th, 8th */
+        .mouse-position-tracker:nth-child(3n - 1) {
+            left: calc(100% / 3);
+        }
+
+        /* 2nd, 5th, 8th */
+        .mouse-position-tracker:nth-child(3n) {
+            right: 0;
+        }
+
+        /* 4 to 6 */
+        .mouse-position-tracker:nth-child(n + 4):nth-child(-n + 6) {
+            top: calc(100% / 3);
+        }
+
+        /* 7 to 9 */
+        .mouse-position-tracker:nth-child(n + 7):nth-child(-n + 9) {
+            bottom: 0;
+        }
+
+        .tilting-card-wrapper {
+            position: relative;
+            width: auto;
+            aspect-ratio: 16/9;
+        }
+
+        .tilting-card-body {
+            position: absolute;
+            inset: 0;
+            border: 1px solid #EAEAEA;
+            border-radius: 10px;
+            background: white;
+
+            &:hover,
+            &:active,
+            &.active {
+                border-color: #6C6C6C;
+            }
+        }
+
+        .tilting-card-body> :where(h1, p) {
+            background: white;
+            padding: 0.2rem;
+            margin: 0;
+        }
+
+        .tilting-card-body {
+            --perspective: 500px;
+            --rotationX: 0;
+            --rotationY: 0;
+            --rotationZ: 0;
+            --angle: 10deg;
+            transform: perspective(var(--perspective)) rotateX(var(--rotationX)) rotateY(var(--rotationY)) rotateZ(var(--rotationZ));
+            transition: transform 500ms ease;
+        }
+
+        .mouse-position-tracker:nth-child(1):hover~.tilting-card-body {
+            --rotationX: var(--angle);
+            --rotationY: calc(var(--angle) * -1);
+        }
+
+        .mouse-position-tracker:nth-child(2):hover~.tilting-card-body {
+            --rotationX: var(--angle);
+        }
+
+        .mouse-position-tracker:nth-child(3):hover~.tilting-card-body {
+            --rotationX: var(--angle);
+            --rotationY: var(--angle);
+        }
+
+        .mouse-position-tracker:nth-child(4):hover~.tilting-card-body {
+            --rotationY: calc(var(--angle) * -1);
+        }
+
+        .mouse-position-tracker:nth-child(6):hover~.tilting-card-body {
+            --rotationY: var(--angle);
+        }
+
+        .mouse-position-tracker:nth-child(7):hover~.tilting-card-body {
+            --rotationY: calc(var(--angle) * -1);
+            --rotationX: calc(var(--angle) * -1);
+        }
+
+        .mouse-position-tracker:nth-child(8):hover~.tilting-card-body {
+            --rotationX: calc(var(--angle) * -1);
+        }
+
+        .mouse-position-tracker:nth-child(9):hover~.tilting-card-body {
+            --rotationY: var(--angle);
+            --rotationX: calc(var(--angle) * -1);
+        }
+    }
+}

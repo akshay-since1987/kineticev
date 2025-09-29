@@ -1,0 +1,26 @@
+/* Modal fixes */
+.modal-container:has(.active) {
+    display: flex;
+}
+
+.modal-container.hidden-modal {
+    display: none;
+}
+
+/* Make sure overlays are visible when active */
+.overlay.active {
+    display: flex;
+}
+
+/* Debug styles to help find issues */
+.overlay {
+    z-index: 1001;
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+    .popup {
+        width: 90%;
+        max-width: 400px;
+    }
+}

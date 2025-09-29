@@ -1,0 +1,126 @@
+form {
+    background: #f7f7f7;
+    border-radius: 8px;
+    padding: 15px 30px;
+
+    .flex {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        .form-group {
+            flex: 1;
+            margin: 0;
+        }
+    }
+
+    .form-group {
+        display: block;
+        margin: 1rem 0;
+        position: relative;
+
+        &.has-error {
+            .error-message {
+                display: block;
+            }
+
+            input,
+            select,
+            textarea {
+                border-color: #dc3545;
+                box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+
+                &:focus {
+                    border-color: #dc3545;
+                    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+                }
+            }
+        }
+
+        &.has-success {
+
+            input,
+            select,
+            textarea {
+                border-color: #28a745;
+                box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+            }
+        }
+    }
+
+    // Error message styling
+    .error-message {
+        display: none;
+        color: #dc3545;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        padding: 0.25rem 0.5rem;
+        background-color: rgba(220, 53, 69, 0.1);
+        border-radius: 4px;
+        border-left: 3px solid #dc3545;
+    }
+
+    // Success feedback
+    .success-feedback {
+        color: #28a745;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+    }
+
+    // Form notes (like "go back" links)
+    .form-note {
+        font-size: 0.75rem;
+        color: #6c757d;
+        margin-top: 0.5rem;
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    input,
+    select,
+    textarea {
+        padding: 0.8rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        background: #fff;
+        outline: none;
+        transition: border 0.3s, box-shadow 0.3s;
+        width: 100%;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+
+        &:focus {
+            border-color: #000;
+        }
+    }
+
+    select {
+        appearance: none;
+        background-image: url("data:image/svg+xml;utf8,<svg fill='%23000' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 20px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+    }
+
+    textarea {
+        resize: none;
+        height: 100px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+    }
+}

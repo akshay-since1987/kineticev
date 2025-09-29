@@ -1,0 +1,511 @@
+@use "./reset.scss";
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
+
+.screen-splash {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    position: relative;
+
+
+    // animation: mobileScaleOut 6s ease-in-out forwards;
+    #svg-preloader {
+        position: fixed;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        will-change: width;
+        animation: strokeAndFillLoop 2s linear infinite;
+    }
+
+    #preloader-path {
+        fill: none;
+        stroke: #D92128;
+        stroke-width: 4;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: strokeAndFillLoop 2s linear infinite;
+    }
+
+    .content {
+        background: rgba(255, 255, 255, 0.8);
+        width: 100%;
+        height: 100%;
+        flex: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: showContent .1s ease-in-out forwards;
+        animation-delay: 6s;
+
+        .legacy-bar {
+            width: 100%;
+            height: 50px;
+            // background: rgba(0, 255, 0, .2);
+            position: absolute;
+            bottom: 20px;
+            overflow-y: visible;
+            overflow-x: clip;
+
+            .legacy-ribbon {
+                position: relative;
+                width: calc(100% - 10px);
+                margin-left: 10px;
+                height: 100%;
+                isolation: isolate;
+
+                @media (min-width: 768px) {
+                    width: calc(100% - 100px);
+                    margin-left: 100px;
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    box-shadow: 2px -2px 2px 0 rgba(0, 0, 0, 0.1);
+                    left: 0;
+                    top: 0;
+                    background: linear-gradient(to right, #FAFAFA 0%, #FAFAFA 75%, #ED1C24 75%, #ED1C24 100%);
+                    z-index: -1;
+                }
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 30px;
+                    height: 100%;
+                    top: -20px;
+                    left: 0;
+                    background: #ED1C24;
+                    z-index: -2;
+                    clip-path: shape(from 0 20px,
+                            line to 100% 0,
+                            line to 85% 100%,
+                            line to 0 100%,
+                            close);
+                }
+
+                ul {
+                    position: relative;
+                }
+
+                li {
+                    --aspect-ratio: calc(1920/1080);
+                    --width: 60px;
+                    --inverse-aspect-ratio: calc(1 / var(--aspect-ratio));
+                    position: absolute;
+                    width: var(--width);
+                    top: calc(var(--inverse-aspect-ratio) * var(--width) * -1);
+                    left: 0;
+                    list-style: none;
+
+
+                    span {
+                        display: inline-block;
+                        text-align: center;
+                        width: 100%;
+                        font-weight: 900;
+                    }
+
+                    &:nth-child(2) {}
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    .background-video-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        isolation: isolate;
+        background: black;
+        filter: saturate(0.5);
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: -2;
+        }
+
+        video {
+            position: relative;
+            z-index: 1;
+            opacity: 0.5;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            // High-quality video rendering
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
+            image-rendering: crisp-edges;
+
+            // Hardware acceleration for smooth playback
+            transform: translateZ(0);
+            will-change: transform;
+
+            // Optimize for quality over performance
+            filter: contrast(1.05) saturate(1.1);
+
+            // Smooth scaling
+            image-rendering: auto;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+    }
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 1);
+            z-index: -11;
+        }
+
+        video {
+            max-width: 100%;
+        }
+    }
+
+    &.splash-video-active {
+        #svg-preloader {
+            display: none;
+        }
+
+        /* Ensure no animations run when video is active */
+        #preloader-path {
+            animation: none;
+            stroke-dashoffset: 1000;
+            fill: #D92128;
+            stroke-width: 0;
+        }
+    }
+
+    &.animate {
+
+        /* Ensure no preloader animations run after video ends */
+        #svg-preloader {
+            animation: none;
+            width: 20%;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            display: none;
+        }
+
+        #preloader-path {
+            animation: none;
+            stroke-dashoffset: 1000;
+            fill: #D92128;
+            stroke-width: 0;
+        }
+
+        .content {
+            .legacy-bar {
+                // filter: saturate(0.5);
+
+                .legacy-ribbon {
+                    /* Configurable timing variables */
+                    --together-duration: 7s;
+                    /* Both items move to 70% */
+                    --move-to-75-duration: 1.2s;
+                    /* Item 2 moves from 70% to 75% */
+                    --pause-duration: 0.5s;
+                    /* Item 2 pauses at 75% */
+                    --exit-duration: 1.5s;
+                    /* Item 2 exits screen */
+                    --total-duration: calc(var(--together-duration) + var(--move-to-75-duration) + var(--pause-duration) + var(--exit-duration));
+
+                    /* Calculated percentages based on total duration (4.8s) */
+                    /* Together phase: 1.5s / 4.8s = 31.25% */
+                    /* Move to 75%: (1.5s + 0.5s) / 4.8s = 41.67% */
+                    /* Pause ends: (1.5s + 0.5s + 2s) / 4.8s = 83.33% */
+
+                    li {
+                        position: absolute;
+                        top: 0;
+                        opacity: 0;
+                        transform: translateY(-35%);
+
+                        &:nth-child(1) {
+                            opacity: 1;
+                            animation: animate-legacy-item-1 var(--together-duration) ease-in-out forwards;
+
+                            @include respond-to(lg) {
+                                animation: animate-legacy-item-1-m var(--together-duration) ease-in-out forwards;
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            color: white;
+                            animation: animate-legacy-item-2 var(--total-duration) ease-in-out forwards;
+                        }
+
+                        @for $i from 3 through 10 {
+                            &:nth-child(#{$i}) {
+                                animation: animate-legacy-item-1 var(--together-duration) ease-in-out forwards;
+                                animation-delay: #{($i - 3) * 0.2}s;
+                            }
+                        }
+                    }
+
+                    .legacy-wrapper,
+                    .legacy-wrapper ul {
+                        height: 100%;
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Preloader SVG Animations */
+    @keyframes strokeAndFillLoop {
+        0% {
+            stroke-dashoffset: 1000;
+            fill: transparent;
+            stroke-width: 4;
+            stroke: #D92128;
+        }
+
+        40% {
+            stroke-dashoffset: 0;
+            fill: transparent;
+            stroke-width: 4;
+            stroke: #D92128;
+        }
+
+        70% {
+            stroke-dashoffset: 0;
+            fill: white;
+            stroke-width: 0;
+            stroke: transparent;
+        }
+
+        100% {
+            stroke-dashoffset: 1000;
+            fill: transparent;
+            stroke-width: 4;
+            stroke: #D92128;
+        }
+    }
+
+    @keyframes strokeAndFillFinal {
+        0% {
+            stroke-dashoffset: 1000;
+            fill: transparent;
+            stroke-width: 4;
+            stroke: #D92128;
+        }
+
+        50% {
+            stroke-dashoffset: 0;
+            fill: transparent;
+            stroke-width: 4;
+            stroke: #D92128;
+        }
+
+        100% {
+            stroke-dashoffset: 0;
+            fill: white;
+            stroke-width: 0;
+            stroke: transparent;
+        }
+    }
+
+    @keyframes strokeAndFill {
+        0% {
+            stroke-dashoffset: 1000;
+            fill: white;
+        }
+
+        50% {
+            stroke-dashoffset: 0;
+            fill: white;
+        }
+
+        51% {
+            stroke-dashoffset: 0;
+            fill: #D92128;
+        }
+
+        80% {
+            stroke-dashoffset: 0;
+            fill: #D92128;
+        }
+
+        100% {
+            stroke-dashoffset: 1000;
+            fill: #D92128;
+            stroke-width: 0;
+        }
+    }
+
+    @keyframes shrinkPreloader {
+        0% {
+            width: 60%;
+        }
+
+        88% {
+            width: 60%;
+        }
+
+        100% {
+            width: 20%;
+        }
+    }
+
+    @keyframes mobileScaleOut {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        75% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(5);
+            opacity: 0;
+        }
+    }
+
+    @keyframes showContent {
+        0% {
+            opacity: 0;
+        }
+
+        74% {
+            opacity: 0;
+        }
+
+        75% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+
+
+    @keyframes animate-legacy-item-1 {
+        0% {
+            left: 0;
+            opacity: 0;
+        }
+
+        10% {
+            opacity: 1;
+        }
+
+        100% {
+            left: 42%;
+            opacity: 1;
+        }
+    }
+
+    @keyframes animate-legacy-item-1-m {
+        0% {
+            left: 0;
+            opacity: 0;
+            transform: translateX(0) translateY(-35%);
+        }
+
+        10% {
+            opacity: 1;
+        }
+
+        95% {
+            opacity: 1;
+        }
+
+        100% {
+            left: 75%;
+            opacity: 0;
+            transform: translateX(-100%) translateY(-35%);
+        }
+    }
+
+    @keyframes animate-legacy-item-2 {
+        0% {
+            left: 0;
+            opacity: 0;
+        }
+
+        5% {
+            opacity: 0;
+        }
+
+        /* 31.25% = 1.5s / 4.8s * 100% (together duration ends) */
+        31.25% {
+            left: 70%;
+            opacity: 0;
+        }
+
+        /* 41.67% = 2s / 4.8s * 100% (move to 75% complete) */
+        41.67% {
+            left: 75%;
+            opacity: 0;
+        }
+
+        /* 83.33% = 4s / 4.8s * 100% (pause ends, start exit) */
+        65% {
+            left: 75%;
+            opacity: 0;
+        }
+
+        83.33% {
+            left: 75%;
+            opacity: 1;
+        }
+
+        95% {
+            opacity: 1
+        }
+
+        /* 100% = 4.8s / 4.8s * 100% (exit complete) */
+        100% {
+            left: 110%;
+            opacity: 0;
+        }
+    }
+}

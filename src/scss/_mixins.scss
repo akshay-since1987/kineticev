@@ -1,0 +1,199 @@
+// =============================================================================
+// RESPONSIVE MIXINS
+// =============================================================================
+
+@use 'sass:map';
+@use './variables' as *;
+
+
+// Media query mixin - mobile first approach
+@mixin respond-to($breakpoint) {
+    // Get the breakpoint value
+    $value: map.get($breakpoints, $breakpoint);
+
+    // If the key exists in the map
+    @if $value !=null {
+
+        // Print a media query based on the value
+        @media (min-width: $value) {
+            @content;
+        }
+    }
+
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " +
+        "Available breakpoints are: #{map.keys($breakpoints)}.";
+    }
+}
+
+// Media query mixin - max-width (desktop first approach)
+@mixin respond-below($breakpoint) {
+    // Get the breakpoint value
+    $value: map.get($breakpoints, $breakpoint);
+
+    // If the key exists in the map
+    @if $value !=null {
+
+        // Print a media query based on the value minus 1px
+        @media (max-width: ($value - 1px)) {
+            @content;
+        }
+    }
+
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " +
+        "Available breakpoints are: #{map.keys($breakpoints)}.";
+    }
+}
+
+// Media query mixin - between two breakpoints
+@mixin respond-between($lower, $upper) {
+    // Get the breakpoint values
+    $lower-value: map.get($breakpoints, $lower);
+    $upper-value: map.get($breakpoints, $upper);
+
+    // If both keys exist in the map
+    @if $lower-value !=null and $upper-value !=null {
+
+        // Print a media query based on the values
+        @media (min-width: $lower-value) and (max-width: ($upper-value - 1px)) {
+            @content;
+        }
+    }
+
+    // If one of the keys doesn't exist in the map
+    @else {
+        @if $lower-value ==null {
+            @warn "Your lower breakpoint was invalid: #{$lower}.";
+        }
+
+        @if $upper-value ==null {
+            @warn "Your upper breakpoint was invalid: #{$upper}.";
+        }
+    }
+}
+
+// Custom media query mixin for specific pixel values
+@mixin respond-custom($min: null, $max: null) {
+    @if $min !=null and $max !=null {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    }
+
+    @else if $min !=null {
+        @media (min-width: $min) {
+            @content;
+        }
+    }
+
+    @else if $max !=null {
+        @media (max-width: $max) {
+            @content;
+        }
+    }
+}
+
+// =============================================================================
+// CONTAINER MIXINS
+// =============================================================================
+
+@mixin container($breakpoint: null) {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @if $breakpoint !=null {
+        $max-width: map.get($container-max-widths, $breakpoint);
+
+        @if $max-width !=null {
+            max-width: $max-width;
+        }
+    }
+}
+
+// =============================================================================
+// UTILITY MIXINS
+// =============================================================================
+
+// Font size mixin
+@mixin font-size($size) {
+    $value: map.get($font-sizes, $size);
+
+    @if $value !=null {
+        font-size: $value;
+    }
+
+    @else {
+        font-size: $size;
+    }
+}
+
+// Font weight mixin
+@mixin font-weight($weight) {
+    $value: map.get($font-weights, $weight);
+
+    @if $value !=null {
+        font-weight: $value;
+    }
+
+    @else {
+        font-weight: $weight;
+    }
+}
+
+// Color mixin
+@mixin color($color-name) {
+    $value: map.get($colors, $color-name);
+
+    @if $value !=null {
+        color: $value;
+    }
+
+    @else {
+        color: $color-name;
+    }
+}
+
+// Background color mixin
+@mixin bg-color($color-name) {
+    $value: map.get($colors, $color-name);
+
+    @if $value !=null {
+        background-color: $value;
+    }
+
+    @else {
+        background-color: $color-name;
+    }
+}
+
+// Spacing mixin
+@mixin spacing($property, $size) {
+    $value: map.get($spacers, $size);
+
+    @if $value !=null {
+        #{$property}: $value;
+    }
+
+    @else {
+        #{$property}: $size;
+    }
+}
+
+// Z-index mixin
+@mixin z-index($layer) {
+    $value: map.get($z-indexes, $layer);
+
+    @if $value !=null {
+        z-index: $value;
+    }
+
+    @else {
+        z-index: $layer;
+    }
+}

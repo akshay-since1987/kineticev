@@ -1,0 +1,44 @@
+// Google Maps InfoWindow Styles
+.marker-info-window {
+    padding: 5px;
+    max-width: 300px;
+    font-family: 'Roboto', Arial, sans-serif;
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 16px;
+        color: #192A5A;
+        font-weight: 700;
+    }
+
+    p {
+        margin-bottom: 10px;
+        font-size: 13px;
+        line-height: 1.4;
+        color: #333;
+    }
+
+    .view-details-link {
+        display: inline-block;
+        color: #ED1C24;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 5px 0;
+        cursor: pointer;
+        pointer-events: auto; /* Force pointer events to work */
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// Override some Google Maps InfoWindow styles
+.gm-style .gm-style-iw-c {
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 11111111;
+}

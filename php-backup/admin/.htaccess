@@ -1,0 +1,69 @@
+RewriteEngine On
+
+# ====================================
+# CACHE CONTROL - PREVENT CDN CACHING
+# ====================================
+
+# Disable caching for admin panel
+# Prevent CDN and browser caching
+<IfModule mod_headers.c>
+    Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header always set Pragma "no-cache"
+    Header always set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
+    
+    # Add CDN-specific headers
+    Header always set "CDN-Cache-Control" "no-cache"
+    Header always set "Cloudflare-CDN-Cache-Control" "no-cache"
+    Header always set "X-Accel-Expires" "0"
+    
+    # Prevent proxy caching
+    Header always set "Surrogate-Control" "no-store"
+    Header always set "X-Cache-Control" "no-cache"
+</IfModule>
+
+# Disable ETags
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+# Specific rules for different file types
+<FilesMatch "\.(php|html|htm|js|css)$">
+    <IfModule mod_headers.c>
+        Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+        Header always set Pragma "no-cache"
+        Header always set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
+    </IfModule>
+</FilesMatch>
+
+# Block caching for specific admin files
+<FilesMatch "(index\.php|admin\.js|admin\.css|api\.php)$">
+    <IfModule mod_headers.c>
+        Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0, private"
+        Header always set Pragma "no-cache"
+        Header always set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
+        Header always set "X-Robots-Tag" "noindex, nofollow"
+    </IfModule>
+</FilesMatch>
+
+# ====================================
+# URL REWRITING
+# ====================================
+
+# Allow direct access to assets
+RewriteRule ^assets/ - [L]
+
+# Default admin route - internal rewrite to login.php
+RewriteRule ^$ login.php [L]
+
+# Handle specific admin routes (extensionless)
+RewriteRule ^login/?$ login.php [L]
+RewriteRule ^logout/?$ logout.php [L]
+RewriteRule ^index/?$ index.php [L]
+RewriteRule ^api/?$ api.php [L]
+
+# Route other extensionless URLs to .php files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L]

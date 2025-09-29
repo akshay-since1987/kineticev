@@ -1,0 +1,1302 @@
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
+
+.legend-reborn {
+    width: 100%;
+
+    picture {
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+}
+
+.og-gangster-wrapper {
+    position: relative;
+    background: url("/-/images/tog-background-m.png") repeat-y, linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1) 80%);
+    background-size: 100% auto;
+    box-sizing: border-box;
+
+    @media (min-width: 768px) {
+        background: url('/-/images/tog-background-d.png') repeat-y, linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1) 80%);
+        background-size: 100% auto;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .scroll-area-title {
+        width: 100%;
+        padding: 20px 0;
+        background: #000;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 20vh;
+
+        picture,
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    .image-container {
+        width: 100%;
+        // background: white;
+
+        picture,
+        img {
+            width: 100%;
+        }
+    }
+
+    .section-area-scroll {
+        --header-height: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: sticky;
+        left: 0;
+        animation-name: slide-in;
+        animation-timeline: view();
+        animation-fill-mode: forwards;
+        justify-content: flex-start;
+        top: calc(var(--header-height) + 1px);
+        will-change: opacity, transform;
+        // opacity: 0;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        &:nth-child(1) {
+            animation-range: entry 0% entry 5%;
+        }
+
+        .section-area-scroll:nth-child(2) {
+            animation-range: entry 5% entry 25%;
+        }
+    }
+}
+
+.stacked-360 {
+    position: relative;
+}
+
+.stacked-360-wrapper {
+    position: relative;
+
+    /* expose the named timeline to siblings - disabled on iOS */
+    @supports not (-webkit-touch-callout: none) {
+        timeline-scope: --features;
+    }
+
+
+
+
+    .scroll-area-title {
+        width: 100%;
+        padding: 20px 0;
+        background: #000;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh; // iOS fix: use min-height instead of 100dvh
+        z-index: 1;
+
+        picture,
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Only the IMAGE animates - disabled on iOS */
+        @supports not (-webkit-touch-callout: none) {
+            img {
+                /* base state before section #2 enters */
+                opacity: 1;
+                width: 100%;
+                max-width: 100%;
+                min-width: 320px;
+                margin: 0 auto;
+                display: block;
+
+                /* driven by .screen.section-area-scroll view-timeline */
+                animation-name: title-img-fade;
+                animation-duration: 1s;
+                animation-timeline: --features;
+                animation-range: entry 0% cover 25%;
+                animation-fill-mode: both;
+                will-change: opacity, width;
+
+                @include respond-to(xxl) {
+                    width: 100%;
+                    max-width: 100%;
+                    min-width: 400px;
+                }
+            }
+        }
+
+        /* iOS fallback - simple static styling */
+        @supports (-webkit-touch-callout: none) {
+            img {
+                opacity: 1;
+                width: 100%;
+                max-width: 100%;
+                min-width: 320px;
+                margin: 0 auto;
+                display: block;
+                /* No animations on iOS */
+            }
+        }
+
+        /* Opt-in: also shrink width by adding .shrink-title-img - disabled on iOS */
+        @supports not (-webkit-touch-callout: none) {
+            &.shrink-title-img img {
+                animation-name: title-img-fade, title-img-width;
+                animation-duration: 1s, 1s;
+            }
+        }
+    }
+
+    .section-area-scroll {
+        --header-height: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: sticky;
+        left: 0;
+        animation-name: slide-in;
+        animation-timeline: view();
+        animation-fill-mode: forwards;
+        justify-content: flex-start;
+        top: calc(var(--header-height) + 1px);
+        will-change: opacity, transform;
+
+        &:nth-child(1) {
+            animation-range: entry 0% entry 5%;
+        }
+
+        &+.section-area-scroll {
+            animation-range: entry 0% entry 5%;
+        }
+    }
+
+    /* Make the features section long enough to scroll through all li animations */
+    .screen.section-area-scroll {
+
+        /* iOS fallback */
+        @supports (-webkit-touch-callout: none) {
+            min-height: 200vh;
+        }
+
+        /* Non-iOS devices */
+        @supports not (-webkit-touch-callout: none) {
+            min-height: 200svh;
+            view-timeline-name: --features;
+            view-timeline-axis: block;
+        }
+
+        @include respond-to(xxl) {
+
+            /* iOS fallback */
+            @supports (-webkit-touch-callout: none) {
+                min-height: 800vh;
+            }
+
+            /* Non-iOS devices */
+            @supports not (-webkit-touch-callout: none) {
+                min-height: 800svh;
+            }
+        }
+    }
+
+    .feature-columns {
+        position: sticky;
+        top: calc(var(--header-height) + 1px);
+        display: flex;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        /* iOS fallback */
+        @supports (-webkit-touch-callout: none) {
+            min-height: calc(100vh - var(--header-height));
+        }
+
+        /* Non-iOS devices */
+        @supports not (-webkit-touch-callout: none) {
+            min-height: calc(100svh - var(--header-height));
+        }
+
+        .model-viewer {
+            display: flex;
+            margin: auto;
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+
+            &:hover {
+                cursor: url("/-/images/360-cursor.png") 16 16, grab;
+            }
+
+            @include respond-to(xxl) {
+                width: 50%;
+            }
+        }
+
+        ul,
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 24px;
+            line-height: 1.4;
+        }
+
+        ul {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            position: absolute;
+            width: 700px;
+
+            /* iOS fallback */
+            @supports (-webkit-touch-callout: none) {
+                height: 100vh;
+            }
+
+            /* Non-iOS devices */
+            @supports not (-webkit-touch-callout: none) {
+                height: 100svh;
+            }
+
+            &:nth-child(1) {
+                left: 0;
+                text-align: left;
+            }
+
+            &:nth-child(3) {
+                right: 0;
+                text-align: right;
+            }
+
+            @include respond-to(xxl) {
+                display: flex;
+            }
+
+            li {
+                font-size: 24px;
+            }
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        .reveal-features {
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .feature-icons {
+                background: white;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                width: 100%;
+                overflow: auto;
+                height: 0;
+                will-change: height;
+                transition: height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+                .feature-icons-wrapper {
+                    display: flex;
+                    gap: 20px;
+                    // width: 100%;
+                    overflow: auto;
+                    padding: 15px 20px 5px 20px;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+
+                    @include respond-to(lg) {
+                        align-items: center;
+                        justify-content: center;
+                        overflow: visible;
+                    }
+
+                    a {
+                        position: relative;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        width: 150px;
+                        display: block;
+                        flex: none;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+                        span {
+                            display: flex;
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            pointer-events: none;
+                            background-color: rgba(0, 0, 0, 0);
+                            color: rgba(0, 0, 0, 0);
+                            text-decoration: none;
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
+                            will-change: background-color, color;
+                            transition: background-color 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+                            // Touch devices: Show span text permanently
+                            @media (hover: none) and (pointer: coarse) {
+                                display: flex;
+                                background-color: rgba(0, 0, 0, 0.3);
+                                color: white;
+                                font-size: 18px;
+                                font-weight: 900;
+                                align-items: flex-start;
+                                padding: 10px 15px;
+                                overflow-wrap: break-word;
+                                box-sizing: border-box;
+                            }
+                        }
+
+                        img {
+                            width: 100%;
+                            // : 120px;
+                        }
+
+                        &:hover {
+                            span {
+                                background-color: rgba(0, 0, 0, 0.7);
+                                color: rgba(255, 255, 255, 1);
+                                will-change: background-color, color;
+                                transition: background-color 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            }
+                        }
+                    }
+                }
+            }
+
+            i {
+                font-size: 12px;
+            }
+
+            label {
+                background: white;
+                color: black;
+                z-index: 100;
+                border-radius: 8px;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                padding: 15px 45px;
+                /* Keep it visible during scroll animations within this section */
+                animation-timeline: --features;
+                animation-fill-mode: both;
+                will-change: opacity;
+                font-size: 14px;
+                cursor: pointer;
+
+                input[type="checkbox"] {
+                    display: none;
+                }
+
+                .up {
+                    display: none;
+                }
+            }
+
+            &:has(input[type="checkbox"]:checked) {
+                .up {
+                    display: inline-block;
+                }
+
+                .down {
+                    display: none;
+                }
+
+                .feature-icons {
+                    height: calc(120px + 32px);
+                    transition: height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                }
+            }
+        }
+
+        .color-picker {
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 99;
+
+            /* Initially hidden */
+            opacity: 0;
+            visibility: hidden;
+
+            /* Animate visibility based on the features timeline (second section) */
+            animation-name: color-picker-reveal;
+            animation-timeline: --features;
+            animation-range: cover 10% cover 12%;
+            animation-fill-mode: forwards;
+            will-change: opacity, visibility;
+
+            >div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 0;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* Feature li animations - separate for left and right */
+@keyframes feature-in-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    15% {
+        opacity: 0.3;
+        transform: translateX(0);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes feature-in-right {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    15% {
+        opacity: 0.3;
+        transform: translateX(0);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.feature-left li,
+.feature-right li {
+    pointer-events: none;
+}
+
+.feature-left li {
+    @include respond-to(xxl) {
+        animation-name: feature-in-left;
+        animation-timeline: --features;
+        animation-fill-mode: both;
+        will-change: transform, opacity;
+    }
+}
+
+.feature-right li {
+    @include respond-to(xxl) {
+        animation-name: feature-in-right;
+        animation-timeline: --features;
+        animation-fill-mode: both;
+        will-change: transform, opacity;
+    }
+}
+
+.feature-left {
+    pointer-events: none;
+    box-sizing: border-box;
+
+    * {
+        box-sizing: inherit;
+    }
+
+    li {
+        width: calc(100% - 40px);
+    }
+}
+
+.feature-right {
+    pointer-events: none;
+    box-sizing: border-box;
+
+    * {
+        box-sizing: inherit;
+    }
+
+    li {
+        width: calc(100% - 40px);
+    }
+}
+
+/* Divide animation ranges into slots for pairs
+   after the image fade completes at 30% */
+$steps: 9; // number of features per side
+$fadeCut: 40%; // image fade ends here, now with buffer
+$remaining: 100% - $fadeCut;
+$slot: $remaining / $steps;
+
+@function slot-start-shifted($i) {
+    @return $fadeCut + ($i - 1) * $slot;
+}
+
+@function slot-end-shifted($i) {
+    @return $fadeCut + $i * $slot;
+}
+
+@for $i from 1 through $steps {
+
+    .feature-left li:nth-child(#{$i}),
+    .feature-right li:nth-child(#{$i}) {
+        /* each pair starts AFTER 40% (image fade completes at 25%) */
+        animation-range: #{slot-start-shifted($i)} #{slot-end-shifted($i)};
+    }
+}
+
+/* Existing section scroll animation */
+@keyframes slide-in {
+    from {
+        transform: translateY(50%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Title image animations */
+@keyframes title-img-fade {
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Animatable property for optional width shrink */
+@property --title-img-w {
+    syntax: "<length-percentage>";
+    inherits: false;
+    initial-value: 100%;
+}
+
+/* Only active when .shrink-title-img is present */
+@keyframes title-img-width {
+    from {
+        --title-img-w: 100%;
+    }
+
+    to {
+        --title-img-w: 500px;
+    }
+}
+
+/* Color picker reveal animation */
+@keyframes color-picker-reveal {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+.my-kiney-section {
+    // padding: 20px 80px;
+    width: 100%;
+
+    .video-wrapper {
+        width: 100%;
+        // margin: 0 auto;
+        // overflow: hidden;
+        // border-radius: 10px;
+
+        video {
+            width: 100%;
+        }
+    }
+}
+
+.compare-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-wrapper {
+    margin-top: 40px;
+    position: relative;
+    max-width: 280px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: flex-end;
+    overflow: visible;
+    box-sizing: border-box;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    @include respond-to(md) {
+        max-width: 480px;
+    }
+
+    @include respond-to(xxl) {
+        max-width: 550px;
+    }
+
+    .custom-dots {
+        width: auto;
+        padding: 10px 10px;
+        background: #EAEAEA;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 8px;
+
+        .slick-dots {
+            position: relative;
+            bottom: 0;
+            box-sizing: border-box;
+
+            li {
+                position: relative;
+                width: auto;
+                height: auto;
+
+                &.slick-active {
+                    button {
+                        border-radius: 5px;
+                        background: #FFFFFF;
+                    }
+                }
+
+                &:nth-child(1) {
+                    button {
+                        &:before {
+                            content: "DX+";
+                        }
+                    }
+                }
+
+                button {
+                    width: auto;
+                    height: auto;
+                    padding: 5px 8px;
+                    font-family: 'Inter';
+
+                    &:before {
+                        position: static;
+                        font-size: 14px;
+                        font-weight: 700;
+                        content: "DX";
+                        font-family: 'Inter';
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .slider {
+        width: 100%;
+        overflow: visible;
+
+        .slick-list {
+            overflow: visible;
+        }
+
+        .slick-track {
+            display: flex;
+            align-items: center;
+        }
+
+        .slick-slide {
+            transform: scale(0.7);
+            opacity: 0.4;
+            transform-origin: center center;
+
+            &.slick-current.slick-active {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    }
+
+    .slide {
+        width: 100%;
+        max-width: 100%;
+
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            display: block;
+        }
+    }
+}
+
+.specs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    // margin-bottom: 50px;
+
+    @include respond-to(lg) {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    @include respond-to(xl) {
+        justify-content: center;
+    }
+
+    strong {
+        margin-bottom: 5px;
+        color: #000;
+    }
+}
+
+.specs {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+    font-size: 0.9rem;
+    gap: 20px; // Consistent space between containers
+    margin-bottom: 10px;
+    color: #6c6c6c;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+
+    @include respond-to(md) {
+        gap: 25px; // Slightly more space on larger screens
+    }
+
+    @include respond-to(lg) {
+        gap: 30px; // Even more space on largest screens
+    }
+
+    strong {
+        margin-bottom: 5px;
+        color: #000;
+    }
+
+    >div {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: auto; // Let content determine width
+        min-width: 120px; // Minimum width for consistency
+        flex: 0 0 auto; // Don't grow or shrink, auto width
+        padding: 15px 12px; // Internal padding for content
+        background: rgba(255, 255, 255, 0.02); // Subtle background
+        border-radius: 6px;
+
+        // Content spacing within each container
+        span {
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        strong {
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+strong {
+    margin-top: 5px;
+    display: block;
+    font-size: 1.4rem;
+}
+
+.color-picker {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: auto; // Auto width based on content
+    min-width: 180px; // Slightly wider minimum for color picker
+    text-align: left;
+    font-size: 0.9rem;
+
+    input[type=radio] {
+        display: none;
+    }
+
+    >div {
+        display: flex;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 5px;
+    }
+
+    label {
+        width: 18px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        display: inline-block;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 1px #999;
+        margin: 0 5px;
+        cursor: pointer;
+
+        @include respond-to(md) {
+            width: 24px;
+        }
+    }
+}
+
+// Specific styling for price div within specs
+.specs .price {
+    width: auto;
+    min-width: 160px; // Sufficient width for price content
+    text-align: left;
+    font-size: 0.9rem;
+
+    strong {
+        margin-top: 8px;
+        margin-bottom: 0;
+        font-size: 1.4rem;
+        display: block;
+    }
+}
+
+.price-book {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    @include respond-to(md) {
+        margin-bottom: 20px;
+    }
+
+    .price {
+        font-size: 0.9rem;
+        text-align: left;
+
+        strong {
+            margin-top: 5px;
+            font-size: 1.4rem;
+            display: inline-block;
+        }
+    }
+
+    a {
+        padding: 1rem 2rem;
+        border: none;
+        // width: 100%;
+        background: #000;
+        color: #fff;
+        border-radius: 6px;
+        cursor: pointer;
+        text-decoration: none;
+
+        &.see-comparison {
+            background: #eee;
+            color: black;
+        }
+    }
+}
+
+/* Telekinetics Masonry Grid Styles */
+.telekinetics {
+    // Tilting card variables - easily adjustable
+    background: black;
+    --tilt-angle: 2deg; // Main tilt angle
+    --tilt-perspective: 1000px; // 3D perspective distance
+    --tilt-scale: 1.01; // Scale on hover
+    --tilt-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); // Smooth transition
+
+    padding: 60px 0;
+    min-height: 100vh;
+
+    .telekinetics-header {
+        text-align: center;
+        padding: 40px 0;
+        background: black;
+        margin-bottom: 50px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .masonry-grid {
+        // Mobile: Use flexbox for easy reordering
+        display: flex;
+        flex-direction: column;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        column-gap: 25px;
+
+        @include respond-to(md) {
+            // Tablet and up: Use masonry columns
+            display: block;
+            column-count: 2;
+            column-gap: 20px;
+        }
+
+        @include respond-to(lg) {
+            column-count: 3;
+            column-gap: 30px;
+        }
+
+        @include respond-to(xl) {
+            column-count: 3;
+            column-gap: 30px;
+        }
+    }
+
+    .card {
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        transition: all var(--tilt-transition);
+        margin-bottom: 15px;
+        break-inside: avoid;
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        opacity: 0;
+        animation: fadeInUp 0.6s ease forwards;
+
+        // Tilting card setup
+        transform-style: preserve-3d;
+        perspective: var(--tilt-perspective);
+
+        @include respond-to(md) {
+            margin-bottom: 20px;
+        }
+
+        @include respond-to(lg) {
+            margin-bottom: 25px;
+        }
+
+        // Mouse position trackers for tilting effect (CSS only)
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        // Create 9 invisible tracking zones for smooth tilting
+        .mouse-tracker {
+            position: absolute;
+            width: 33.333%;
+            height: 33.333%;
+            pointer-events: auto;
+            z-index: 2;
+
+            &:nth-child(1) {
+                top: 0;
+                left: 0;
+            }
+
+            &:nth-child(2) {
+                top: 0;
+                left: 33.333%;
+            }
+
+            &:nth-child(3) {
+                top: 0;
+                right: 0;
+            }
+
+            &:nth-child(4) {
+                top: 33.333%;
+                left: 0;
+            }
+
+            &:nth-child(5) {
+                top: 33.333%;
+                left: 33.333%;
+            }
+
+            &:nth-child(6) {
+                top: 33.333%;
+                right: 0;
+            }
+
+            &:nth-child(7) {
+                bottom: 0;
+                left: 0;
+            }
+
+            &:nth-child(8) {
+                bottom: 0;
+                left: 33.333%;
+            }
+
+            &:nth-child(9) {
+                bottom: 0;
+                right: 0;
+            }
+        }
+
+        // Tilting effects for each zone using CSS variables - MOUSE ONLY
+        @media (hover: hover) and (pointer: fine) {
+            .mouse-tracker:nth-child(1):hover~img {
+                transform: perspective(var(--tilt-perspective)) rotateY(calc(-1 * var(--tilt-angle))) rotateX(calc(-1 * var(--tilt-angle))) scale(var(--tilt-scale));
+            }
+
+            .mouse-tracker:nth-child(2):hover~img {
+                transform: perspective(var(--tilt-perspective)) rotateY(0deg) rotateX(calc(-1 * var(--tilt-angle))) scale(var(--tilt-scale));
+            }
+
+            .mouse-tracker:nth-child(3):hover~img {
+                transform: perspective(var(--tilt-perspective)) rotateY(var(--tilt-angle)) rotateX(calc(-1 * var(--tilt-angle))) scale(var(--tilt-scale));
+            }
+
+            .mouse-tracker:nth-child(4):hover~img {
+                transform: perspective(var(--tilt-perspective)) rotateY(calc(-1 * var(--tilt-angle))) rotateX(0deg) scale(var(--tilt-scale));
+            }
+
+            .mouse-tracker:nth-child(5):hover~img {
+                transform: perspective(var(--tilt-perspective)) rotateY(0deg) rotateX(0deg) scale(var(--tilt-scale));
+            }
+
+            .mouse-tracker:nth-child(6):hover~img {
+                transform: perspective(var(--tilt-perspective)) rotateY(var(--tilt-angle)) rotateX(0deg) scale(var(--tilt-scale));
+            }
+
+            .mouse-tracker:nth-child(7):hover~img {
+                transform: perspective(var(--tilt-perspective)) rotateY(calc(-1 * var(--tilt-angle))) rotateX(var(--tilt-angle)) scale(var(--tilt-scale));
+            }
+
+            .mouse-tracker:nth-child(8):hover~img {
+                transform: perspective(var(--tilt-perspective)) rotateY(0deg) rotateX(var(--tilt-angle)) scale(var(--tilt-scale));
+            }
+
+            .mouse-tracker:nth-child(9):hover~img {
+                transform: perspective(var(--tilt-perspective)) rotateY(var(--tilt-angle)) rotateX(var(--tilt-angle)) scale(var(--tilt-scale));
+            }
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform var(--tilt-transition);
+            object-fit: cover;
+            transform-origin: center center;
+            position: relative;
+            z-index: 1;
+            border-radius: 8px;
+        }
+
+        // Enhanced hover effects - MOUSE ONLY
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                img {
+                    box-shadow:
+                        0 25px 30px rgba(255, 255, 255, 0.3),
+                        0 0 20px rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i}) {
+                animation-delay: #{$i * 0.1}s;
+            }
+        }
+
+        // ===================================
+        // RESPONSIVE CARD ORDERING SYSTEM
+        // ===================================
+        // Mobile ordering: Show cards in custom order for better mobile experience
+        // Example: Show 5th card (trip-analysis) first, followed by others
+
+        // Mobile only (up to md breakpoint)
+        @media (max-width: 767px) {
+            &:nth-child(1) {
+                order: 2;
+            }
+
+            // Find My Kiney -> 2nd
+            &:nth-child(2) {
+                order: 3;
+            }
+
+            // Guide Me Home -> 3rd
+            &:nth-child(3) {
+                order: 4;
+            }
+
+            // On/Off Ignition -> 4th
+            &:nth-child(4) {
+                order: 6;
+            }
+
+            // Seat & Charger -> 6th
+            &:nth-child(5) {
+                order: 1;
+            }
+
+            // Trip Analysis -> 1st (featured on mobile)
+            &:nth-child(6) {
+                order: 5;
+            }
+
+            // Geo Fencing -> 5th
+            &:nth-child(7) {
+                order: 7;
+            }
+
+            // Track My Kinetic -> 7th
+            &:nth-child(8) {
+                order: 8;
+            }
+
+            // Data Analytics -> 8th
+            &:nth-child(9) {
+                order: 9;
+            }
+
+            // Anti-Theft Alert -> 9th
+            &:nth-child(10) {
+                order: 10;
+            }
+
+            // FOTA Updates -> 10th
+        }
+
+        // Tablet ordering: Different arrangement for 2-column layout
+        @media (min-width: 768px) and (max-width: 991px) {
+            &:nth-child(1) {
+                order: 1;
+            }
+
+            // Reset to default order
+            &:nth-child(2) {
+                order: 3;
+            }
+
+            // Guide Me Home -> 3rd column position
+            &:nth-child(3) {
+                order: 2;
+            }
+
+            // On/Off Ignition -> 2nd
+            // Add more custom tablet ordering as needed
+        }
+
+        // Desktop: Use default order (no custom ordering needed)
+        @media (min-width: 992px) {
+
+            // Reset all orders to default for desktop masonry
+            &:nth-child(n) {
+                order: initial;
+            }
+        }
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.model-banner {
+    img {
+        display: block;
+        width: 100%;
+    }
+
+    svg {
+        display: block;
+    }
+}

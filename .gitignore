@@ -1,0 +1,201 @@
+# =============================================================================
+# K2 Kinetic EV Website - Git Ignore File
+# =============================================================================
+
+# Build and Distribution Files
+# -----------------------------------------------------------------------------
+src/dist/
+src/public/
+php/css/
+php/js/
+build/
+dist/
+*.min.css
+*.min.js
+*.map
+
+# Dependencies and Packages
+# -----------------------------------------------------------------------------
+node_modules/
+vendor/
+bower_components/
+jspm_packages/
+
+# Package Manager Files (optional - can be included for reproducible builds)
+# package-lock.json
+# composer.lock
+
+# Environment and Configuration Files
+# -----------------------------------------------------------------------------
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+config.php
+*-config.php
+database-config.php
+secrets.php
+production-config.php
+test-config.php
+php/dev-config.php
+php-backup/test-config.php
+
+# IDE and Editor Files
+# -----------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.buildpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Operating System Files
+# -----------------------------------------------------------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# Log Files and Debugging
+# -----------------------------------------------------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
+error.log
+access.log
+
+# Temporary Files
+# -----------------------------------------------------------------------------
+tmp/
+temp/
+.tmp/
+.cache/
+*.tmp
+*.temp
+*.pid
+*.seed
+
+# Runtime and Process Files
+# -----------------------------------------------------------------------------
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage and Testing
+# -----------------------------------------------------------------------------
+coverage/
+.nyc_output/
+.coverage
+htmlcov/
+.pytest_cache/
+*.cover
+*.py,cover
+
+# Database Files
+# -----------------------------------------------------------------------------
+*.sqlite
+*.sqlite3
+*.db
+*.mdb
+*.accdb
+database-backups/
+sql-dumps/
+
+# Media and Upload Directories
+# -----------------------------------------------------------------------------
+uploads/user-content/
+media/uploads/
+files/temp/
+cache/images/
+
+# Compiled and Optimized Files
+# -----------------------------------------------------------------------------
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.dylib
+
+# Security and Sensitive Files
+# -----------------------------------------------------------------------------
+*.key
+*.pem
+*.p12
+*.crt
+*.csr
+.htpasswd
+auth.json
+credentials.json
+secrets.json
+
+# Backup Files
+# -----------------------------------------------------------------------------
+*.backup
+*.bak
+*.orig
+*.rej
+*~
+
+# Version Control
+# -----------------------------------------------------------------------------
+.svn/
+.hg/
+.bzr/
+
+# Deployment and CI/CD
+# -----------------------------------------------------------------------------
+.deployment
+.azure/
+.github/workflows/*.yml
+deploy-config.json
+
+# Project Specific
+# -----------------------------------------------------------------------------
+# Keep prod-logs and test-logs as they may contain important deployment info
+# but ignore any local development logs
+prod-logs/*.log
+test-logs/*.log
+*.local.log
+
+# Documentation Build Files
+# -----------------------------------------------------------------------------
+docs/_build/
+site/
+
+# Misc
+# -----------------------------------------------------------------------------
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+*.swp
+*.swo

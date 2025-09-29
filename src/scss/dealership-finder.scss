@@ -1,0 +1,123 @@
+/* Dealership Finder Styles */
+.dealer-finder-page {
+    padding: 40px 0;
+    background-color: #f8f9fa;
+}
+
+.dealer-finder-page h1 {
+    color: #343a40;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.dealer-finder-page h2 {
+    color: #495057;
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+
+.dealership-card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.dealership-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dealership-card .card-title {
+    font-weight: 600;
+    color: #0d6efd;
+    margin-bottom: 10px;
+}
+
+.dealership-card .card-body {
+    padding: 1.5rem;
+}
+
+.dealership-results {
+    margin-top: 20px;
+}
+
+.dealer-contact a {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.dealer-contact a:hover {
+    text-decoration: underline;
+}
+
+.dealership-card .badge {
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+/* View Toggle Buttons */
+.view-toggle .btn {
+    border-width: 1px;
+    font-weight: 500;
+}
+
+.view-toggle .btn.active {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+/* Map Styles */
+#map-view {
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-info-window {
+    max-width: 300px;
+    padding: 5px;
+}
+
+.map-info-window .card-body {
+    padding: 10px;
+}
+
+.map-info-window .card-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.map-info-window p {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+/* Empty state illustration */
+.dealer-finder-page .img-fluid {
+    opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+    .dealer-finder-page {
+        padding: 20px 0;
+    }
+    
+    .dealer-finder-page h2 {
+        font-size: 1.5rem;
+    }
+    
+    .dealership-card .card-body {
+        padding: 1.2rem;
+    }
+    
+    .view-toggle {
+        margin-top: 15px;
+    }
+    
+    #map-view {
+        height: 350px !important;
+    }
+}

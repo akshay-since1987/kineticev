@@ -1,0 +1,51 @@
+{
+    "name": "k2",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "dev": "node scripts/dev.js",
+        "build:scss": "node scripts/sass-watch.js",
+        "build:js": "node scripts/js-watch.js",
+        "build": "npm run build:scss && npm run build:js",
+        "deploy:test": "node scripts/deploy-test.js",
+        "deploy:prod": "node scripts/deploy-production.js"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.29.3",
+        "chokidar": "^3.5.3",
+        "esbuild": "^0.19.2",
+        "sass": "^1.90.0"
+    },
+    "KINETICEV": {
+        "sftp": {
+            "test": {
+                "host": "test.kineticev.in",
+                "username": "testkinetic",
+                "password": "w2bzFHh0bVr7",
+                "port": 22,
+                "remotePath": "/public_html/"
+            },
+            "production": {
+                "host": "65.1.195.172",
+                "port": 22,
+                "username": "prodkinetic",
+                "password": "hv21cc21v212v",
+                "remotePath": "/public_html/"
+            }
+        },
+        "local": "dev.kineticev.in",
+        "proxy": "www.kineticev.in"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "basic-ftp": "^5.0.5",
+        "font-awesome": "^4.7.0",
+        "imagesloaded": "^5.0.0",
+        "jquery": "^3.7.1",
+        "masonry-layout": "^4.2.2",
+        "slick-carousel": "^1.8.1",
+        "ssh2-sftp-client": "^10.0.3"
+    }
+}

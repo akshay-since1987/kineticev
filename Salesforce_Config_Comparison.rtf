@@ -1,0 +1,152 @@
+{\rtf1\ansi\deff0 {\fonttbl {\f0 Times New Roman;} {\f1 Courier New;}}
+{\colortbl;\red0\green0\blue0;\red255\green0\blue0;\red0\green128\blue0;\red128\green128\blue128;}
+
+\f0\fs24\b SALESFORCE CONFIGURATION COMPARISON: dev-config.php vs test-config.php\b0\par
+\par
+Generated on: September 22, 2025\par
+\par
+
+\b\fs20 BASIC CONFIGURATION\b0\par
+\trowd\trgaph108\trleft-108
+\cellx2000\cellx4000\cellx6000\cellx8000
+\intbl\b Setting\b0\cell\b dev-config.php\b0\cell\b test-config.php\b0\cell\b Match?\b0\cell\row
+\intbl Endpoint\cell https://test.salesforce.com/servlet/servlet.WebToLead\cell https://test.salesforce.com/servlet/servlet.WebToLead\cell \cf3 Same\cf1\cell\row
+\intbl Organization ID\cell 00DHE000001cCu1\cell 00DHE000001cCu1\cell \cf3 Same\cf1\cell\row
+\intbl Retail Record Type\cell 012HE000001LIpOYAW\cell 012HE000001LIpOYAW\cell \cf3 Same\cf1\cell\row
+\intbl Dealership Record Type\cell 012HE000001LIpNYAW\cell 012HE000001LIpNYAW\cell \cf3 Same\cf1\cell\row
+\intbl Lead Source\cell Website\cell Website\cell \cf3 Same\cf1\cell\row
+\intbl Status\cell Lead Created\cell Lead Created\cell \cf3 Same\cf1\cell\row
+\par
+
+\b\fs20 STANDARD FIELDS MAPPING\b0\par
+\trowd\trgaph108\trleft-108
+\cellx2000\cellx4000\cellx6000\cellx8000
+\intbl\b Field\b0\cell\b dev-config.php\b0\cell\b test-config.php\b0\cell\b Match?\b0\cell\row
+\intbl first_name\cell first_name\cell first_name\cell \cf3 Same\cf1\cell\row
+\intbl last_name\cell last_name\cell last_name\cell \cf3 Same\cf1\cell\row
+\intbl email\cell email\cell email\cell \cf3 Same\cf1\cell\row
+\intbl phone\cell phone\cell phone\cell \cf3 Same\cf1\cell\row
+\intbl company\cell Not Present\cell company\cell \cf2 Different\cf1\cell\row
+\par
+
+\b\fs20 CUSTOM FIELD MAPPINGS\b0\par
+\trowd\trgaph108\trleft-108
+\cellx2500\cellx5000\cellx7500\cellx9000
+\intbl\b Application Field\b0\cell\b dev-config.php Field ID\b0\cell\b test-config.php Field ID\b0\cell\b Match?\b0\cell\row
+\intbl pincode\cell 00NC1000001c8s1\cell 00NHE000000mQaZ\cell \cf2 Different\cf1\cell\row
+\intbl whatsapp_number\cell 00NC1000001d7yq\cell 00NHE000000mQbz\cell \cf2 Different\cf1\cell\row
+\intbl address\cell 00NC1000001dNYy\cell 00NHE000000mQWa\cell \cf2 Different\cf1\cell\row
+\intbl product_variant\cell 00NC1000001r2j3\cell 00NHE000000mQaj\cell \cf2 Different\cf1\cell\row
+\intbl variant\cell 00NC1000001qpM1\cell 00NHE000000mQai\cell \cf2 Different\cf1\cell\row
+\intbl color\cell 00NC1000001qpNd\cell 00NHE000000mQah\cell \cf2 Different\cf1\cell\row
+\intbl test_ride_date\cell 00NC1000001y12H\cell 00NHE000000mQac\cell \cf2 Different\cf1\cell\row
+\intbl booking_amount\cell 00NC1000001dNZ6\cell 00NHE000000mQWs\cell \cf2 Different\cf1\cell\row
+\intbl payment_method\cell 00NC1000001dNbG\cell 00NHE000000mQaU\cell \cf2 Different\cf1\cell\row
+\intbl payment_date\cell 00NC1000001xxjS\cell 00NHE000000mQXl\cell \cf2 Different\cf1\cell\row
+\intbl transaction_id\cell 00NC1000001ZTsz\cell 00NHE000000mQbQ\cell \cf2 Different\cf1\cell\row
+\intbl message\cell 00NC1000001qCe4\cell 00NHE000000mQa3\cell \cf2 Different\cf1\cell\row
+\intbl concern\cell 00NC1000001qDrp\cell 00NHE000000mQXR\cell \cf2 Different\cf1\cell\row
+\intbl payment_status\cell 00NC1000001qvpd\cell 00NHE000000mQWz\cell \cf2 Different\cf1\cell\row
+\intbl test_ride_date_web\cell Not Present\cell 00NHE000000qqAb\cell \cf2 Different\cf1\cell\row
+\intbl payment_date_web\cell Not Present\cell 00NHE000000qqCD\cell \cf2 Different\cf1\cell\row
+\intbl area\cell Not Present\cell 00NHE000000mQZN\cell \cf2 Different\cf1\cell\row
+\intbl employment_type\cell Not Present\cell 00NHE000000mQXW\cell \cf2 Different\cf1\cell\row
+\intbl business_nature\cell Not Present\cell 00NHE000000mQXY\cell \cf2 Different\cf1\cell\row
+\intbl initial_investment\cell Not Present\cell 00NHE000000mQZM\cell \cf2 Different\cf1\cell\row
+\intbl business_turnover\cell Not Present\cell 00NHE000000mQX8\cell \cf2 Different\cf1\cell\row
+\intbl investment_capability\cell Not Present\cell 00NHE000000mQZU\cell \cf2 Different\cf1\cell\row
+\intbl suggested_start_date\cell Not Present\cell 00NHE000000mQbG\cell \cf2 Different\cf1\cell\row
+\par
+
+\b\fs20 VALUE MAPPINGS - VARIANT\b0\par
+\trowd\trgaph108\trleft-108
+\cellx2000\cellx4000\cellx6000\cellx8000
+\intbl\b Input Value\b0\cell\b dev-config.php Output\b0\cell\b test-config.php Output\b0\cell\b Match?\b0\cell\row
+\intbl dx\cell EX\cell EX\cell \cf3 Same\cf1\cell\row
+\intbl dx-plus\cell Ex+\cell Ex+\cell \cf3 Same\cf1\cell\row
+\intbl k2\cell K2\cell K2\cell \cf3 Same\cf1\cell\row
+\intbl k2+\cell K2+\cell K2+\cell \cf3 Same\cf1\cell\row
+\intbl k2 plus\cell K2+\cell K2+\cell \cf3 Same\cf1\cell\row
+\intbl plus\cell K2+\cell K2+\cell \cf3 Same\cf1\cell\row
+\intbl base\cell K2\cell K2\cell \cf3 Same\cf1\cell\row
+\intbl standard\cell K2\cell K2\cell \cf3 Same\cf1\cell\row
+\par
+
+\b\fs20 VALUE MAPPINGS - CONCERN (CRITICAL DIFFERENCE)\b0\par
+\trowd\trgaph108\trleft-108
+\cellx2000\cellx4000\cellx6000\cellx8000
+\intbl\b Input Value\b0\cell\b dev-config.php Output\b0\cell\b test-config.php Output\b0\cell\b Match?\b0\cell\row
+\intbl support\cell Enquiry\cell Enquiry\cell \cf3 Same\cf1\cell\row
+\intbl enquiry\cell Booking Enquiry\cell Enquiry\cell \cf2\b Different\cf1\b0\cell\row
+\intbl dealership\cell Dealership Enquiry\cell Enquiry\cell \cf2\b Different\cf1\b0\cell\row
+\intbl dealership enquiry\cell Dealership Enquiry\cell Enquiry\cell \cf2\b Different\cf1\b0\cell\row
+\intbl others\cell Enquiry\cell Enquiry\cell \cf3 Same\cf1\cell\row
+\intbl test_ride\cell Test Ride Enquiry\cell Enquiry\cell \cf2\b Different\cf1\b0\cell\row
+\intbl test-ride\cell Test Ride Enquiry\cell Enquiry\cell \cf2\b Different\cf1\b0\cell\row
+\par
+
+\b\fs20 VALUE MAPPINGS - PAYMENT STATUS\b0\par
+\trowd\trgaph108\trleft-108
+\cellx2000\cellx4000\cellx6000\cellx8000
+\intbl\b Input Value\b0\cell\b dev-config.php Output\b0\cell\b test-config.php Output\b0\cell\b Match?\b0\cell\row
+\intbl completed\cell Success\cell Success\cell \cf3 Same\cf1\cell\row
+\intbl failed\cell Failed\cell Failed\cell \cf3 Same\cf1\cell\row
+\intbl pending\cell Pending\cell Pending\cell \cf3 Same\cf1\cell\row
+\intbl success\cell Success\cell Success\cell \cf3 Same\cf1\cell\row
+\intbl failure\cell Failed\cell Failed\cell \cf3 Same\cf1\cell\row
+\intbl COMPLETED\cell Success\cell Success\cell \cf3 Same\cf1\cell\row
+\intbl FAILED\cell Failed\cell Failed\cell \cf3 Same\cf1\cell\row
+\intbl PENDING\cell Pending\cell Pending\cell \cf3 Same\cf1\cell\row
+\par
+
+\b\fs20 ADDITIONAL VALUE MAPPINGS (test-config.php only)\b0\par
+\trowd\trgaph108\trleft-108
+\cellx2000\cellx3000\cellx5000\cellx7000
+\intbl\b Category\b0\cell\b Input Value\b0\cell\b test-config.php Output\b0\cell\b Present in dev-config?\b0\cell\row
+\intbl payment_method\cell upi\cell UPI\cell No\cell\row
+\intbl payment_method\cell bank_transfer\cell Bank Transfer\cell No\cell\row
+\intbl payment_method\cell cash\cell Cash\cell No\cell\row
+\intbl employment_type\cell business\cell Business owner\cell No\cell\row
+\intbl employment_type\cell employed\cell Employed\cell No\cell\row
+\intbl employment_type\cell student\cell Student\cell No\cell\row
+\intbl employment_type\cell homemaker\cell Homemaker\cell No\cell\row
+\par
+
+\b\fs20 DEFAULT VALUES\b0\par
+\trowd\trgaph108\trleft-108
+\cellx3000\cellx5000\cellx7000\cellx8500
+\intbl\b Setting\b0\cell\b dev-config.php\b0\cell\b test-config.php\b0\cell\b Match?\b0\cell\row
+\intbl book_now booking_amount\cell 1000\cell 1000\cell \cf3 Same\cf1\cell\row
+\intbl test_ride booking_amount\cell (empty)\cell (empty)\cell \cf3 Same\cf1\cell\row
+\intbl contact booking_amount\cell (empty)\cell (empty)\cell \cf3 Same\cf1\cell\row
+\intbl payment_method_fallback\cell UPI\cell UPI\cell \cf3 Same\cf1\cell\row
+\intbl lead_source\cell Website - Development\cell Website - Test UAT\cell \cf2 Different\cf1\cell\row
+\par
+
+\b\fs24 SUMMARY\b0\par
+\par
+\b Record Types:\b \cf3 SAME\cf1 - Both use correct UAT record types\par
+\par
+\b Field IDs:\b \cf2 COMPLETELY DIFFERENT\cf1 - Different Salesforce org custom field IDs\par
+- dev-config uses 00NC prefix field IDs\par
+- test-config uses 00NHE prefix field IDs\par
+\par
+\b Field Count:\b \cf2 DIFFERENT\cf1 - test-config has 9 additional fields for dealership enquiries\par
+\par
+\b Value Mappings:\b \cf2 CRITICAL DIFFERENCES\cf1 - Concern field mappings are completely different\par
+- dev-config maintains specific concern types (Booking Enquiry, Dealership Enquiry, Test Ride Enquiry)\par
+- test-config simplifies all concerns to just "Enquiry"\par
+\par
+\b Overall Compatibility:\b \cf2 NOT COMPATIBLE\cf1 - Would send data to different fields in Salesforce\par
+\par
+\b\fs20 CRITICAL IMPACT:\b0\par
+The configurations are fundamentally incompatible because they target different custom field structures within the same Salesforce organization. This means:\par
+\par
+1. Data submitted from dev environment vs test environment would map to entirely different custom fields\par
+2. Lead categorization would be lost in test environment (all become generic "Enquiry")\par
+3. Dealership-specific fields are only available in test configuration\par
+4. Field mappings need to be synchronized for consistent data handling\par
+\par
+\b\fs20 RECOMMENDATION:\b0\par
+Standardize field mappings across environments or ensure environment-specific handling in the application logic to maintain data integrity and proper lead categorization.\par
+}

@@ -1,0 +1,623 @@
+@use "./reset.scss";
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
+@use "./slick.css";
+@use "./slick-theme.css";
+@use "./legend-form";
+@use "./corporate.scss";
+@use "./footer.scss";
+@use "./modals.scss";
+@use "./range-x.scss";
+@use "./_forms.scss";
+@use "./_new-landing.scss";
+@use "./my-kiney.scss";
+@use "./dealership-finder.scss";
+@use "./dealership-map.scss";
+@use "./modal-fixes.scss";
+@use "./otp-verification.scss";
+@use "./contact-map.scss";
+@use "./emi-calculator.scss";
+
+// Font Awesome configuration
+$fa-font-path: "/-/fonts";
+@use "../../node_modules/font-awesome/scss/font-awesome.scss";
+
+$fa-version: "6.5.2";
+
+
+@font-face {
+    font-family: "A4SPEED";
+    src: url("/-/fonts/a4speed-bold.ttf");
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("/-/fonts/inter-regular_1.ttf");
+}
+
+@font-face {
+    font-family: "PilateWide";
+    src: url("/-/fonts/pilateWide-regular.ttf");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-weight: 900;
+    src: url("/-/fonts/inter_18pt-black.ttf");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-weight: 700;
+    src: url("/-/fonts/inter_18pt-bold.ttf");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-weight: 500;
+    src: url("/-/fonts/inter_28pt-medium.ttf");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-weight: 200;
+    src: url("/-/fonts/inter_18pt-thin.ttf");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-weight: 400;
+    src: url("/-/fonts/inter_24pt-regular.ttf");
+}
+
+.slick-wrapper {
+    padding: 50px 0;
+    position: relative;
+    z-index: 1;
+}
+
+// Mixin for responsive background containers
+@mixin responsive-background-container($default-height: 100dvh) {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: $default-height;
+
+    // Portrait screens (mobile) - 9:16 optimized
+    @media (orientation: portrait) and (max-aspect-ratio: 10/16) {
+        height: 100dvh;
+    }
+
+    // Landscape screens (desktop/tablet) - 16:9 optimized  
+    @media (orientation: landscape) and (min-aspect-ratio: 16/10) {
+        height: 100dvh;
+        min-height: 600px;
+    }
+
+    // Ultra-wide screens
+    @media (min-aspect-ratio: 21/9) {
+        height: 100dvh;
+        min-height: 500px;
+    }
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        picture {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; // Like background-size: cover (allows clipping)
+            object-position: center; // Like background-position: center
+            display: block;
+        }
+
+        // For SVG backgrounds
+        svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+    }
+}
+
+// 360 viewer preloader - styling for global preloader in header.php
+.feature-columns {
+    anchor-name: --viewer;
+    position: relative;
+    /* ensures a well-defined anchor box */
+}
+
+.preloader {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease;
+    z-index: 9999;
+    /* Higher z-index to ensure visibility */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 20px;
+    // border-radius: 8px;
+    // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    // border: 3px solid red; /* Debug border */
+
+    #svg-preloader {
+        display: block;
+        width: 250px;
+        // height: 50px;
+        aspect-ratio: 4 / 1;
+        margin-bottom: 15px;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .loading-progress {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 200px;
+
+        .progress-bar {
+            width: 0%;
+            height: 4px;
+            background: #d92128;
+            border-radius: 2px;
+            transition: width 0.3s ease-out;
+            margin-bottom: 5px;
+            position: relative;
+            overflow: hidden;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 5px;
+                background: rgba(255, 255, 255, 0.7);
+                border-radius: 1px;
+                filter: blur(1px);
+                opacity: 0;
+                animation: progress-glow 1.5s ease-in-out infinite;
+            }
+
+            &.progress-low {
+                background: #d92128;
+            }
+
+            &.progress-medium {
+                background: #ff8c00;
+            }
+
+            &.progress-high {
+                background: #22c55e;
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .progress-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: #ffffff;
+            font-weight: 500;
+            text-align: center;
+        }
+    }
+
+    @keyframes progress-glow {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 0.8;
+        }
+
+        100% {
+            transform: translateX(200%);
+            opacity: 0;
+        }
+    }
+}
+
+.preloader.is-loading {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    /* Explicitly set visibility */
+    display: block;
+    /* Force display */
+    // background-color: rgba(0, 0, 0, 0.3); /* Debug: Red tint */
+}
+
+/* Custom styling for the viewer-anchored preloader */
+.preloader.viewer-anchored {
+    /* Position relative to the viewport but will be positioned by JS over the viewer */
+    position: absolute;
+    /* Default centering, though JS will override these */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    /* Ensure it's above other content */
+    visibility: visible;
+    /* Force visibility */
+    opacity: 1;
+    /* Force opacity */
+    display: block;
+    /* Force display */
+
+    /* Make it more visible with better styling */
+    // background-color: rgba(0, 0, 0, 0.85);
+    // border: 1px solid rgba(255, 255, 255, 0.2);
+    // border-radius: 8px;
+    padding: 15px 20px;
+    // box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    /* Set a specific size for better visibility */
+    // width: 500px;
+
+    /* Add some text to indicate color change */
+    // &::before {
+    //     content: "Loading color variant...";
+    //     display: block;
+    //     color: white;
+    //     font-size: 14px;
+    //     margin-bottom: 10px;
+    //     text-align: center;
+    // }
+
+    /* Make the progress bar container more visible */
+    .loading-progress {
+        display: none;
+        margin-top: 10px;
+
+        .progress-bar {
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+
+            /* Create the inner progress element if it doesn't exist in the HTML */
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: var(--progress-width, 0%);
+                background-color: #4CAF50;
+                /* Green progress */
+                transition: width 0.3s ease;
+            }
+        }
+
+        .progress-text {
+            display: none;
+            text-align: center;
+            color: white;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+    }
+}
+
+#preloader-path {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 1200;
+    animation: trace-stroke 1.8s linear infinite reverse;
+}
+
+@keyframes trace-stroke {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.side-screen-1,
+.side-screen-2,
+.side-screen-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 120px);
+    position: relative;
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100vw - 400px);
+        height: calc(100vh - 120px);
+        height: calc(100svh - 120px);
+        
+        z-index: 1;
+        overflow: hidden;
+
+        svg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            // @include respond-to(md) {
+            //     height: calc(100vh - 240px);
+            // }
+
+            // @include respond-to(lg) {
+            //     height: calc(100vh - 120px);
+            // }
+        }
+    }
+
+    .side-page-content {
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 120px);
+        top: 0;
+        right: 0;
+        z-index: 2;
+
+        @include respond-to(md) {
+            width: 450px;
+        }
+
+        .form-container {
+            height: calc(100vh - 120px);
+            box-shadow: -30px 0 40px rgba(0, 0, 0, 0.15), -10px 0 20px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+}
+
+// EMI Section Styles - Matching site design patterns
+.emi-section {
+    background: #EAEAEA;
+    padding: 60px 20px;
+    position: relative;
+
+    @include respond-to(md) {
+        padding: 80px 40px;
+    }
+}
+
+.emi-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+
+    @include respond-to(md) {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+}
+
+.emi-content {
+    text-align: center;
+
+    @include respond-to(md) {
+        text-align: left;
+    }
+}
+
+.emi-header {
+    margin-bottom: 24px;
+
+    h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #1a1a1a;
+        line-height: 1.2;
+        margin: 0;
+
+        @include respond-to(md) {
+            font-size: 3rem;
+        }
+
+        @include respond-to(lg) {
+            font-size: 3.5rem;
+        }
+    }
+}
+
+.emi-description {
+    margin-bottom: 32px;
+
+    p {
+        font-family: "Inter", sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #555;
+        margin: 0;
+
+        @include respond-to(md) {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.emi-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include respond-to(sm) {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    @include respond-to(md) {
+        justify-content: flex-start;
+    }
+}
+
+.emi-btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    min-width: 180px;
+
+    &.primary {
+        background: #1E1E1E;
+        color: white;
+        
+        &:hover {
+            background: #2A2A2A;
+            transform: translateY(-2px);
+        }
+    }
+
+    &.secondary {
+        background: transparent;
+        color: #d92128;
+        border-color: #d92128;
+
+        &:hover {
+            background: #d92128;
+            color: white;
+        }
+    }
+}
+
+.emi-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emi-calculator-preview {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 350px;
+    width: 100%;
+}
+
+.calculator-mockup {
+    padding: 0;
+}
+
+.calc-header {
+    background: #000;
+    color: white;
+    padding: 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.calc-inputs {
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 0 0 8px 8px;
+}
+
+.calc-row {
+    display: block;
+    margin: 1rem 0;
+    font-family: "Inter", sans-serif;
+    position: relative;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &.highlight {
+        background: #d92128;
+        margin: 16px -20px -20px;
+        padding: 20px;
+        color: white;
+        font-weight: 600;
+        border-radius: 0 0 8px 8px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+            color: white !important;
+            font-size: 1.1rem;
+        }
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    input, select {
+        padding: 0.8rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        background: #fff;
+        outline: none;
+        transition: border 0.3s, box-shadow 0.3s;
+        width: 100%;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+
+        &:focus {
+            border-color: #000;
+        }
+    }
+
+    select {
+        appearance: none;
+        background-image: url("data:image/svg+xml;utf8,<svg fill='%23000' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 20px;
+        cursor: pointer;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+    }
+
+    span:first-child {
+        color: #333;
+        font-size: 0.95rem;
+        font-weight: 500;
+    }
+
+    span:last-child {
+        font-weight: 600;
+        color: #d92128;
+        font-size: 1.1rem;
+    }
+}

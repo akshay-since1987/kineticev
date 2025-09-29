@@ -1,0 +1,130 @@
+[2025-08-27 15:49:53] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-08-27 15:49:53] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-08-27 15:49:53] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-08-27 15:49:53] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-08-27 15:49:54] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subject' in 'field list'","table":"contacts"}
+[2025-08-27 15:49:54] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subject' in 'field list'","table":"contacts"}
+[2025-08-27 15:49:54] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subject' in 'field list'","table":"contacts"}
+[2025-08-27 15:49:54] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subject' in 'field list'","table":"contacts"}
+[2025-08-27 16:24:50] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-08-27 16:24:50] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-08-27 16:24:50] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-08-27 16:24:50] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-08-27 16:24:52] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subject' in 'field list'","table":"contacts"}
+[2025-08-27 16:24:52] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subject' in 'field list'","table":"contacts"}
+[2025-08-27 16:24:52] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subject' in 'field list'","table":"contacts"}
+[2025-08-27 16:24:52] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subject' in 'field list'","table":"contacts"}
+[2025-08-29 16:32:26] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-08-29 16:32:26] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-08-29 16:32:26] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-08-29 16:32:26] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-08-30 12:36:01] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-08-30 12:36:01] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-08-30 12:36:01] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-08-30 12:36:01] [ERROR]: [ADMIN_HANDLER] Failed to get filter options {"error":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'","table":"test_drives"}
+[2025-09-02 18:58:56] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-02 18:58:56] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-02 18:58:56] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-03 14:10:59] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-03 14:10:59] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-03 14:10:59] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-03 14:21:29] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-03 14:21:29] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-03 14:21:29] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-03 14:21:46] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-03 14:21:46] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-03 14:21:46] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-03 14:24:37] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-03 14:24:37] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-03 14:24:37] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-03 20:29:10] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-03 20:29:10] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-03 20:29:10] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-03 22:01:12] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-03 22:01:12] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-03 22:01:12] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-03 22:47:09] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-03 22:47:09] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-03 22:47:09] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-03 22:47:22] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-03 22:47:22] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-03 22:47:22] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-03 22:51:44] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-03 22:51:44] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-03 22:51:44] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-04 09:31:00] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-04 09:31:00] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-04 09:31:00] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-04 09:31:32] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-04 09:31:32] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-04 09:31:32] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-04 09:31:44] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-04 09:31:44] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-04 09:31:44] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-04 09:34:20] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-04 09:34:20] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-04 09:34:20] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-04 09:34:41] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com;dbname=kineticev;charset=utf8mb4"}
+[2025-09-04 09:34:41] [ERROR]: [ADMIN_HANDLER] Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-04 09:34:41] [ERROR]: [ADMIN_LOGIN] Login system error {"error":"SQLSTATE[HY000] [2002] Connection timed out","username":"kineticadmin"}
+[2025-09-04 09:34:43] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com;dbname=kineticev;charset=utf8mb4"}
+[2025-09-04 09:34:43] [ERROR]: [ADMIN_HANDLER] Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-04 09:34:43] [ERROR]: [ADMIN_LOGIN] Login system error {"error":"SQLSTATE[HY000] [2002] Connection timed out","username":"kineticadmin"}
+[2025-09-04 09:34:48] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com;dbname=kineticev;charset=utf8mb4"}
+[2025-09-04 09:34:48] [ERROR]: [ADMIN_HANDLER] Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-04 09:34:48] [ERROR]: [ADMIN_LOGIN] Login system error {"error":"SQLSTATE[HY000] [2002] Connection timed out","username":"kineticadmin"}
+[2025-09-04 09:34:53] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com;dbname=kineticev;charset=utf8mb4"}
+[2025-09-04 09:34:53] [ERROR]: [ADMIN_HANDLER] Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-04 09:34:53] [ERROR]: [ADMIN_LOGIN] Login system error {"error":"SQLSTATE[HY000] [2002] Connection timed out","username":"kineticadmin"}
+[2025-09-04 09:35:13] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com;dbname=kineticev;charset=utf8mb4"}
+[2025-09-04 09:35:13] [ERROR]: [ADMIN_HANDLER] Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-04 09:35:13] [ERROR]: [ADMIN_LOGIN] Login system error {"error":"SQLSTATE[HY000] [2002] Connection timed out","username":"kineticadmin"}
+[2025-09-04 09:35:15] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-04 09:35:15] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-04 09:35:15] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-04 09:36:24] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-04 09:36:24] [ERROR]: Database connection failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","code":2002,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":57}
+[2025-09-04 09:36:24] [ERROR]: Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] Connection timed out"}
+[2025-09-04 09:51:30] [ERROR]: Database connection failed after all retries {"total_attempts":6,"final_error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com;dbname=kineticev;charset=utf8mb4"}
+[2025-09-04 09:51:30] [ERROR]: Schema fix script failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","trace":"#0 \/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php(83): PDO->__construct()\n#1 \/var\/www\/kineticev.in\/public_html\/fix-database-schema.php(35): DatabaseUtils::createConnectionWithRetry()\n#2 {main}"}
+[2025-09-04 09:51:33] [ERROR]: Database connection failed after all retries {"total_attempts":6,"final_error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com;dbname=kineticev;charset=utf8mb4"}
+[2025-09-04 09:51:33] [ERROR]: Schema fix script failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","trace":"#0 \/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php(83): PDO->__construct()\n#1 \/var\/www\/kineticev.in\/public_html\/fix-database-schema.php(35): DatabaseUtils::createConnectionWithRetry()\n#2 {main}"}
+[2025-09-04 09:52:00] [ERROR]: Database connection failed after all retries {"total_attempts":6,"final_error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com;dbname=kineticev;charset=utf8mb4"}
+[2025-09-04 09:52:00] [ERROR]: Schema fix script failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","trace":"#0 \/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php(83): PDO->__construct()\n#1 \/var\/www\/kineticev.in\/public_html\/fix-database-schema.php(35): DatabaseUtils::createConnectionWithRetry()\n#2 {main}"}
+[2025-09-04 09:52:03] [ERROR]: Database connection failed after all retries {"total_attempts":6,"final_error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com;dbname=kineticev;charset=utf8mb4"}
+[2025-09-04 09:52:03] [ERROR]: Schema fix script failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","trace":"#0 \/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php(83): PDO->__construct()\n#1 \/var\/www\/kineticev.in\/public_html\/fix-database-schema.php(35): DatabaseUtils::createConnectionWithRetry()\n#2 {main}"}
+[2025-09-04 09:52:30] [ERROR]: Database connection failed after all retries {"total_attempts":6,"final_error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com;dbname=kineticev;charset=utf8mb4"}
+[2025-09-04 09:52:30] [ERROR]: Schema fix script failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","trace":"#0 \/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php(83): PDO->__construct()\n#1 \/var\/www\/kineticev.in\/public_html\/fix-database-schema.php(35): DatabaseUtils::createConnectionWithRetry()\n#2 {main}"}
+[2025-09-04 09:52:32] [ERROR]: Database connection failed after all retries {"total_attempts":6,"final_error":"SQLSTATE[HY000] [2002] Connection timed out","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com;dbname=kineticev;charset=utf8mb4"}
+[2025-09-04 09:52:32] [ERROR]: Schema fix script failed {"error":"SQLSTATE[HY000] [2002] Connection timed out","trace":"#0 \/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php(83): PDO->__construct()\n#1 \/var\/www\/kineticev.in\/public_html\/fix-database-schema.php(35): DatabaseUtils::createConnectionWithRetry()\n#2 {main}"}
+[2025-09-07 21:29:53] [ERROR]: Failed to create transaction record {"transactionId":"1757260612812741","error_info":["23000",1062,"Duplicate entry '1757260612812741' for key 'transactions.transaction_id'"],"sql_state":"23000","error_code":1062,"error_message":"Duplicate entry '1757260612812741' for key 'transactions.transaction_id'"}
+[2025-09-18 12:55:06] [ERROR]: 
+Database connection failed after all retries {"total_attempts":4,"final_error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","dsn":"mysql:host=localhost"}
+[2025-09-18 12:55:06] [ERROR]: 
+Database connection failed {"error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","code":1045,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":89}
+[2025-09-18 12:55:06] [ERROR]: 
+Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)"}
+[2025-09-18 12:55:29] [ERROR]: 
+Database connection failed after all retries {"total_attempts":4,"final_error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","dsn":"mysql:host=localhost"}
+[2025-09-18 12:55:29] [ERROR]: 
+Database connection failed {"error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","code":1045,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":89}
+[2025-09-18 12:55:29] [ERROR]: 
+Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)"}
+[2025-09-18 12:55:44] [ERROR]: 
+Database connection failed after all retries {"total_attempts":4,"final_error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","dsn":"mysql:host=localhost"}
+[2025-09-18 12:55:44] [ERROR]: 
+Database connection failed {"error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","code":1045,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":89}
+[2025-09-18 12:55:44] [ERROR]: 
+Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)"}
+[2025-09-18 12:55:47] [ERROR]: 
+Database connection failed after all retries {"total_attempts":4,"final_error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","dsn":"mysql:host=localhost"}
+[2025-09-18 12:55:47] [ERROR]: 
+Database connection failed {"error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","code":1045,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":89}
+[2025-09-18 12:55:47] [ERROR]: 
+Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)"}
+[2025-09-18 12:57:23] [ERROR]: 
+Database connection failed after all retries {"total_attempts":4,"final_error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","dsn":"mysql:host=localhost"}
+[2025-09-18 12:57:23] [ERROR]: 
+Database connection failed {"error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","code":1045,"file":"\/var\/www\/kineticev.in\/public_html\/DatabaseUtils.php","line":89}
+[2025-09-18 12:57:23] [ERROR]: 
+Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)"}

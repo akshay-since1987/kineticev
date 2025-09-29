@@ -1,0 +1,310 @@
+/**
+ * =======================
+ * OTP Verification Styles
+ * =======================
+ * Styles for the OTP verification component
+ */
+
+/* OTP Container */
+.otp-verification-container {
+    margin-top: 15px;
+    padding: 20px;
+    // background: #f8f9fa;
+    // border: 1px solid #dee2e6;
+    border-radius: 8px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out, margin 0.4s ease-out;
+
+    &.otp-container-visible {
+        max-height: 500px; /* Adjust based on content height */
+        transition: max-height 0.4s ease-in, padding 0.4s ease-in, margin 0.4s ease-in;
+    }
+}
+
+/* OTP Form Group */
+.otp-form-group {
+    margin-bottom: 0;
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: #495057;
+        font-size: 14px;
+    }
+}
+
+/* OTP Input Wrapper */
+.otp-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* OTP Inputs Container */
+.otp-inputs {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Individual OTP Digit Input */
+.otp-digit {
+    width: 45px;
+    height: 50px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    background: #fff;
+    transition: all 0.2s ease;
+    outline: none;
+
+    &:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        background: #fff;
+    }
+
+    &:disabled {
+        background-color: #e9ecef;
+        border-color: #dee2e6;
+        color: #6c757d;
+        cursor: not-allowed;
+    }
+
+    &.error {
+        border-color: #dc3545;
+        background: #fff5f5;
+    }
+
+    &.success {
+        border-color: #28a745;
+        background: #f8fff8;
+    }
+}
+
+/* Resend OTP Button - Link Style */
+.resend-otp-btn {
+    background: none;
+    color: #007bff;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    font-family: inherit;
+    text-decoration: underline;
+    padding: 0;
+
+    &:hover:not(:disabled) {
+        color: #0056b3;
+        text-decoration: none;
+    }
+
+    &:disabled {
+        color: #6c757d;
+        cursor: not-allowed;
+        text-decoration: none;
+    }
+
+    .countdown {
+        font-weight: 600;
+    }
+}
+
+/* Status Messages */
+.otp-status {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &.info {
+        background: #d1ecf1;
+        color: #0c5460;
+        border: 1px solid #bee5eb;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            border: 2px solid #0c5460;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            vertical-align: middle;
+        }
+    }
+
+    &.success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+        animation: successPulse 0.5s ease-out;
+    }
+
+    &.error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+}
+
+/* Error Message */
+.error-message {
+    display: none;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: center;
+    animation: errorShake 0.5s ease-out;
+}
+
+/* Animations */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes successPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Form Integration */
+.form-group {
+    &.otp-form-group {
+        border: none;
+        background: none;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+}
+
+/* Submit Button States */
+button[type="submit"],
+input[type="submit"] {
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+
+        &:hover {
+            transform: none;
+            box-shadow: none;
+        }
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .otp-inputs {
+        gap: 6px;
+    }
+    
+    .otp-digit {
+        width: 40px;
+        height: 45px;
+        font-size: 16px;
+    }
+    
+    .otp-verification-container {
+        padding: 15px;
+        margin-top: 10px;
+    }
+    
+    .otp-input-wrapper {
+        gap: 12px;
+    }
+    
+    .resend-otp-btn {
+        font-size: 13px;
+        padding: 7px 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .otp-inputs {
+        gap: 4px;
+    }
+    
+    .otp-digit {
+        width: 35px;
+        height: 40px;
+        font-size: 15px;
+    }
+}
+
+/* High Contrast Theme Support */
+@media (prefers-contrast: high) {
+    .otp-digit {
+        border-width: 3px;
+
+        &:focus {
+            border-width: 3px;
+            box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3);
+        }
+    }
+    
+    .otp-status {
+        &.info {
+            background: #cce7f0;
+            border-width: 2px;
+        }
+        
+        &.success {
+            background: #c8e6c9;
+            border-width: 2px;
+        }
+        
+        &.error {
+            background: #ffcdd2;
+            border-width: 2px;
+        }
+    }
+    
+    .error-message {
+        background: #ffcdd2;
+        border-width: 2px;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .otp-verification-container,
+    .otp-digit,
+    .resend-otp-btn,
+    .otp-status {
+        transition: none;
+        animation: none;
+    }
+    
+    .otp-verification-container.otp-container-visible {
+        animation: none;
+    }
+    
+    .otp-status.info::before {
+        animation: none;
+        border: 2px solid #0c5460;
+    }
+}

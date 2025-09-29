@@ -1,0 +1,132 @@
+RewriteEngine On
+
+# Set timezone to Indian Standard Time (IST)
+<IfModule mod_env.c>
+    SetEnv TZ Asia/Kolkata
+    SetEnv PHP_TZ Asia/Kolkata
+</IfModule>
+
+# PHP timezone configuration (if PHP module is available)
+<IfModule mod_php.c>
+    php_value date.timezone "Asia/Kolkata"
+</IfModule>
+
+# Alternative PHP configuration method
+<IfModule mod_php7.c>
+    php_value date.timezone "Asia/Kolkata"
+</IfModule>
+
+<IfModule mod_php8.c>
+    php_value date.timezone "Asia/Kolkata"
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes
+
+# iOS-specific headers for static files (comprehensive support)
+<IfModule mod_headers.c>
+    # Images - iOS optimization with all formats
+    <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp)$">
+        Header set Cache-Control "public, max-age=31536000"
+        Header unset ETag
+        Header set Accept-Ranges bytes
+        # Critical for iOS Safari
+        Header always set X-Content-Type-Options nosniff
+    </FilesMatch>
+    
+    # Videos - iOS streaming support (all video formats)
+    <FilesMatch "\.(mp4|mov|webm|avi)$">
+        Header set Accept-Ranges bytes
+        Header set Cache-Control "public, max-age=31536000"
+        Header unset ETag
+        # Enable iOS video controls and seeking
+        Header always set X-Content-Type-Options nosniff
+    </FilesMatch>
+    
+    # Fonts - iOS compatibility (all font formats)
+    <FilesMatch "\.(ttf|woff|woff2|eot|otf)$">
+        Header set Cache-Control "public, max-age=31536000"
+        Header set Access-Control-Allow-Origin "*"
+        Header unset ETag
+        # iOS font loading optimization
+        Header set Vary "Accept-Encoding"
+    </FilesMatch>
+    
+    # Documents - iOS PDF support
+    <FilesMatch "\.pdf$">
+        Header set Cache-Control "public, max-age=86400"
+        Header set Accept-Ranges bytes
+        Header unset ETag
+    </FilesMatch>
+    
+    # CSS/JS - iOS optimization
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=86400"
+        Header set Vary "Accept-Encoding"
+        # Prevent iOS MIME confusion
+        Header always set X-Content-Type-Options nosniff
+    </FilesMatch>
+    
+    # Source maps - development files
+    <FilesMatch "\.map$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# Explicit MIME types for iOS compatibility
+<IfModule mod_mime.c>
+    # Image MIME types
+    AddType image/jpeg .jpg .jpeg
+    AddType image/png .png
+    AddType image/gif .gif
+    AddType image/svg+xml .svg
+    AddType image/webp .webp
+    
+    # Video MIME types
+    AddType video/mp4 .mp4
+    AddType video/quicktime .mov
+    AddType video/webm .webm
+    
+    # Font MIME types (critical for iOS)
+    AddType font/truetype .ttf
+    AddType font/woff .woff
+    AddType font/woff2 .woff2
+    AddType application/vnd.ms-fontobject .eot
+    AddType font/opentype .otf
+    
+    # Document MIME types
+    AddType application/pdf .pdf
+    
+    # CSS/JS MIME types
+    AddType text/css .css
+    AddType text/javascript .js
+    AddType application/json .map
+</IfModule>
+
+# Allow existing files and directories to be served directly (moved to start of rewrites)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [L]
+
+# PRIORITY: Handle /-/ assets (deployment copies files here)
+RewriteRule ^-/.*$ - [L]
+
+# Allow static files (CSS, JS, images, fonts, etc.) to be served directly  
+RewriteRule ^(css|js|images|fonts|videos|vendor)/.*$ - [L]
+
+# Handle extensionless URLs for admin folder
+RewriteCond %{REQUEST_URI} ^/admin/(.+)$
+RewriteCond %{DOCUMENT_ROOT}/admin/%1.php -f
+RewriteRule ^admin/(.+)$ admin/$1.php [L]
+
+# Handle extensionless URLs for api folder
+RewriteCond %{REQUEST_URI} ^/api/(.+)$
+RewriteCond %{DOCUMENT_ROOT}/api/%1.php -f
+RewriteRule ^api/(.+)$ api/$1.php [L]
+
+# Handle extensionless URLs for root folder
+RewriteCond %{REQUEST_URI} ^/(.+)$
+RewriteCond %{DOCUMENT_ROOT}/%1.php -f
+RewriteCond %{REQUEST_URI} !^/(admin|api)/
+RewriteCond %{REQUEST_URI} !^/-/
+RewriteRule ^(.+)$ $1.php [L]

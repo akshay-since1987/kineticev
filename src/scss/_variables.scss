@@ -1,0 +1,137 @@
+// =============================================================================
+// BREAKPOINTS
+// =============================================================================
+
+// Breakpoint values (mobile-first approach)
+$breakpoints: (
+    xs: 320px,
+    // Extra small devices (small phones)
+    sm: 576px,
+    // Small devices (landscape phones)
+    md: 768px,
+    // Medium devices (tablets)
+    lg: 992px,
+    // Large devices (desktops)
+    xl: 1200px,
+    // Extra large devices (large desktops)
+    xxl: 1400px // Extra extra large devices (larger desktops)
+    ) !default;
+
+// Container max-widths
+$container-max-widths: (
+    sm: 540px,
+    md: 768px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1580) !default;
+
+// =============================================================================
+// TYPOGRAPHY
+// =============================================================================
+
+$font-family-primary: "Inter",
+    sans-serif !default;
+$font-family-secondary: "Helvetica",
+    sans-serif !default;
+
+$font-sizes: (
+    xs: 12px,
+    sm: 14px,
+    base: 16px,
+    lg: 18px,
+    xl: 20px,
+    2xl: 24px,
+    3xl: 30px,
+    4xl: 36px,
+    5xl: 48px,
+    6xl: 60px,
+    7xl: 72px,
+    8xl: 96px,
+    9xl: 128px) !default;
+
+$font-weights: (
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800,
+    black: 900,
+    extrablack: 1000) !default;
+
+// =============================================================================
+// COLORS
+// =============================================================================
+
+$colors: (
+    primary: #1E1E1E,
+    secondary: #ffffff,
+    accent: #007bff,
+    success: #28a745,
+    warning: #ffc107,
+    danger: #dc3545,
+    info: #17a2b8,
+    light: #f8f9fa,
+    dark: #343a40) !default;
+
+// =============================================================================
+// SPACING
+// =============================================================================
+
+$spacers: (
+    0: 0,
+    1: 0.25rem,
+    // 4px
+    2: 0.5rem,
+    // 8px
+    3: 0.75rem,
+    // 12px
+    4: 1rem,
+    // 16px
+    5: 1.25rem,
+    // 20px
+    6: 1.5rem,
+    // 24px
+    8: 2rem,
+    // 32px
+    10: 2.5rem,
+    // 40px
+    12: 3rem,
+    // 48px
+    16: 4rem,
+    // 64px
+    20: 5rem,
+    // 80px
+    24: 6rem,
+    // 96px
+    32: 8rem,
+    // 128px
+    40: 10rem,
+    // 160px
+    48: 12rem,
+    // 192px
+    56: 14rem,
+    // 224px
+    64: 16rem // 256px
+    ) !default;
+
+// =============================================================================
+// Z-INDEX
+// =============================================================================
+
+$z-indexes: (
+    dropdown: 1000,
+    sticky: 1020,
+    fixed: 1030,
+    modal-backdrop: 1040,
+    modal: 1050,
+    popover: 1060,
+    tooltip: 1070) !default;
+
+// =============================================================================
+// TRANSITIONS
+// =============================================================================
+
+$transition-base: all 0.3s ease-in-out !default;
+$transition-fast: all 0.15s ease-in-out !default;
+$transition-slow: all 0.5s ease-in-out !default;

@@ -1,0 +1,540 @@
+@use "./about-us.scss";
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
+
+$hide-test-ride-fold: true;
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    padding: 1rem 2rem;
+}
+
+body {
+    padding: 85px 0 0;
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+
+    .header-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px;
+        height: 85px;
+        position: relative;
+        z-index: 1002;
+        gap: 12px;
+        padding: 12px 64px 12px 20px;
+
+        @include respond-to(md) {
+            padding: 12px 64px;
+        }
+
+
+        /* Slide in when checked */
+        &:has(.menu-toggle:checked) {
+            .book-btn {
+                display: none;
+
+                @include respond-to(lg) {
+                    display: inline-block;
+                }
+
+            }
+
+            .nav-links {
+                right: 0;
+
+                @include respond-to(lg) {
+                    @if $hide-test-ride-fold {
+                        right: 140px;
+                    }
+
+                    @else {
+                        right: 250px;
+                    }
+                }
+
+                .book-btn {
+                    display: inline-block;
+                    color: white;
+                    padding: 16px;
+
+                    @include respond-to(lg) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .logo img {
+        height: 32px;
+
+        @include respond-to(md) {
+            height: 58px;
+        }
+    }
+
+    .book-btn {
+        background: #000;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 14px;
+        text-decoration: none;
+        z-index: 1003;
+        order: 1;
+    }
+
+    /* Hide checkbox */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* Hamburger */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        cursor: pointer;
+        z-index: 1003;
+        order: 2;
+        position: absolute;
+        right: 20px;
+
+        span {
+            height: 2px;
+            background: #000;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            transform-origin: 50% 50%;
+        }
+    }
+
+    /* Hamburger transform to X when checked */
+    .menu-toggle:checked+.hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 5px);
+    }
+
+    .menu-toggle:checked+.hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked+.hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -4px)
+    }
+
+    /* Menu - Mobile (hidden offscreen by default) */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 280px;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        gap: 20px;
+        transition: right 0.3s ease;
+        z-index: 1002;
+        box-shadow: 0 0 1px rgba(0, 0, 0, .5);
+
+        @include respond-to(lg) {
+            max-width: none;
+        }
+
+        .book-btn {
+            @include respond-to(lg) {
+                display: none;
+            }
+        }
+
+        @include respond-to(lg) {
+            box-shadow: none;
+        }
+
+        .btn-outline {
+            display: inline-block;
+
+            @include respond-to(lg) {
+                display: inline-block;
+
+                // @if $hide-test-ride-fold {
+                //     display: none;
+                // }
+            }
+        }
+    }
+
+    a {
+        color: #000;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .btn-outline {
+        border: 1px solid #000;
+        border-radius: 4px;
+        padding: 8px 16px;
+        display: none;
+        color: black;
+        text-decoration: none;
+        margin-right: 10px;
+
+        @include respond-to(lg) {
+            padding: 8px 16px;
+        }
+
+        @include respond-to(lg) {
+            @if $hide-test-ride-fold {
+                display: none;
+            }
+
+            @else {
+                display: inline-block;
+            }
+        }
+    }
+
+    /* Desktop behavior */
+    @include respond-to(lg) {
+        align-items: center;
+
+        .nav-links {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 0;
+            flex-direction: row;
+            align-items: center;
+            background: transparent;
+            justify-content: flex-end;
+            overflow: hidden;
+            padding: 0;
+            gap: 15px;
+            transition: width 0.3s ease, padding 0.3s ease;
+        }
+
+        /* Expanding panel from right to left */
+        .menu-toggle:checked~.nav-links {
+            width: 50%;
+            padding: 0 24px;
+        }
+    }
+}
+
+/* Variables */
+$toggle-bg: #D9D9D9;
+$toggle-bg-active: #999999;
+$highlight-bg: black;
+$highlight-text: white;
+$border-color: #eee;
+$header-bg: #f4f4f4;
+$btn-bg: #ccc;
+$max-width: 1200px;
+
+/* Main Content */
+.model-compare {
+    padding: 2rem 1rem;
+    max-width: $max-width;
+    margin: 0 auto;
+
+    .top-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .model-intro {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        box-sizing: border-box;
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .back-arrow {
+            flex: 1;
+            color: black;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 36px;
+        }
+
+        .title-section {
+            flex: none;
+
+            p {
+                margin-bottom: 10px;
+                font-size: 24px;
+                font-weight: 700;
+            }
+
+            h2 {
+                font-size: 48px;
+                font-weight: 900;
+            }
+
+            .toggle-button {
+                background-color: $toggle-bg;
+                border-radius: 10px;
+                padding: 20px 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex: none;
+                width: 300px;
+                margin-top: 20px;
+                color: #000;
+                transition: background-color 0.3s ease, color 0.3s ease;
+                cursor: pointer;
+
+                &:has(:checked) {
+                    background-color: $toggle-bg-active;
+                    // color: $highlight-text;
+                }
+
+                .toggle {
+                    cursor: pointer;
+
+                    &:after {
+                        content: "\f096";
+                        -webkit-font-smoothing: antialiased;
+                        display: var(--fa-display, inline-block);
+                        font-style: normal;
+                        font-variant: normal;
+                        line-height: 1;
+                        text-rendering: auto;
+                        font-family: var(--fa-style-family, "Font Awesome 6 Free");
+                        background-color: none;
+                        color: black;
+                        margin-left: 10px;
+                    }
+
+                    &:has(:checked) {
+
+                        &:after {
+                            content: "\f14a";
+                        }
+                    }
+
+                    input[type=checkbox] {
+                        display: none;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .model-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+        flex: 1;
+        justify-content: center;
+        align-items: end;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .features-section {
+        h3 {
+            margin-top: 2rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #000;
+            padding-bottom: 0.5rem;
+        }
+
+        .features-table {
+            display: table;
+            width: 100%;
+
+            .feature-header,
+            .feature-row {
+                background: transparent;
+            }
+
+            .feature-header {
+                [data-header] {
+                    font-weight: 900;
+                    color: #000;
+
+                    &:nth-child(1) {
+                        font-weight: 400;
+                    }
+                }
+            }
+
+            .feature-header,
+            .feature-row {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin: 10px 0;
+
+                i {
+                    font-size: 20px;
+                }
+
+                [data-header] {
+                    padding: 10px;
+                    width: 50%;
+                    flex: 0 0 50%;
+                    line-height: 1.4;
+                    font-size: 16px;
+
+                    &:nth-child(1) {
+                        padding: 5px;
+                        flex: 0 0 100%;
+                        font-size: 12px;
+                        font-weight: 400;
+
+                        @include respond-to(lg) {
+                            padding: 5px 10px;
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                }
+
+                @include respond-to(lg) {
+                    width: 100%;
+
+                    [data-header] {
+                        flex: 1;
+
+                        &:nth-child(1) {
+                            flex: 1;
+                            font-size: 16px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+
+            .feature-header {
+                @include respond-to(lg) {
+                    [data-header] {
+                        flex: 1;
+
+                        &:nth-child(1) {
+                            flex: 1;
+                            font-size: 16px;
+                            font-weight: 900;
+                        }
+                    }
+                }
+            }
+
+            .feature-row {
+                border-radius: 5px;
+
+                &:nth-child(odd) {
+                    background: #EAEAEA66;
+                }
+
+                &:has(.features-table) {
+                    &:nth-child(odd) {
+                        background: transparent;
+                    }
+
+                    .features-table {
+                        flex: 1 1 100%;
+
+                        .feature-header {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+
+        // When toggle is checked: hide non-highlightable rows
+        .model-compare:has(.toggle input:checked) & {
+            .feature-row {
+                display: none;
+
+                &.highlightable {
+                    display: contents;
+                }
+            }
+        }
+
+        .highlightable {
+
+            &.feature-row.highlight div,
+            &.feature-header.highlight div {
+                background: $highlight-bg;
+                color: $highlight-text;
+            }
+
+            &.feature-header.highlight~div div {
+                background: $header-bg;
+                color: black;
+            }
+        }
+    }
+
+    .downloads {
+        @include respond-to(lg) {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .btn-download {
+            display: inline-block;
+            padding: 20px 40px;
+            color: #FFF;
+            background-color: #000;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+
+            @include respond-to(lg) {
+                width: auto;
+            }
+        }
+    }
+
+    .disclaimer {
+        display: flex;
+        justify-content: center;
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 12px;
+        margin-top: 10px;
+
+        @include respond-to(lg) {
+            justify-content: flex-start;
+        }
+    }
+}

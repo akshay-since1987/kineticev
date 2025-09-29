@@ -1,0 +1,1088 @@
+/* KineticEV Admin Panel CSS */
+
+/* Common Variables and Base Styles */
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --success-gradient: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+    --filter-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --text-color: #2c3e50;
+    --border-radius: 8px;
+    --border-radius-lg: 15px;
+    --border-radius-xl: 20px;
+    --border-radius-pill: 25px;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 25px rgba(102, 126, 234, 0.3);
+    --shadow-xl: 0 15px 35px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s ease;
+}
+
+/* Login Page Styles */
+.login-body {
+    background: var(--primary-gradient);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    background: white;
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+    width: 400px;
+}
+
+.login-header {
+    background: var(--secondary-gradient);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.login-form-body {
+    padding: 40px 30px;
+}
+
+.login-form-control {
+    border-radius: var(--border-radius-pill);
+    padding: 15px 20px;
+    border: 2px solid #e9ecef;
+    transition: var(--transition);
+}
+
+.login-form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.btn-login {
+    background: var(--primary-gradient);
+    border: none;
+    border-radius: var(--border-radius-pill);
+    padding: 15px 30px;
+    color: white;
+    width: 100%;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+.login-input-group {
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+}
+
+.login-input-group-text {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-right: none;
+    border-radius: var(--border-radius-pill) 0 0 var(--border-radius-pill);
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.login-input-group .form-control {
+    border-left: none;
+    border-radius: 0 var(--border-radius-pill) var(--border-radius-pill) 0;
+    flex: 1;
+}
+
+.login-alert {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Admin Panel Styles */
+.sidebar {
+    background: var(--primary-gradient);
+    min-height: 100vh;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    margin: 5px 15px;
+    transition: var(--transition);
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: translateX(5px);
+}
+
+.content-header {
+    background: var(--secondary-gradient);
+    color: white;
+    padding: 30px 0;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.stat-card {
+    background: var(--primary-gradient);
+    color: white;
+    border-radius: var(--border-radius-lg);
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+    cursor: pointer;
+}
+
+/* Clickable dashboard cards */
+.stat-card.clickable {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.stat-card.clickable:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+}
+
+.stat-card.clickable:active {
+    transform: translateY(-3px);
+    transition: all 0.1s ease;
+}
+
+.table-card {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 20px;
+    overflow: visible;
+    /* Allow content to show */
+    height: auto;
+    /* Remove fixed height */
+    display: flex;
+    flex-direction: column;
+}
+
+.table-card .table-responsive {
+    flex: 1;
+    overflow: visible;
+    /* Remove overflow from table container */
+    max-height: none;
+    /* Remove height constraint */
+}
+
+.table-header {
+    background: var(--success-gradient);
+    padding: 20px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.btn-kinetic {
+    background: var(--primary-gradient);
+    border: none;
+    color: white;
+    border-radius: var(--border-radius-pill);
+    padding: 10px 25px;
+    transition: var(--transition);
+}
+
+.btn-kinetic:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Email Logs Styling */
+#email-logs-content {
+    background: #1e1e1e;
+    color: #00ff00;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    height: calc(100vh - 200px);
+    min-height: 500px;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.log-line {
+    padding: 2px 0;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+}
+
+.log-line:hover {
+    background: rgba(0, 255, 0, 0.1);
+}
+
+/* System Logs Styling */
+#log-content {
+    background: #1e1e1e;
+    color: #00ff00;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    height: calc(100vh - 200px);
+    min-height: 500px;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Loading animation */
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Filter styling */
+.filter-section {
+    background: var(--filter-gradient);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-controls .form-control,
+.filter-controls .form-select {
+    border-radius: var(--border-radius);
+    border: 1px solid #dee2e6;
+    transition: var(--transition);
+}
+
+.filter-controls .form-control:focus,
+.filter-controls .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.filter-header {
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-header:hover {
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.result-info {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Database Data Display Styles */
+.dataTables_wrapper {
+    height: auto;
+    /* Remove fixed height */
+    overflow: visible;
+    /* Remove overflow */
+}
+
+.dataTables_scrollBody {
+    max-height: none;
+    /* Remove height constraints */
+    overflow: visible;
+    /* Remove overflow */
+}
+
+.tab-content {
+    height: calc(100vh - 150px);
+    overflow-y: auto;
+}
+
+.tab-pane {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-pane .table-card {
+    flex: 1;
+    height: auto;
+    min-height: calc(100vh - 200px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+    }
+
+    .login-card {
+        width: 90%;
+        margin: 0 15px;
+    }
+
+    .stat-card {
+        margin-bottom: 15px;
+    }
+
+    .table-card {
+        margin-bottom: 15px;
+    }
+
+    .filter-controls .row>div {
+        margin-bottom: 15px;
+    }
+
+    /* Mobile adjustments for sections */
+    .content-section,
+    .transactions-section,
+    .test_drives-section,
+    .contacts-section,
+    .analytics-section,
+    .user_management-section,
+    .email_logs-section,
+    .system_logs-section {
+        margin: 5px;
+        padding: 15px;
+        height: calc(100vh - 80px);
+        border-radius: var(--border-radius);
+    }
+
+    /* Mobile dashboard section adjustments */
+    .dashboard-section {
+        margin: 5px;
+        padding: 15px;
+        height: calc(100vh - 80px);
+        border-radius: var(--border-radius);
+    }
+
+    .dashboard-section>.row:first-child {
+        margin-bottom: 15px;
+    }
+
+    .p-4 {
+        padding: 0 !important;
+    }
+
+    .content-section .filter-controls {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .content-section .table-card {
+        margin-bottom: 15px;
+        border-radius: var(--border-radius);
+    }
+
+    /* Mobile DataTable adjustments */
+    .content-section .dataTables_wrapper {
+        height: auto;
+        min-height: 250px;
+        padding: 0;
+        overflow: auto;
+    }
+
+    .content-section .dataTables_scrollBody {
+        max-height: calc(100vh - 250px);
+        min-height: 200px;
+        padding: 0;
+        /* Remove padding */
+    }
+
+    .transactions-section .dataTables_wrapper,
+    .test_drives-section .dataTables_wrapper,
+    .contacts-section .dataTables_wrapper {
+        height: calc(100vh - 180px);
+        min-height: 250px;
+        padding: 0;
+        /* Remove padding */
+    }
+
+    .transactions-section .dataTables_scrollBody,
+    .test_drives-section .dataTables_scrollBody,
+    .contacts-section .dataTables_scrollBody {
+        max-height: calc(100vh - 250px);
+        min-height: 200px;
+        padding: 0;
+        /* Remove padding */
+    }
+}
+
+/* Utility classes */
+.gradient-primary {
+    background: var(--primary-gradient);
+}
+
+.gradient-secondary {
+    background: var(--secondary-gradient);
+}
+
+.gradient-success {
+    background: var(--success-gradient);
+}
+
+.text-kinetic {
+    color: var(--primary-color);
+}
+
+.border-kinetic {
+    border-color: var(--primary-color);
+}
+
+.shadow-kinetic {
+    box-shadow: var(--shadow-lg);
+}
+
+.hover-lift {
+    transition: var(--transition);
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+/* Enhanced Table Styles for Better Responsiveness */
+.table-responsive {
+    width: 100%;
+    overflow: visible;
+    /* Remove overflow from table container */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Content Sections - Full Height with Overflow */
+.content-section {
+    height: calc(100vh - 180px);
+    /* Adjust based on your header height */
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    background: #f8f9fa;
+    border-radius: var(--border-radius-lg);
+    margin: 10px;
+    box-shadow: var(--shadow-sm);
+}
+
+.transactions-section,
+.test_drives-section,
+.contacts-section,
+.analytics-section,
+.user_management-section,
+.email_logs-section,
+.system_logs-section {
+    height: calc(100vh - 90px);
+    /* Adjusted for margin */
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: var(--border-radius-xl);
+    margin: 15px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid #e9ecef;
+}
+
+/* Table card adjustments for full height sections */
+.content-section .table-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-height: none;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.content-section .table-card .table-responsive {
+    flex: 1;
+    overflow: visible;
+    /* Remove overflow from table */
+    max-height: none;
+    padding: 0;
+}
+
+/* DataTable wrapper height calculations - account for footer */
+.content-section .dataTables_wrapper {
+    height: auto;
+    /* Always use auto height */
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    /* Remove padding */
+}
+
+.content-section .dataTables_wrapper .dataTables_scroll {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    /* Remove padding */
+}
+
+.content-section .dataTables_wrapper .dataTables_scrollBody {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height: calc(100vh - 250px);
+    /* Account for pagination and info footer */
+    padding: 0;
+    /* Remove padding */
+}
+
+/* DataTable footer elements spacing */
+.content-section .dataTables_info,
+.content-section .dataTables_paginate {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.content-section .dataTables_length,
+.content-section .dataTables_filter {
+    margin-bottom: 15px;
+}
+
+/* Ensure footer doesn't overlap */
+.content-section .dataTables_wrapper .row:last-child {
+    margin-top: 15px;
+    flex-shrink: 0;
+    /* Prevent footer from shrinking */
+}
+
+/* Filter sections styling */
+.content-section .filter-controls {
+    background: var(--filter-gradient);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #dee2e6;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Section headers */
+.content-section h1,
+.content-section h2,
+.content-section h3 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Analytics section specific styling */
+.analytics-section .row {
+    margin-bottom: 25px;
+}
+
+.analytics-section .card {
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: none;
+    overflow: hidden;
+}
+
+/* Dashboard section specific styling */
+.dashboard-section {
+    height: calc(100vh - 90px);
+    overflow: hidden;
+    /* Prevent section-level scrolling */
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: var(--border-radius-xl);
+    margin: 15px;
+    padding: 25px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid #e9ecef;
+}
+
+/* First row (stats cards) - always visible at top */
+.dashboard-section>.row:first-child {
+    flex-shrink: 0;
+    /* Don't allow shrinking */
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Second row (recent activity) - create scrollable container */
+.dashboard-section>.row:nth-child(2) {
+    flex: 1;
+    min-height: 0;
+    /* Important for flex child to respect parent height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make the table-card scrollable */
+.dashboard-section>.row:nth-child(2) .table-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.dashboard-section>.row:nth-child(2) .table-card .p-4 {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.dashboard-section .stat-card {
+    border-radius: var(--border-radius-lg);
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.dashboard-section .recent-activity {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Force table to fit container width */
+.table {
+    width: 100%;
+    table-layout: fixed;
+    /* Force fixed table layout */
+    margin-bottom: 0;
+}
+
+.table-responsive .table {
+    margin-bottom: 0;
+    border-collapse: collapse;
+}
+
+/* Table cell text handling */
+.table td,
+.table th {
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    padding: 6px 8px;
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+/* Specific column width optimizations - Updated for simplified table */
+.table td:nth-child(1),
+.table th:nth-child(1) {
+    /* Transaction ID */
+    max-width: 150px;
+    min-width: 120px;
+    width: 150px;
+}
+
+.table td:nth-child(2),
+.table th:nth-child(2) {
+    /* First Name */
+    max-width: 150px;
+    min-width: 120px;
+    width: 150px;
+}
+
+.table td:nth-child(3),
+.table th:nth-child(3) {
+    /* Pincode */
+    max-width: 100px;
+    min-width: 80px;
+    width: 100px;
+}
+
+.table td:nth-child(4),
+.table th:nth-child(4) {
+    /* Variant */
+    max-width: 120px;
+    min-width: 100px;
+    width: 120px;
+}
+
+.table td:nth-child(5),
+.table th:nth-child(5) {
+    /* Color */
+    max-width: 100px;
+    min-width: 80px;
+    width: 100px;
+}
+
+.table td:nth-child(6),
+.table th:nth-child(6) {
+    /* Status */
+    max-width: 100px;
+    min-width: 80px;
+    width: 100px;
+}
+
+.table td:nth-child(7),
+.table th:nth-child(7) {
+    /* Actions */
+    max-width: 120px;
+    min-width: 100px;
+    width: 120px;
+    text-align: left;
+}
+
+/* Clickable cell content with tooltip */
+.cell-content {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.cell-content:hover {
+    background-color: rgba(102, 126, 234, 0.1);
+    border-radius: 4px;
+}
+
+/* Tooltip for showing full text */
+.cell-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: normal;
+    word-wrap: break-word;
+    z-index: 1000;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    transform: translateY(5px);
+}
+
+.cell-tooltip.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.cell-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 10px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #333;
+}
+
+/* DataTables responsive enhancements */
+.dataTables_wrapper .dataTables_scrollHead,
+.dataTables_wrapper .dataTables_scrollBody {
+    overflow: visible;
+    /* Remove overflow constraints */
+}
+
+.dataTables_wrapper .dataTables_scrollBody {
+    border: 1px solid #dee2e6;
+    border-top: none;
+}
+
+/* DataTable height management for different sections */
+.transactions-section .dataTables_wrapper,
+.test_drives-section .dataTables_wrapper,
+.contacts-section .dataTables_wrapper {
+    height: calc(100vh - 180px);
+    /* Simplified height calculation */
+    min-height: 400px;
+    padding: 0;
+    /* Remove padding */
+}
+
+.transactions-section .dataTables_scrollBody,
+.test_drives-section .dataTables_scrollBody,
+.contacts-section .dataTables_scrollBody {
+    max-height: calc(100vh - 250px);
+    /* Leave space for pagination footer */
+    min-height: 300px;
+    padding: 0;
+    /* Remove padding */
+}
+
+/* Analytics section adjustments */
+.analytics-section .dataTables_wrapper {
+    height: calc(100vh - 180px);
+    min-height: 350px;
+    padding: 0;
+    /* Remove padding */
+}
+
+/* User management section adjustments */
+.user_management-section .dataTables_wrapper {
+    height: calc(100vh - 180px);
+    min-height: 300px;
+    padding: 0;
+    /* Remove padding */
+}
+
+/* Table footer spacing */
+.dataTables_wrapper .dataTables_info {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+/* Compact table for better mobile view */
+@media (max-width: 1400px) {
+
+    .table td,
+    .table th {
+        font-size: 12px;
+        padding: 5px 6px;
+    }
+
+    /* Adjust for simplified 7-column layout */
+    .table td:nth-child(1),
+    .table th:nth-child(1) {
+        width: 130px;
+        max-width: 130px;
+    }
+
+    .table td:nth-child(2),
+    .table th:nth-child(2) {
+        width: 130px;
+        max-width: 130px;
+    }
+
+    .table td:nth-child(3),
+    .table th:nth-child(3) {
+        width: 80px;
+        max-width: 80px;
+    }
+
+    .table td:nth-child(4),
+    .table th:nth-child(4) {
+        width: 100px;
+        max-width: 100px;
+    }
+
+    .table td:nth-child(5),
+    .table th:nth-child(5) {
+        width: 80px;
+        max-width: 80px;
+    }
+
+    .table td:nth-child(6),
+    .table th:nth-child(6) {
+        width: 80px;
+        max-width: 80px;
+    }
+
+    .table td:nth-child(7),
+    .table th:nth-child(7) {
+        width: 100px;
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .table td,
+    .table th {
+        font-size: 11px;
+        padding: 4px 5px;
+    }
+
+    /* More compact for smaller screens */
+    .table td:nth-child(1),
+    .table th:nth-child(1) {
+        width: 110px;
+        max-width: 110px;
+    }
+
+    .table td:nth-child(2),
+    .table th:nth-child(2) {
+        width: 110px;
+        max-width: 110px;
+    }
+
+    .table td:nth-child(3),
+    .table th:nth-child(3) {
+        width: 70px;
+        max-width: 70px;
+    }
+
+    .table td:nth-child(4),
+    .table th:nth-child(4) {
+        width: 80px;
+        max-width: 80px;
+    }
+
+    .table td:nth-child(5),
+    .table th:nth-child(5) {
+        width: 70px;
+        max-width: 70px;
+    }
+
+    .table td:nth-child(6),
+    .table th:nth-child(6) {
+        width: 70px;
+        max-width: 70px;
+    }
+
+    .table td:nth-child(7),
+    .table th:nth-child(7) {
+        width: 90px;
+        max-width: 90px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .table td,
+    .table th {
+        font-size: 10px;
+        padding: 3px 4px;
+    }
+
+    .table-responsive {
+        font-size: 10px;
+        overflow-x: auto;
+        /* Allow scroll only on very small screens */
+    }
+
+    /* Minimal widths for mobile */
+    .table td:nth-child(n),
+    .table th:nth-child(n) {
+        max-width: 80px;
+        min-width: 60px;
+    }
+}
+
+/* Transaction Details Modal Styles */
+#transactionDetailsModal .modal-dialog {
+    max-width: 900px;
+}
+
+#transactionDetailsModal .modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.detail-item {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 3px solid var(--primary-color);
+    height: 100%;
+}
+
+.detail-item strong {
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-value {
+    color: var(--text-color);
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.detail-value a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.detail-value a:hover {
+    text-decoration: underline;
+}
+
+.detail-value pre {
+    background: #e9ecef;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 0;
+    font-size: 11px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+/* Action buttons styling */
+.btn-sm {
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.btn-sm i {
+    font-size: 11px;
+}
+
+/* Button spacing */
+.me-1 {
+    margin-right: 0.25rem;
+}
+
+/* Status display in modal */
+.detail-value .d-flex {
+    align-items: center;
+    gap: 10px;
+}
+
+.detail-value .badge {
+    font-size: 12px;
+    padding: 6px 10px;
+    font-weight: 600;
+}
+
+.detail-value .btn-sm {
+    white-space: nowrap;
+    font-size: 11px;
+    padding: 4px 8px;
+}
+
+.detail-value .btn-sm i {
+    font-size: 10px;
+}

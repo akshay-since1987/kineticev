@@ -1,0 +1,226 @@
+/**
+ * =======================
+ * Dealership Map Module
+ * =======================
+ */
+
+// Define the DealershipMap class
+class DealershipMap {
+    constructor() {
+        console.log('DealershipMap constructor called');
+        
+        // Initialize properties
+        this.map = null;
+        this.markers = [];
+        this.dealershipData = window.dealershipData || [];
+        this.mapElement = document.getElementById('dealership-map');
+        this.searchInput = null;
+        
+        // Check if we're on the right page
+        if (!this.mapElement) {
+            console.log('No dealership map found, skipping initialization');
+            return;
+        }
+        
+        // Initialize when ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', this.init.bind(this));
+        } else {
+            this.init();
+        }
+    }
+    
+    init() {
+        console.log('Initializing dealership map...');
+        
+        // Find the search input
+        this.searchInput = document.getElementById('dealership-suggest-input');
+        
+        // Set up Google Maps when API is loaded
+        if (window.google && window.google.maps) {
+            this.setupMap();
+        } else {
+            this.waitForGoogleMaps();
+        }
+    }
+    
+    waitForGoogleMaps() {
+        console.log('Waiting for Google Maps to load...');
+        
+        // Check if script exists
+        const mapsScript = document.querySelector('script[src*="maps.googleapis.com"]');
+        if (!mapsScript) {
+            console.log('No Google Maps script found, adding one');
+            this.loadGoogleMapsScript();
+            return;
+        }
+        
+        // Set up polling to wait for Google Maps
+        let attempts = 0;
+        const checkMaps = setInterval(() => {
+            attempts++;
+            
+            if (window.google && window.google.maps) {
+                clearInterval(checkMaps);
+                console.log('Google Maps loaded');
+                this.setupMap();
+                return;
+            }
+            
+            if (attempts > 50) {
+                clearInterval(checkMaps);
+                console.error('Google Maps failed to load after waiting');
+            }
+        }, 200);
+    }
+    
+    loadGoogleMapsScript() {
+        const script = document.createElement('script');
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA-2N9fbAPu2cWVLNGYu0qWL8Gs1Xu3QTw&libraries=places,geometry';
+        script.onload = () => {
+            console.log('Google Maps script loaded');
+            this.setupMap();
+        };
+        document.head.appendChild(script);
+    }
+    
+    setupMap() {
+        if (!this.mapElement || !window.google || !window.google.maps) {
+            console.error('Cannot setup map - missing element or Google Maps');
+            return;
+        }
+        
+        try {
+            // Create map
+            this.map = new google.maps.Map(this.mapElement, {
+                center: { lat: 28.6139, lng: 77.209 }, // New Delhi
+                zoom: 10
+            });
+            
+            // Set up autocomplete if search input exists
+            if (this.searchInput && window.google.maps.places) {
+                this.setupAutocomplete();
+            }
+            
+            // Add markers for dealerships
+            this.addDealershipMarkers();
+            
+            // Set up event listeners
+            this.setupEventListeners();
+            
+            console.log('Map initialized successfully');
+        } catch (error) {
+            console.error('Error setting up map:', error);
+        }
+    }
+    
+    setupAutocomplete() {
+        try {
+            const autocomplete = new google.maps.places.Autocomplete(this.searchInput, {
+                types: ['geocode'],
+                componentRestrictions: { country: 'in' }
+            });
+            
+            autocomplete.addListener('place_changed', () => {
+                const place = autocomplete.getPlace();
+                if (place.geometry) {
+                    this.map.setCenter(place.geometry.location);
+                    this.map.setZoom(12);
+                }
+            });
+            
+            console.log('Autocomplete setup complete');
+        } catch (error) {
+            console.error('Error setting up autocomplete:', error);
+        }
+    }
+    
+    addDealershipMarkers() {
+        if (!this.dealershipData || this.dealershipData.length === 0) {
+            console.warn('No dealership data available');
+            return;
+        }
+        
+        console.log(`Adding ${this.dealershipData.length} dealership markers`);
+        
+        const bounds = new google.maps.LatLngBounds();
+        
+        this.dealershipData.forEach(dealership => {
+            // Get coordinates
+            const lat = dealership.lat || dealership.latitude;
+            const lng = dealership.lng || dealership.longitude;
+            
+            if (!lat || !lng) return;
+            
+            const position = new google.maps.LatLng(
+                parseFloat(lat), 
+                parseFloat(lng)
+            );
+            
+            // Create marker
+            const marker = new google.maps.Marker({
+                position: position,
+                map: this.map,
+                title: dealership.name
+            });
+            
+            bounds.extend(position);
+            this.markers.push(marker);
+        });
+        
+        // Fit map to show all markers
+        if (this.markers.length > 0) {
+            this.map.fitBounds(bounds);
+        }
+    }
+    
+    setupEventListeners() {
+        // Set up current location button
+        const locationButton = document.getElementById('get-current-location');
+        if (locationButton) {
+            locationButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.getUserLocation();
+            });
+        }
+    }
+    
+    getUserLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const location = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                    
+                    this.map.setCenter(location);
+                    this.map.setZoom(13);
+                    
+                    // Add marker for user location
+                    new google.maps.Marker({
+                        position: location,
+                        map: this.map,
+                        icon: {
+                            url: 'data:image/svg+xml;charset=UTF-8,' + 
+                                 encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#4285F4" stroke="#ffffff" stroke-width="1.5"><circle cx="12" cy="12" r="10"/></svg>'),
+                            scaledSize: new google.maps.Size(16, 16)
+                        }
+                    });
+                },
+                (error) => {
+                    console.error('Error getting location:', error);
+                    alert('Could not get your location. Please try again or enter your location manually.');
+                }
+            );
+        } else {
+            alert('Location services not available in your browser.');
+        }
+    }
+}
+
+// Make available globally
+window.DealershipMap = DealershipMap;
+
+// Export for ES modules
+export default DealershipMap;
