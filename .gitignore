@@ -12,6 +12,10 @@ build/
 dist/
 blogs/
 blog/
+php-backup/
+php/css/
+php/-
+php/js/
 *.min.css
 *.min.js
 *.map

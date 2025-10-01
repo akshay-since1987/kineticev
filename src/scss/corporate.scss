@@ -2,7 +2,7 @@
 @use "./variables.scss" as *;
 @use "./mixins.scss" as *;
 
-$hide-test-ride-fold: true;
+$hide-test-ride-fold: false;
 
 * {
     box-sizing: border-box;
