@@ -48,7 +48,7 @@ body {
             .book-btn {
                 display: none;
 
-                @include respond-to(lg) {
+                @include respond-to(xl) {
                     display: inline-block;
                 }
 
@@ -57,13 +57,13 @@ body {
             .nav-links {
                 right: 0;
 
-                @include respond-to(lg) {
+                @include respond-to(xl) {
                     @if $hide-test-ride-fold {
                         right: 140px;
                     }
 
                     @else {
-                        right: 250px;
+                        right: 278px;
                     }
                 }
 
@@ -72,7 +72,7 @@ body {
                     color: white;
                     padding: 16px;
 
-                    @include respond-to(lg) {
+                    @include respond-to(xl) {
                         display: none;
                     }
                 }
@@ -157,29 +157,31 @@ body {
         z-index: 1002;
         box-shadow: 0 0 1px rgba(0, 0, 0, .5);
 
-        @include respond-to(lg) {
+        @include respond-to(xl) {
             max-width: none;
         }
 
         .book-btn {
-            @include respond-to(lg) {
+            @include respond-to(xl) {
                 display: none;
             }
         }
 
-        @include respond-to(lg) {
+        @include respond-to(xl) {
             box-shadow: none;
         }
 
         .btn-outline {
             display: inline-block;
 
-            @include respond-to(lg) {
+            @include respond-to(xl) {
                 display: inline-block;
-
-                // @if $hide-test-ride-fold {
-                //     display: none;
-                // }
+                
+                @if $hide-test-ride-fold {
+                    display: inline-block;
+                } @else {
+                    display: none;
+                }
             }
         }
     }
@@ -200,11 +202,11 @@ body {
         text-decoration: none;
         margin-right: 10px;
 
-        @include respond-to(lg) {
+        @include respond-to(xl) {
             padding: 8px 16px;
         }
 
-        @include respond-to(lg) {
+        @include respond-to(xl) {
             @if $hide-test-ride-fold {
                 display: none;
             }
@@ -216,7 +218,7 @@ body {
     }
 
     /* Desktop behavior */
-    @include respond-to(lg) {
+    @include respond-to(xl) {
         align-items: center;
 
         .nav-links {

@@ -173,20 +173,24 @@ class Logger
 
     /**
      * Write log entry to file
+     * 
+     * @throws Exception when throwErrors is true and writing fails
      */
-    private function log($level, $message, $context = [], $logFile = 'application_logs.txt')
+    private function log($level, $message, $context = [], $logFile = 'application_logs.txt', $throwErrors = false)
     {
         // Check if we can write logs
         if ($this->canWrite === false) {
-            // Silently ignore if we cannot write
+            if ($throwErrors) {
+                throw new Exception("Logger: Cannot write to log directory: {$this->logDir}");
+            }
             return;
         }
 
         // If canWrite is null, we haven't checked yet, so check now
         if ($this->canWrite === null) {
             $this->canWrite = $this->checkWritePermissions();
-            if ($this->canWrite === false) {
-                return; // Silently ignore
+            if ($this->canWrite === false && $throwErrors) {
+                throw new Exception("Logger: Failed permission check for log directory: {$this->logDir}");
             }
         }
 
@@ -206,14 +210,59 @@ class Logger
         // Try to write to log file with file locking for concurrent access
         $result = @file_put_contents($fullLogPath, $logEntry, FILE_APPEND | LOCK_EX);
 
-        // If write failed, disable logging to prevent further attempts
+        // If write failed
         if ($result === false) {
             $this->canWrite = false;
-            // Optionally log to PHP error log, but only once to avoid spam
+            $error = error_get_last();
+            $errorMsg = $error ? $error['message'] : 'Unknown error';
+            if ($throwErrors) {
+                throw new Exception("Logger: Failed to write to log file {$logFile}: {$errorMsg}");
+            }
+            // Log to PHP error log only if not throwing
             if (!defined('LOGGER_WRITE_ERROR_LOGGED')) {
                 define('LOGGER_WRITE_ERROR_LOGGED', true);
-                @error_log('[LOGGER] Write access lost to log directory. Logging disabled.');
+                @error_log('[LOGGER] Write access lost to log directory. Error: ' . $errorMsg);
             }
         }
+    }
+
+    /**
+     * Log with throwing exceptions on failure
+     */
+    private function logWithException($level, $message, $context = [], $logFile = 'application_logs.txt')
+    {
+        return $this->log($level, $message, $context, $logFile, true);
+    }
+
+    /**
+     * Info log that throws exception on failure
+     */
+    public function infoWithException($message, $context = [], $logFile = 'info_logs.txt')
+    {
+        return $this->logWithException('INFO', $message, $context, $logFile);
+    }
+
+    /**
+     * Error log that throws exception on failure
+     */
+    public function errorWithException($message, $context = [], $logFile = 'error_logs.txt')
+    {
+        return $this->logWithException('ERROR', $message, $context, $logFile);
+    }
+
+    /**
+     * Warning log that throws exception on failure
+     */
+    public function warningWithException($message, $context = [], $logFile = 'warning_logs.txt')
+    {
+        return $this->logWithException('WARNING', $message, $context, $logFile);
+    }
+
+    /**
+     * Debug log that throws exception on failure
+     */
+    public function debugWithException($message, $context = [], $logFile = 'debug_logs.txt')
+    {
+        return $this->logWithException('DEBUG', $message, $context, $logFile);
     }
 }

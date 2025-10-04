@@ -1,6 +1,3 @@
-// Import debug helper first for early error tracking
-import "./debug-helper.js";
-
 // Import modules that are used by other modules
 import "./DealershipFinder.js"; // Make DealershipFinder globally available
 import "./dealership-map.js"; // Make DealershipMap globally available
@@ -14,9 +11,3 @@ import "./index.js";
 
 // Import additional functionality
 import "./modal-fix.js"; // Modal specific functionality
-
-// Register that main.js has loaded all scripts
-if (window.K2Debug) {
-    window.K2Debug.trackScript('main.js');
-    console.log('✅ All scripts loaded and bundled successfully');
-}

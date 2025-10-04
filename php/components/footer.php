@@ -42,6 +42,7 @@ function renderFooter() {
         <div class="footer-column">
             <h4>Quick Link</h4>
             <ul>
+                <li><a href="https://blog.kineticev.in">Blog</a></li>
                 <li><a href="/contact-us">Careers</a></li>
                 <li><a href="/support">Support</a></li>
                 <li><a href="/contact-us">Contact</a></li>

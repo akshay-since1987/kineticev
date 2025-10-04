@@ -26,9 +26,8 @@
  * Authorization: System Administrator Only
  */
 
-// SCRIPT IS CURRENTLY DISABLED FOR SECURITY
-// Uncomment the following lines ONLY in emergency situations within KineticEV network
-
+// SCRIPT IS CURRENTLY DISABLED FOR EMERGENCY USE
+// Comment out the following lines after emergency use is complete
 /*
 // IP Restriction - Only allow KineticEV network ranges
 $allowedIPs = [
@@ -150,7 +149,6 @@ try {
     error_log("Emergency password reset error: " . $e->getMessage());
 }
 */
-
 // END OF COMMENTED EMERGENCY SCRIPT
 // Remove this file after emergency use!
 

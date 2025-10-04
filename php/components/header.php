@@ -6,6 +6,9 @@ if (basename($_SERVER['PHP_SELF']) === basename(__FILE__)) {
     exit();
 }
 
+// Include config file for environment detection
+require_once __DIR__ . '/../config.php';
+
 /**
  * Common header section for all pages
  */
@@ -36,6 +39,18 @@ function renderHeader()
                 <a href="/see-comparison">Explore DX</a>
                 <a href="/range-x">Range X</a>
                 <a href="/contact-us">Contact</a>
+                <a href="<?php 
+                    $env = determineEnvironment();
+                    $subdomain = match($env) {
+                        'production' => 'www',
+                        'test' => 'test',
+                        'uat' => 'uat',
+                        'development', 'dev' => 'dev',
+                        default => 'local'
+                    };
+                    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+                    echo "{$protocol}://{$subdomain}.blog.kineticev.in/";
+                ?>">Blog</a>
                 <a href="#" class="btn-outline open-modal" data-modal="popup-test-drive">Test Ride</a>
                 <a href="/book-now" class="btn-primary book-btn">Book Now</a>
             </nav>

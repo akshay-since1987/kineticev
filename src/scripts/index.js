@@ -2558,19 +2558,35 @@ const PincodeCityRestriction = {
         GOOGLE_API_KEY: 'AIzaSyA-2N9fbAPu2cWVLNGYu0qWL8Gs1Xu3QTw',
         MAX_DISTANCE_KM: 50,
         CACHE_EXPIRY_HOURS: 24,
-        ALLOWED_CITIES: [
-            { name: 'Mumbai', coordinates: '19.0760,72.8777' },
-            { name: 'Pune', coordinates: '18.5204,73.8567' }
-        ]
+        ALLOWED_CITIES: [] // Will be populated from API
     },
 
     // Cache for distance results
     distanceCache: new Map(),
 
+    // Fetch allowed cities from API
+    fetchAllowedCities: async function() {
+        try {
+            const response = await fetch(`${getBaseUrl()}/api/get-allowed-cities.php`);
+            const data = await response.json();
+            if (data.success) {
+                this.config.ALLOWED_CITIES = data.cities.map(city => ({
+                    name: city.city_name,
+                    coordinates: city.coordinates
+                }));
+                console.log('Fetched allowed cities:', this.config.ALLOWED_CITIES);
+            } else {
+                console.error('Failed to fetch allowed cities:', data.error);
+            }
+        } catch (error) {
+            console.error('Error fetching allowed cities:', error);
+        }
+    },
+
     /**
      * Initialize pincode city restriction
      */
-    init: function () {
+    init: async function () {
         // Only run on book-now page
         this.pincodeInput = document.querySelector('input[name="pincode"]');
         this.payButton = document.querySelector('.pay-button');
@@ -2583,6 +2599,9 @@ const PincodeCityRestriction = {
             return;
         }
 
+        // Fetch allowed cities before setting up validation
+        await this.fetchAllowedCities();
+        
         this.setupRestrictionValidation();
         this.loadCacheFromStorage();
         console.log('Pincode City Restriction initialized');
@@ -2652,7 +2671,7 @@ const PincodeCityRestriction = {
             // this.showValidationLoader();
 
             // Use our PHP proxy API instead of direct Google API call
-            const response = await fetch(`${getBaseUrl()}/api/distance-check.php?pincode=${encodeURIComponent(pincode)}`);
+            const response = await fetch(`${getBaseUrl()}/api/distance-check?pincode=${encodeURIComponent(pincode)}`);
             const data = await response.json();
 
             if (data.success && data.isAllowed !== undefined) {
@@ -2790,14 +2809,17 @@ const PincodeCityRestriction = {
             line-height: 1.4;
         `;
 
+        // Get list of allowed cities
+        const allowedCityNames = this.getAllowedCities();
+        const cityList = allowedCityNames.join(' and ');
+
         message.innerHTML = `
             <div style="color: #856404; background: #fff3cd; padding: 4px 8px; border-radius: 3px; display: block; ">
-                Bookings open for Mumbai and Pune. 
+                Bookings open for ${cityList}. 
                 <br/>
                 From another city? <a href="${getBaseUrl()}/contact-us?phone=${sanitizedPhone}&name=${name}&email=${email}&intent=${intent}${verifiedParam}">Register your interest.</a>
             </div>
         `;
-
         this.insertMessage(message);
     },
 
@@ -2981,7 +3003,8 @@ const PincodeCityRestriction = {
         // Check if pay button is restricted due to pincode
         if (this.payButton.hasAttribute('data-pincode-restricted')) {
             event.preventDefault();
-            this.showError('Please enter a pincode within our delivery area (50km from Mumbai or Pune).');
+            const cityList = this.getAllowedCities().join(' or ');
+            this.showError(`Please enter a pincode within our delivery area (50km from ${cityList}).`);
             return false;
         }
 
@@ -3377,46 +3400,44 @@ const PincodeAddressAutocomplete = {
     getPartialPincodeSuggestions: function (partialPincode) {
         const suggestions = [];
 
-        // Common Indian pincode patterns
+        // Get all allowed cities first
+        const allowedCities = this.config.ALLOWED_CITIES || [];
+        
+        // Common Indian pincode patterns - filtered to only include our serviceable cities
         const pincodePatterns = {
-            '1': [
-                { range: '110001-110096', city: 'New Delhi', state: 'Delhi', area: 'Central Delhi' },
-                { range: '121001-121105', city: 'Faridabad', state: 'Haryana', area: 'Faridabad' },
-                { range: '122001-122505', city: 'Gurgaon', state: 'Haryana', area: 'Gurgaon' }
-            ],
-            '2': [
-                { range: '201001-201310', city: 'Ghaziabad', state: 'Uttar Pradesh', area: 'Ghaziabad' },
-                { range: '211001-221010', city: 'Allahabad', state: 'Uttar Pradesh', area: 'Allahabad' },
-                { range: '226001-226302', city: 'Lucknow', state: 'Uttar Pradesh', area: 'Lucknow' }
-            ],
-            '3': [
-                { range: '302001-302042', city: 'Jaipur', state: 'Rajasthan', area: 'Jaipur' },
-                { range: '380001-382481', city: 'Ahmedabad', state: 'Gujarat', area: 'Ahmedabad' }
-            ],
-            '4': [
+            '4': [ // Maharashtra pincodes
                 { range: '400001-400714', city: 'Mumbai', state: 'Maharashtra', area: 'Mumbai' },
-                { range: '411001-411062', city: 'Pune', state: 'Maharashtra', area: 'Pune' },
-                { range: '421001-421605', city: 'Thane', state: 'Maharashtra', area: 'Thane' }
-            ],
-            '5': [
-                { range: '500001-509412', city: 'Hyderabad', state: 'Telangana', area: 'Hyderabad' },
-                { range: '560001-560110', city: 'Bangalore', state: 'Karnataka', area: 'Bangalore' }
-            ],
-            '6': [
-                { range: '600001-603407', city: 'Chennai', state: 'Tamil Nadu', area: 'Chennai' },
-                { range: '641001-641408', city: 'Coimbatore', state: 'Tamil Nadu', area: 'Coimbatore' }
-            ],
-            '7': [
-                { range: '700001-700159', city: 'Kolkata', state: 'West Bengal', area: 'Kolkata' },
-                { range: '751001-770077', city: 'Bhubaneswar', state: 'Odisha', area: 'Bhubaneswar' }
-            ],
-            '8': [
-                { range: '800001-855117', city: 'Patna', state: 'Bihar', area: 'Patna' }
-            ],
-            '9': [
-                { range: '900001-936193', city: 'Itanagar', state: 'Arunachal Pradesh', area: 'Itanagar' }
+                { range: '411001-411062', city: 'Pune', state: 'Maharashtra', area: 'Pune' }
             ]
         };
+
+        // Create a dynamic pattern based on allowed cities
+        allowedCities.forEach(city => {
+            const cityName = city.name;
+            // Add pattern based on city - this is a simplification, 
+            // in a real implementation you might want to fetch actual pincode ranges for these cities
+            switch(cityName.toLowerCase()) {
+                case 'mumbai':
+                    if (!pincodePatterns['4']) pincodePatterns['4'] = [];
+                    pincodePatterns['4'].push({ 
+                        range: '400001-400714', 
+                        city: cityName, 
+                        state: 'Maharashtra', 
+                        area: cityName 
+                    });
+                    break;
+                case 'pune':
+                    if (!pincodePatterns['4']) pincodePatterns['4'] = [];
+                    pincodePatterns['4'].push({ 
+                        range: '411001-411062', 
+                        city: cityName, 
+                        state: 'Maharashtra', 
+                        area: cityName 
+                    });
+                    break;
+                // Add more cities as needed
+            }
+        });
 
         const firstDigit = partialPincode.charAt(0);
         const patterns = pincodePatterns[firstDigit] || [];

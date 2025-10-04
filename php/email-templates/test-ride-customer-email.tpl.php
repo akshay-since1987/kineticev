@@ -53,7 +53,7 @@ if (basename($_SERVER['PHP_SELF']) === basename(__FILE__)) {
 <body>
     <div class='container'>
         <div class='header'>
-            <h2>Test Ride Request Successful!</h2>
+            <h2>Thanks for Your Interest in Kinetic EV!</h2>
         </div>
         <div class='content'>
             <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -67,29 +67,16 @@ if (basename($_SERVER['PHP_SELF']) === basename(__FILE__)) {
                 </tr>
             </table>
             
-            <h3>Your Kinetic EV Test Ride is Successful!</h3>
-            <p>Thank you for choosing to experience the future of sustainable mobility with us! We're thrilled that you want to test ride our amazing Kinetic DX EV.</p>
-            
+            <p>Thanks for showing your interest in Kinetic EV! Our team will get back to you shortly with all the information.</p>
+
             <div class='highlight'>
-                <strong>Your Test Ride request is Successful!</strong><br>
                 <strong>Reference ID:</strong> <?php echo htmlspecialchars($test_ride_id); ?><br>
                 <strong>Location:</strong> Pin Code <?php echo htmlspecialchars($pincode); ?>
             </div>
             
-            <p><strong>What happens next?</strong></p>
-            <p>Our dedicated test ride specialists will contact you shortly:</p>
-            <p>• Confirm the exact location and timing that works best for you<br>
-            • Share exciting details about the vehicle features you'll experience<br>
-            • Answer any questions you might have about our Kinetic DX EV<br>
-            • Discuss special offers and booking options available to you</p>
+            <p>The Kinetic DX EV delivers thrilling acceleration, whisper-quiet rides, and zero emissions – an experience you won't forget! Want to know more right away? For assistance please contact our dedicated support team at <a href="tel:8600096800" style="color: #ef0012; text-decoration: none; font-weight: bold;">86000 96800</a> – we're here to help!</p>
             
-            <p>We will arrange a test ride at your nearest KineticEV showroom or authorized dealer.</p>
-            
-            <p><strong>Get ready for an incredible experience!</strong> Our Kinetic DX EV offers amazing acceleration, whisper-quiet rides, and zero emissions - you're going to love it!</p>
-            
-            <p>Can't wait to speak with us? Feel free to call our test ride hotline at <a href="tel:8600096800" style="color: #ef0012; text-decoration: none; font-weight: bold;">86000 96800</a> - we're here to help!</p>
-            
-            <p>We're excited to show you why thousands of customers have already chosen Kinetic EV for their daily commute. Get ready to fall in love with electric! ⚡</p>
+            <p>Get ready to join thousands of happy Kinetic EV owners and embrace the future of electric mobility. ⚡</p>
             
             <p>Best regards,<br>
             <strong>Test Ride Experience Team<br>

@@ -14,12 +14,6 @@ function renderScripts() {
 <!-- Main JavaScript bundle with all dependencies included -->
 <script src="/js/main.js?v=<?php echo time(); ?>" type="application/javascript"></script>
 
-<script>
-// Track script completion
-if (window.K2Debug) {
-    window.K2Debug.trackScript('main-scripts');
-}
-</script>
 <?php
 }
 ?>

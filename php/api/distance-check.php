@@ -5,6 +5,11 @@
  * Restricts bookings to locations within 50km of Mumbai and Pune
  */
 
+// Enable error reporting
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
@@ -15,17 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
-
-// Load configuration
-$config = include __DIR__ . '/../config.php';
-
-// Configuration
-$GOOGLE_API_KEY = 'AIzaSyA-2N9fbAPu2cWVLNGYu0qWL8Gs1Xu3QTw';
-$MAX_DISTANCE_KM = 50;
-$ALLOWED_CITIES = [
-    ['name' => 'Mumbai', 'coordinates' => '19.0760,72.8777'],
-    ['name' => 'Pune', 'coordinates' => '18.5204,73.8567']
-];
 
 /**
  * Send error response
@@ -44,117 +38,116 @@ function sendSuccess($data) {
     exit();
 }
 
-/**
- * Validate coordinates format
- */
-function validateCoordinates($coords) {
-    if (!$coords) return false;
-    $parts = explode(',', $coords);
-    if (count($parts) !== 2) return false;
-    
-    $lat = floatval(trim($parts[0]));
-    $lng = floatval(trim($parts[1]));
-    
-    // Basic coordinate validation
-    if ($lat < -90 || $lat > 90 || $lng < -180 || $lng > 180) return false;
-    
-    return true;
-}
+// Load required files
+require_once __DIR__ . '/../DatabaseUtils.php';
+require_once __DIR__ . '/../Logger.php';
 
-/**
- * Calculate distance using Google Distance Matrix API
- */
-function calculateDistance($origins, $destinations, $apiKey) {
-    $url = 'https://maps.googleapis.com/maps/api/distancematrix/json?' . http_build_query([
-        'origins' => $origins,
-        'destinations' => $destinations,
-        'units' => 'metric',
-        'mode' => 'driving',
-        'key' => $apiKey
-    ]);
-    
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $error = curl_error($ch);
-    curl_close($ch);
-    
-    if ($error) {
-        throw new Exception('cURL error: ' . $error);
-    }
-    
-    if ($httpCode !== 200) {
-        throw new Exception('HTTP error: ' . $httpCode);
-    }
-    
-    $data = json_decode($response, true);
-    if (!$data) {
-        throw new Exception('Invalid JSON response from Google API');
-    }
-    
-    return $data;
-}
+// Load configuration
+$config = include __DIR__ . '/../config.php';
 
-/**
- * Geocode pincode to get coordinates
- */
-function geocodePincode($pincode, $apiKey) {
-    $url = 'https://maps.googleapis.com/maps/api/geocode/json?' . http_build_query([
-        'address' => $pincode . ',India',
-        'key' => $apiKey
-    ]);
-    
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $error = curl_error($ch);
-    curl_close($ch);
-    
-    if ($error) {
-        throw new Exception('Geocoding cURL error: ' . $error);
-    }
-    
-    if ($httpCode !== 200) {
-        throw new Exception('Geocoding HTTP error: ' . $httpCode);
-    }
-    
-    $data = json_decode($response, true);
-    if (!$data || $data['status'] !== 'OK' || empty($data['results'])) {
-        throw new Exception('Unable to geocode pincode');
-    }
-    
-    return $data;
-}
+// Configuration
+$GOOGLE_API_KEY = 'AIzaSyA-2N9fbAPu2cWVLNGYu0qWL8Gs1Xu3QTw';
+$MAX_DISTANCE_KM = 50;
 
-// Main API logic
+// Initialize logger
 try {
-    // Get input parameters
-    $method = $_SERVER['REQUEST_METHOD'];
+    $logger = Logger::getInstance();
+} catch (Exception $e) {
+    error_log("Logger initialization failed: " . $e->getMessage());
+    sendError('Internal system error', 500);
+}
+
+// Get input parameters
+$method = $_SERVER['REQUEST_METHOD'];
+
+try {
+    // Validate database config
+    if (!isset($config['database']['host']) || !isset($config['database']['dbname']) || !isset($config['database']['username'])) {
+        throw new Exception("Database configuration is incomplete");
+    }
     
+    // Build DSN with explicit charset
+    $dsn = "mysql:host={$config['database']['host']};dbname={$config['database']['dbname']};charset=utf8mb4";
+    
+    // Use DatabaseUtils for consistent connection handling
+    $db = DatabaseUtils::createConnection(
+        $dsn,
+        $config['database']['username'],
+        $config['database']['password'],
+        [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_TIMEOUT => 5
+        ]
+    );
+
+    // Get or create allowed cities
+    $db->beginTransaction();
+    
+    $tableCheck = $db->query("SHOW TABLES LIKE 'allowed_cities'");
+    if ($tableCheck->rowCount() === 0) {
+        $db->exec("CREATE TABLE IF NOT EXISTS allowed_cities (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            city_name VARCHAR(255) NOT NULL,
+            coordinates VARCHAR(50) NOT NULL,
+            is_allowed TINYINT(1) DEFAULT 1,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )");
+        
+        $db->exec("INSERT INTO allowed_cities (city_name, coordinates) VALUES 
+            ('Mumbai', '19.0760,72.8777'),
+            ('Pune', '18.5204,73.8567')
+        ");
+    }
+
+    $db->commit();
+    
+    // Get allowed cities
+    $stmt = $db->query("SELECT city_name, coordinates FROM allowed_cities WHERE is_allowed = 1");
+    $ALLOWED_CITIES = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    if (empty($ALLOWED_CITIES)) {
+        throw new Exception('No serviceable cities configured');
+    }
+
     if ($method === 'GET') {
-        // GET request - validate by pincode
         $pincode = $_GET['pincode'] ?? '';
         
         if (!$pincode || !preg_match('/^\d{6}$/', $pincode)) {
             sendError('Valid 6-digit pincode is required');
         }
         
-        // Geocode the pincode first
-        $geocodeData = geocodePincode($pincode, $GOOGLE_API_KEY);
+        // Geocode the pincode
+        $url = 'https://maps.googleapis.com/maps/api/geocode/json?' . http_build_query([
+            'address' => $pincode . ',India',
+            'key' => $GOOGLE_API_KEY
+        ]);
+        
+        $ch = curl_init();
+        curl_setopt_array($ch, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 10,
+            CURLOPT_SSL_VERIFYPEER => false
+        ]);
+        
+        $response = curl_exec($ch);
+        $error = curl_error($ch);
+        curl_close($ch);
+        
+        if ($error) {
+            throw new Exception('Geocoding error: ' . $error);
+        }
+        
+        $geocodeData = json_decode($response, true);
+        if (!$geocodeData || $geocodeData['status'] !== 'OK' || empty($geocodeData['results'])) {
+            throw new Exception('Unable to find location for the provided pincode');
+        }
+        
         $location = $geocodeData['results'][0]['geometry']['location'];
         $coordinates = $location['lat'] . ',' . $location['lng'];
         
-        // Extract city and state from address components
+        // Extract city and state
         $addressComponents = $geocodeData['results'][0]['address_components'];
         $city = 'Unknown City';
         $state = 'Unknown State';
@@ -171,19 +164,8 @@ try {
             }
         }
         
-    } elseif ($method === 'POST') {
-        // POST request - validate by coordinates
-        $input = json_decode(file_get_contents('php://input'), true);
-        $coordinates = $input['coordinates'] ?? '';
-        $city = $input['city'] ?? 'Unknown City';
-        $state = $input['state'] ?? 'Unknown State';
-        
-        if (!validateCoordinates($coordinates)) {
-            sendError('Valid coordinates (lat,lng) are required');
-        }
-        
     } else {
-        sendError('Only GET and POST methods are supported', 405);
+        sendError('Only GET method is supported', 405);
     }
     
     // Calculate distances to all allowed cities
@@ -192,59 +174,71 @@ try {
     $nearestCity = '';
     
     foreach ($ALLOWED_CITIES as $allowedCity) {
-        try {
-            $distanceData = calculateDistance($coordinates, $allowedCity['coordinates'], $GOOGLE_API_KEY);
-            
-            if ($distanceData['status'] === 'OK' && 
-                !empty($distanceData['rows']) && 
-                !empty($distanceData['rows'][0]['elements']) &&
-                $distanceData['rows'][0]['elements'][0]['status'] === 'OK') {
-                
-                $element = $distanceData['rows'][0]['elements'][0];
-                $distanceKm = round($element['distance']['value'] / 1000);
-                
-                $distances[] = [
-                    'city' => $allowedCity['name'],
-                    'distanceKm' => $distanceKm,
-                    'duration' => $element['duration']['text'],
-                    'distanceText' => $element['distance']['text']
-                ];
-                
-                if ($distanceKm < $minDistance) {
-                    $minDistance = $distanceKm;
-                    $nearestCity = $allowedCity['name'];
-                }
-            }
-        } catch (Exception $e) {
-            // Log error but continue with other cities
-            error_log('Distance calculation error for ' . $allowedCity['name'] . ': ' . $e->getMessage());
+        $url = 'https://maps.googleapis.com/maps/api/distancematrix/json?' . http_build_query([
+            'origins' => $coordinates,
+            'destinations' => $allowedCity['coordinates'],
+            'mode' => 'driving',
+            'units' => 'metric',
+            'key' => $GOOGLE_API_KEY
+        ]);
+        
+        $ch = curl_init();
+        curl_setopt_array($ch, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 10,
+            CURLOPT_SSL_VERIFYPEER => false
+        ]);
+        
+        $response = curl_exec($ch);
+        $error = curl_error($ch);
+        curl_close($ch);
+        
+        if ($error) {
+            error_log("Distance API error for {$allowedCity['city_name']}: $error");
+            continue;
+        }
+        
+        $distanceData = json_decode($response, true);
+        if (!$distanceData || $distanceData['status'] !== 'OK' || empty($distanceData['rows'][0]['elements'][0])) {
+            error_log("Invalid distance response for {$allowedCity['city_name']}: " . json_encode($distanceData));
+            continue;
+        }
+        
+        $element = $distanceData['rows'][0]['elements'][0];
+        if ($element['status'] !== 'OK') {
+            error_log("Distance calculation failed for {$allowedCity['city_name']}: {$element['status']}");
+            continue;
+        }
+        
+        $distanceKm = round($element['distance']['value'] / 1000);
+        $distances[] = [
+            'city' => $allowedCity['city_name'],
+            'distanceKm' => $distanceKm,
+            'duration' => $element['duration']['text']
+        ];
+        
+        if ($distanceKm < $minDistance) {
+            $minDistance = $distanceKm;
+            $nearestCity = $allowedCity['city_name'];
         }
     }
     
     if (empty($distances)) {
-        sendError('Unable to calculate distances to any allowed cities');
+        throw new Exception('Unable to calculate distance to service areas');
     }
     
-    // Determine if location is allowed
-    $isAllowed = $minDistance <= $MAX_DISTANCE_KM;
-    
-    // Prepare response
-    $response = [
-        'isAllowed' => $isAllowed,
+    sendSuccess([
+        'isAllowed' => $minDistance <= $MAX_DISTANCE_KM,
         'minDistance' => $minDistance,
         'nearestCity' => $nearestCity,
-        'maxDistance' => $MAX_DISTANCE_KM,
         'city' => $city,
         'state' => $state,
         'coordinates' => $coordinates,
-        'distances' => $distances,
-        'allowedCities' => array_column($ALLOWED_CITIES, 'name')
-    ];
-    
-    sendSuccess($response);
-    
+        'distances' => $distances
+    ]);
+
 } catch (Exception $e) {
-    error_log('Distance check API error: ' . $e->getMessage());
-    sendError('Error checking location: ' . $e->getMessage(), 500);
+    error_log('[DISTANCE_CHECK] Error: ' . $e->getMessage());
+    sendError($e->getMessage(), 500);
 }
-?>
