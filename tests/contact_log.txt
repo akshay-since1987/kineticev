@@ -1,0 +1,3314 @@
+[2025-09-13 12:57:55] [INFO] Contact form POST request received {
+    "user_agent": "",
+    "ip_address": "::1",
+    "post_data_size": 167,
+    "timestamp": "2025-09-13 12:57:55"
+}
+[2025-09-13 12:57:55] [SUCCESS] Required components loaded successfully
+[2025-09-13 12:57:55] [INFO] Configuration loading attempted
+[2025-09-13 12:57:55] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-13 12:57:55] [SUCCESS] Email handler initialized
+[2025-09-13 12:57:55] [INFO] Form data received and sanitized {
+    "full_name": "Test User Support",
+    "phone": "9876543210",
+    "email": "test.support@example.com",
+    "help_type": "support",
+    "message": "Testing support form submission for contact logging",
+    "phone_verified_raw": "1",
+    "message_length": 51
+}
+[2025-09-13 12:57:55] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-13 12:57:55] [SUCCESS] Form validation passed successfully
+[2025-09-13 12:57:55] [INFO] DatabaseHandler initialized
+[2025-09-13 12:57:55] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "Test User Support",
+        "phone": "9876543210",
+        "email": "test.support@example.com",
+        "help_type": "support",
+        "message": "Testing support form submission for contact logging",
+        "phone_verified": 1,
+        "ip_address": "::1",
+        "user_agent": ""
+    }
+}
+[2025-09-13 12:57:55] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "38"
+}
+[2025-09-13 12:57:55] [INFO] Contact ID processed {
+    "original_id": "f49506b0-3863-4137-9cc1-68eebe5a85dd",
+    "uuid": "f49506b0-3863-4137-9cc1-68eebe5a85dd",
+    "final_id": "f49506b0-3863-4137-9cc1-68eebe5a85dd"
+}
+[2025-09-13 12:57:55] [INFO] Initializing Salesforce integration
+[2025-09-13 12:57:55] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "Test User Support",
+        "phone": "9876543210",
+        "email": "test.support@example.com",
+        "help_type": "support",
+        "message": "Testing support form submission for contact logging",
+        "phone_verified": 1,
+        "ip_address": "::1",
+        "user_agent": ""
+    }
+}
+[2025-09-13 12:57:55] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "f49506b0-3863-4137-9cc1-68eebe5a85dd",
+    "salesforce_result": {
+        "error": null,
+        "success": {
+            "form": "Data not Sent To Salesforce as it is not Enquiry or Dealership Enquiry"
+        }
+    }
+}
+[2025-09-13 12:57:55] [INFO] Starting email notification process {
+    "contact_id": "f49506b0-3863-4137-9cc1-68eebe5a85dd",
+    "customer_name": "Test User Support",
+    "customer_email": "test.support@example.com",
+    "help_type": "support",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-13 12:57:56] [INFO] Admin email send result {
+    "contact_id": "f49506b0-3863-4137-9cc1-68eebe5a85dd",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-13 12:57:56] [INFO] Customer confirmation email result {
+    "contact_id": "f49506b0-3863-4137-9cc1-68eebe5a85dd",
+    "customer_email": "test.support@example.com",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-13 12:57:56] [SUCCESS] Contact form processed successfully {
+    "contact_id": "f49506b0-3863-4137-9cc1-68eebe5a85dd",
+    "customer_details": {
+        "name": "Test User Support",
+        "email": "test.support@example.com",
+        "phone": "9876543210",
+        "help_type": "support"
+    },
+    "email_results": {
+        "admin_emails": {
+            "success": false,
+            "sent_count": 0,
+            "failed_count": 0,
+            "email_id": "unknown",
+            "error": null
+        },
+        "customer_email": {
+            "success": false,
+            "email_id": "unknown",
+            "error": null
+        },
+        "overall_success": false
+    }
+}
+[2025-09-13 12:57:56] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "f49506b0-3863-4137-9cc1-68eebe5a85dd",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-13 12:57:56] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "f49506b0-3863-4137-9cc1-68eebe5a85dd",
+    "customer_email": "test.support@example.com",
+    "error": "Unknown error"
+}
+[2025-09-13 12:57:57] [INFO] Contact form POST request received {
+    "user_agent": "",
+    "ip_address": "::1",
+    "post_data_size": 167,
+    "timestamp": "2025-09-13 12:57:57"
+}
+[2025-09-13 12:57:57] [SUCCESS] Required components loaded successfully
+[2025-09-13 12:57:57] [INFO] Configuration loading attempted
+[2025-09-13 12:57:57] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-13 12:57:57] [SUCCESS] Email handler initialized
+[2025-09-13 12:57:57] [INFO] Form data received and sanitized {
+    "full_name": "Test User Enquiry",
+    "phone": "8765432109",
+    "email": "test.enquiry@example.com",
+    "help_type": "enquiry",
+    "message": "Testing enquiry form submission for contact logging",
+    "phone_verified_raw": "1",
+    "message_length": 51
+}
+[2025-09-13 12:57:57] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-13 12:57:57] [SUCCESS] Form validation passed successfully
+[2025-09-13 12:57:57] [INFO] DatabaseHandler initialized
+[2025-09-13 12:57:57] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "Test User Enquiry",
+        "phone": "8765432109",
+        "email": "test.enquiry@example.com",
+        "help_type": "enquiry",
+        "message": "Testing enquiry form submission for contact logging",
+        "phone_verified": 1,
+        "ip_address": "::1",
+        "user_agent": ""
+    }
+}
+[2025-09-13 12:57:57] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "39"
+}
+[2025-09-13 12:57:57] [INFO] Contact ID processed {
+    "original_id": "d672b128-2f58-4df2-97eb-c57304441ecf",
+    "uuid": "d672b128-2f58-4df2-97eb-c57304441ecf",
+    "final_id": "d672b128-2f58-4df2-97eb-c57304441ecf"
+}
+[2025-09-13 12:57:57] [INFO] Initializing Salesforce integration
+[2025-09-13 12:57:57] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "Test User Enquiry",
+        "phone": "8765432109",
+        "email": "test.enquiry@example.com",
+        "help_type": "enquiry",
+        "message": "Testing enquiry form submission for contact logging",
+        "phone_verified": 1,
+        "ip_address": "::1",
+        "user_agent": ""
+    }
+}
+[2025-09-13 12:57:58] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "d672b128-2f58-4df2-97eb-c57304441ecf",
+    "salesforce_result": {
+        "success": true,
+        "http_code": 200,
+        "response_body": "",
+        "response_time_ms": 1200.26,
+        "submitted_data": {
+            "oid": "00DC1000002crkB",
+            "recordType": "012C1000000uk1l",
+            "status": "Lead Created",
+            "lead_source": "Website",
+            "encoding": "UTF-8",
+            "first_name": "Test",
+            "last_name": "User Enquiry",
+            "email": "test.enquiry@example.com",
+            "phone": "8765432109",
+            "00NC1000001d7yq": "8765432109",
+            "00NC1000001nDEr": "13-09-25",
+            "00NC1000001qCe4": "Testing enquiry form submission for contact logging",
+            "00NC1000001qDrp": "Booking Enquiry",
+            "retURL": "http://localhost/contact-us.php"
+        }
+    }
+}
+[2025-09-13 12:57:58] [INFO] Starting email notification process {
+    "contact_id": "d672b128-2f58-4df2-97eb-c57304441ecf",
+    "customer_name": "Test User Enquiry",
+    "customer_email": "test.enquiry@example.com",
+    "help_type": "enquiry",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-13 12:57:58] [INFO] Admin email send result {
+    "contact_id": "d672b128-2f58-4df2-97eb-c57304441ecf",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-13 12:57:59] [INFO] Customer confirmation email result {
+    "contact_id": "d672b128-2f58-4df2-97eb-c57304441ecf",
+    "customer_email": "test.enquiry@example.com",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-13 12:57:59] [SUCCESS] Contact form processed successfully {
+    "contact_id": "d672b128-2f58-4df2-97eb-c57304441ecf",
+    "customer_details": {
+        "name": "Test User Enquiry",
+        "email": "test.enquiry@example.com",
+        "phone": "8765432109",
+        "help_type": "enquiry"
+    },
+    "email_results": {
+        "admin_emails": {
+            "success": false,
+            "sent_count": 0,
+            "failed_count": 0,
+            "email_id": "unknown",
+            "error": null
+        },
+        "customer_email": {
+            "success": false,
+            "email_id": "unknown",
+            "error": null
+        },
+        "overall_success": false
+    }
+}
+[2025-09-13 12:57:59] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "d672b128-2f58-4df2-97eb-c57304441ecf",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-13 12:57:59] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "d672b128-2f58-4df2-97eb-c57304441ecf",
+    "customer_email": "test.enquiry@example.com",
+    "error": "Unknown error"
+}
+[2025-09-13 12:58:00] [INFO] Contact form POST request received {
+    "user_agent": "",
+    "ip_address": "::1",
+    "post_data_size": 179,
+    "timestamp": "2025-09-13 12:58:00"
+}
+[2025-09-13 12:58:00] [SUCCESS] Required components loaded successfully
+[2025-09-13 12:58:00] [INFO] Configuration loading attempted
+[2025-09-13 12:58:00] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-13 12:58:00] [SUCCESS] Email handler initialized
+[2025-09-13 12:58:00] [INFO] Form data received and sanitized {
+    "full_name": "Test User Dealership",
+    "phone": "7654321098",
+    "email": "test.dealership@example.com",
+    "help_type": "dealership",
+    "message": "Testing dealership form submission for contact logging",
+    "phone_verified_raw": "1",
+    "message_length": 54
+}
+[2025-09-13 12:58:00] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-13 12:58:00] [SUCCESS] Form validation passed successfully
+[2025-09-13 12:58:00] [INFO] DatabaseHandler initialized
+[2025-09-13 12:58:00] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "Test User Dealership",
+        "phone": "7654321098",
+        "email": "test.dealership@example.com",
+        "help_type": "dealership",
+        "message": "Testing dealership form submission for contact logging",
+        "phone_verified": 1,
+        "ip_address": "::1",
+        "user_agent": ""
+    }
+}
+[2025-09-13 12:58:00] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "40"
+}
+[2025-09-13 12:58:00] [INFO] Contact ID processed {
+    "original_id": "a1e598a1-9f84-40c6-b50d-2ff49b969287",
+    "uuid": "a1e598a1-9f84-40c6-b50d-2ff49b969287",
+    "final_id": "a1e598a1-9f84-40c6-b50d-2ff49b969287"
+}
+[2025-09-13 12:58:00] [INFO] Initializing Salesforce integration
+[2025-09-13 12:58:00] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "Test User Dealership",
+        "phone": "7654321098",
+        "email": "test.dealership@example.com",
+        "help_type": "dealership",
+        "message": "Testing dealership form submission for contact logging",
+        "phone_verified": 1,
+        "ip_address": "::1",
+        "user_agent": ""
+    }
+}
+[2025-09-13 12:58:01] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "a1e598a1-9f84-40c6-b50d-2ff49b969287",
+    "salesforce_result": {
+        "success": true,
+        "http_code": 200,
+        "response_body": "",
+        "response_time_ms": 922.53,
+        "submitted_data": {
+            "oid": "00DC1000002crkB",
+            "recordType": "012C1000000uk09",
+            "status": "Lead Created",
+            "lead_source": "Website",
+            "encoding": "UTF-8",
+            "first_name": "Test",
+            "last_name": "User Dealership",
+            "email": "test.dealership@example.com",
+            "phone": "7654321098",
+            "00NC1000001d7yq": "7654321098",
+            "00NC1000001nDEr": "13-09-25",
+            "00NC1000001qCe4": "Testing dealership form submission for contact logging",
+            "00NC1000001qDrp": "Dealership Enquiry",
+            "retURL": "http://localhost/contact-us.php"
+        }
+    }
+}
+[2025-09-13 12:58:01] [INFO] Starting email notification process {
+    "contact_id": "a1e598a1-9f84-40c6-b50d-2ff49b969287",
+    "customer_name": "Test User Dealership",
+    "customer_email": "test.dealership@example.com",
+    "help_type": "dealership",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-13 12:58:01] [INFO] Admin email send result {
+    "contact_id": "a1e598a1-9f84-40c6-b50d-2ff49b969287",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-13 12:58:01] [INFO] Customer confirmation email result {
+    "contact_id": "a1e598a1-9f84-40c6-b50d-2ff49b969287",
+    "customer_email": "test.dealership@example.com",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-13 12:58:01] [SUCCESS] Contact form processed successfully {
+    "contact_id": "a1e598a1-9f84-40c6-b50d-2ff49b969287",
+    "customer_details": {
+        "name": "Test User Dealership",
+        "email": "test.dealership@example.com",
+        "phone": "7654321098",
+        "help_type": "dealership"
+    },
+    "email_results": {
+        "admin_emails": {
+            "success": false,
+            "sent_count": 0,
+            "failed_count": 0,
+            "email_id": "unknown",
+            "error": null
+        },
+        "customer_email": {
+            "success": false,
+            "email_id": "unknown",
+            "error": null
+        },
+        "overall_success": false
+    }
+}
+[2025-09-13 12:58:01] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "a1e598a1-9f84-40c6-b50d-2ff49b969287",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-13 12:58:01] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "a1e598a1-9f84-40c6-b50d-2ff49b969287",
+    "customer_email": "test.dealership@example.com",
+    "error": "Unknown error"
+}
+[2025-09-13 12:58:02] [INFO] Contact form POST request received {
+    "user_agent": "",
+    "ip_address": "::1",
+    "post_data_size": 163,
+    "timestamp": "2025-09-13 12:58:02"
+}
+[2025-09-13 12:58:02] [SUCCESS] Required components loaded successfully
+[2025-09-13 12:58:02] [INFO] Configuration loading attempted
+[2025-09-13 12:58:02] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-13 12:58:02] [SUCCESS] Email handler initialized
+[2025-09-13 12:58:02] [INFO] Form data received and sanitized {
+    "full_name": "Test User Others",
+    "phone": "6543210987",
+    "email": "test.others@example.com",
+    "help_type": "others",
+    "message": "Testing others form submission for contact logging",
+    "phone_verified_raw": "1",
+    "message_length": 50
+}
+[2025-09-13 12:58:02] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-13 12:58:02] [SUCCESS] Form validation passed successfully
+[2025-09-13 12:58:02] [INFO] DatabaseHandler initialized
+[2025-09-13 12:58:02] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "Test User Others",
+        "phone": "6543210987",
+        "email": "test.others@example.com",
+        "help_type": "others",
+        "message": "Testing others form submission for contact logging",
+        "phone_verified": 1,
+        "ip_address": "::1",
+        "user_agent": ""
+    }
+}
+[2025-09-13 12:58:02] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "41"
+}
+[2025-09-13 12:58:02] [INFO] Contact ID processed {
+    "original_id": "500b97ec-aebd-4834-b1a1-45590c76202a",
+    "uuid": "500b97ec-aebd-4834-b1a1-45590c76202a",
+    "final_id": "500b97ec-aebd-4834-b1a1-45590c76202a"
+}
+[2025-09-13 12:58:02] [INFO] Initializing Salesforce integration
+[2025-09-13 12:58:02] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "Test User Others",
+        "phone": "6543210987",
+        "email": "test.others@example.com",
+        "help_type": "others",
+        "message": "Testing others form submission for contact logging",
+        "phone_verified": 1,
+        "ip_address": "::1",
+        "user_agent": ""
+    }
+}
+[2025-09-13 12:58:02] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "500b97ec-aebd-4834-b1a1-45590c76202a",
+    "salesforce_result": {
+        "error": null,
+        "success": {
+            "form": "Data not Sent To Salesforce as it is not Enquiry or Dealership Enquiry"
+        }
+    }
+}
+[2025-09-13 12:58:02] [INFO] Starting email notification process {
+    "contact_id": "500b97ec-aebd-4834-b1a1-45590c76202a",
+    "customer_name": "Test User Others",
+    "customer_email": "test.others@example.com",
+    "help_type": "others",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-13 12:58:02] [INFO] Admin email send result {
+    "contact_id": "500b97ec-aebd-4834-b1a1-45590c76202a",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-13 12:58:03] [INFO] Customer confirmation email result {
+    "contact_id": "500b97ec-aebd-4834-b1a1-45590c76202a",
+    "customer_email": "test.others@example.com",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-13 12:58:03] [SUCCESS] Contact form processed successfully {
+    "contact_id": "500b97ec-aebd-4834-b1a1-45590c76202a",
+    "customer_details": {
+        "name": "Test User Others",
+        "email": "test.others@example.com",
+        "phone": "6543210987",
+        "help_type": "others"
+    },
+    "email_results": {
+        "admin_emails": {
+            "success": false,
+            "sent_count": 0,
+            "failed_count": 0,
+            "email_id": "unknown",
+            "error": null
+        },
+        "customer_email": {
+            "success": false,
+            "email_id": "unknown",
+            "error": null
+        },
+        "overall_success": false
+    }
+}
+[2025-09-13 12:58:03] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "500b97ec-aebd-4834-b1a1-45590c76202a",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-13 12:58:03] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "500b97ec-aebd-4834-b1a1-45590c76202a",
+    "customer_email": "test.others@example.com",
+    "error": "Unknown error"
+}
+[2025-09-16 15:38:14] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "ip_address": "127.0.0.1",
+    "post_data_size": 148,
+    "timestamp": "2025-09-16 15:38:14"
+}
+[2025-09-16 15:38:14] [SUCCESS] Required components loaded successfully
+[2025-09-16 15:38:14] [INFO] Configuration loading attempted
+[2025-09-16 15:38:14] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-16 15:38:18] [SUCCESS] Email handler initialized
+[2025-09-16 15:38:18] [INFO] Form data received and sanitized {
+    "full_name": "Test careers Akshay",
+    "phone": "7506754344",
+    "email": "akshay.since1987@gmail.com",
+    "help_type": "careers",
+    "message": "Test careers Development Env",
+    "phone_verified_raw": "1",
+    "message_length": 28
+}
+[2025-09-16 15:38:18] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-16 15:38:18] [SUCCESS] Form validation passed successfully
+[2025-09-16 15:38:18] [INFO] DatabaseHandler initialized
+[2025-09-16 15:38:18] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "Test careers Akshay",
+        "phone": "7506754344",
+        "email": "akshay.since1987@gmail.com",
+        "help_type": "careers",
+        "message": "Test careers Development Env",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-16 15:38:18] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "42"
+}
+[2025-09-16 15:38:18] [INFO] Contact ID processed {
+    "original_id": "1e1cf4c7-ce0d-498e-a6f7-e1bb6cb2e1b7",
+    "uuid": "1e1cf4c7-ce0d-498e-a6f7-e1bb6cb2e1b7",
+    "final_id": "1e1cf4c7-ce0d-498e-a6f7-e1bb6cb2e1b7"
+}
+[2025-09-16 15:38:18] [INFO] Careers enquiry excluded from Salesforce integration {
+    "contact_id": "1e1cf4c7-ce0d-498e-a6f7-e1bb6cb2e1b7"
+}
+[2025-09-16 15:38:18] [INFO] Starting email notification process {
+    "contact_id": "1e1cf4c7-ce0d-498e-a6f7-e1bb6cb2e1b7",
+    "customer_name": "Test careers Akshay",
+    "customer_email": "akshay.since1987@gmail.com",
+    "help_type": "careers",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-16 15:38:19] [INFO] Admin email send result {
+    "contact_id": "1e1cf4c7-ce0d-498e-a6f7-e1bb6cb2e1b7",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-16 15:38:19] [INFO] Customer confirmation email result {
+    "contact_id": "1e1cf4c7-ce0d-498e-a6f7-e1bb6cb2e1b7",
+    "customer_email": "akshay.since1987@gmail.com",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-16 15:38:19] [INFO] Customer email for careers sent {
+    "contact_id": "1e1cf4c7-ce0d-498e-a6f7-e1bb6cb2e1b7",
+    "customer_email": "akshay.since1987@gmail.com",
+    "success": true
+}
+[2025-09-16 15:38:19] [SUCCESS] Contact form processed successfully {
+    "contact_id": "1e1cf4c7-ce0d-498e-a6f7-e1bb6cb2e1b7",
+    "customer_details": {
+        "name": "Test careers Akshay",
+        "email": "akshay.since1987@gmail.com",
+        "phone": "7506754344",
+        "help_type": "careers"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-16 15:38:19] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "1e1cf4c7-ce0d-498e-a6f7-e1bb6cb2e1b7",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-16 15:38:19] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "1e1cf4c7-ce0d-498e-a6f7-e1bb6cb2e1b7",
+    "customer_email": "akshay.since1987@gmail.com",
+    "error": "Unknown error"
+}
+[2025-09-16 15:38:19] [SUCCESS] Form submitted successfully {
+    "contact_id": "1e1cf4c7-ce0d-498e-a6f7-e1bb6cb2e1b7",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 5.48875093460083,
+    "timestamp": "2025-09-16 15:38:19"
+}
+[2025-09-16 16:00:49] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "ip_address": "127.0.0.1",
+    "post_data_size": 135,
+    "timestamp": "2025-09-16 16:00:49"
+}
+[2025-09-16 16:00:49] [SUCCESS] Required components loaded successfully
+[2025-09-16 16:00:49] [INFO] Configuration loading attempted
+[2025-09-16 16:00:49] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-16 16:00:49] [SUCCESS] Email handler initialized
+[2025-09-16 16:00:49] [INFO] Form data received and sanitized {
+    "full_name": "akshay careers test",
+    "phone": "7506754344",
+    "email": "akshay.since1987@gmail.com",
+    "help_type": "careers",
+    "message": "Careers enquiry",
+    "phone_verified_raw": "1",
+    "message_length": 15
+}
+[2025-09-16 16:00:49] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-16 16:00:49] [SUCCESS] Form validation passed successfully
+[2025-09-16 16:00:49] [INFO] DatabaseHandler initialized
+[2025-09-16 16:00:49] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "akshay careers test",
+        "phone": "7506754344",
+        "email": "akshay.since1987@gmail.com",
+        "help_type": "careers",
+        "message": "Careers enquiry",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-16 16:00:50] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "43"
+}
+[2025-09-16 16:00:50] [INFO] Contact ID processed {
+    "original_id": "8c8c9354-c5f0-4485-a234-aa8ee834cf2b",
+    "uuid": "8c8c9354-c5f0-4485-a234-aa8ee834cf2b",
+    "final_id": "8c8c9354-c5f0-4485-a234-aa8ee834cf2b"
+}
+[2025-09-16 16:00:50] [INFO] Careers enquiry excluded from Salesforce integration {
+    "contact_id": "8c8c9354-c5f0-4485-a234-aa8ee834cf2b"
+}
+[2025-09-16 16:00:50] [INFO] Starting email notification process {
+    "contact_id": "8c8c9354-c5f0-4485-a234-aa8ee834cf2b",
+    "customer_name": "akshay careers test",
+    "customer_email": "akshay.since1987@gmail.com",
+    "help_type": "careers",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-16 16:00:50] [INFO] Admin email send result {
+    "contact_id": "8c8c9354-c5f0-4485-a234-aa8ee834cf2b",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-16 16:00:50] [INFO] Customer email for careers sent {
+    "contact_id": "8c8c9354-c5f0-4485-a234-aa8ee834cf2b",
+    "customer_email": "akshay.since1987@gmail.com",
+    "success": true
+}
+[2025-09-16 16:00:50] [SUCCESS] Contact form processed successfully {
+    "contact_id": "8c8c9354-c5f0-4485-a234-aa8ee834cf2b",
+    "customer_details": {
+        "name": "akshay careers test",
+        "email": "akshay.since1987@gmail.com",
+        "phone": "7506754344",
+        "help_type": "careers"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-16 16:00:50] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "8c8c9354-c5f0-4485-a234-aa8ee834cf2b",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-16 16:00:50] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "8c8c9354-c5f0-4485-a234-aa8ee834cf2b",
+    "customer_email": "akshay.since1987@gmail.com",
+    "error": "Unknown error"
+}
+[2025-09-16 16:00:50] [SUCCESS] Form submitted successfully {
+    "contact_id": "8c8c9354-c5f0-4485-a234-aa8ee834cf2b",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 0.576312780380249,
+    "timestamp": "2025-09-16 16:00:50"
+}
+[2025-09-17 12:18:57] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "ip_address": "127.0.0.1",
+    "post_data_size": 128,
+    "timestamp": "2025-09-17 12:18:57"
+}
+[2025-09-17 12:18:57] [SUCCESS] Required components loaded successfully
+[2025-09-17 12:18:57] [INFO] Configuration loading attempted
+[2025-09-17 12:18:57] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-17 12:18:57] [SUCCESS] Email handler initialized
+[2025-09-17 12:18:57] [INFO] Form data received and sanitized {
+    "full_name": "Contact Akshay",
+    "phone": "7506754344",
+    "email": "support@testcnotact.in",
+    "help_type": "support",
+    "message": "test support send",
+    "phone_verified_raw": "1",
+    "message_length": 17
+}
+[2025-09-17 12:18:57] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-17 12:18:57] [SUCCESS] Form validation passed successfully
+[2025-09-17 12:18:57] [INFO] DatabaseHandler initialized
+[2025-09-17 12:18:57] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "Contact Akshay",
+        "phone": "7506754344",
+        "email": "support@testcnotact.in",
+        "help_type": "support",
+        "message": "test support send",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-17 12:18:57] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "44"
+}
+[2025-09-17 12:18:57] [INFO] Contact ID processed {
+    "original_id": "33526356-af84-431c-aad2-1d3da4ca6adc",
+    "uuid": "33526356-af84-431c-aad2-1d3da4ca6adc",
+    "final_id": "33526356-af84-431c-aad2-1d3da4ca6adc"
+}
+[2025-09-17 12:18:57] [INFO] Initializing Salesforce integration
+[2025-09-17 12:18:57] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "Contact Akshay",
+        "phone": "7506754344",
+        "email": "support@testcnotact.in",
+        "help_type": "support",
+        "message": "test support send",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-17 12:18:57] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "33526356-af84-431c-aad2-1d3da4ca6adc",
+    "salesforce_result": {
+        "error": null,
+        "success": {
+            "form": "Data not Sent To Salesforce as it is not Enquiry or Dealership Enquiry"
+        }
+    }
+}
+[2025-09-17 12:18:57] [INFO] Starting email notification process {
+    "contact_id": "33526356-af84-431c-aad2-1d3da4ca6adc",
+    "customer_name": "Contact Akshay",
+    "customer_email": "support@testcnotact.in",
+    "help_type": "support",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-17 12:18:58] [INFO] Admin email send result {
+    "contact_id": "33526356-af84-431c-aad2-1d3da4ca6adc",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-17 12:18:58] [INFO] Customer confirmation email result {
+    "contact_id": "33526356-af84-431c-aad2-1d3da4ca6adc",
+    "customer_email": "support@testcnotact.in",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-17 12:18:58] [SUCCESS] Contact form processed successfully {
+    "contact_id": "33526356-af84-431c-aad2-1d3da4ca6adc",
+    "customer_details": {
+        "name": "Contact Akshay",
+        "email": "support@testcnotact.in",
+        "phone": "7506754344",
+        "help_type": "support"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-17 12:18:58] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "33526356-af84-431c-aad2-1d3da4ca6adc",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-17 12:18:58] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "33526356-af84-431c-aad2-1d3da4ca6adc",
+    "customer_email": "support@testcnotact.in",
+    "error": "Unknown error"
+}
+[2025-09-17 12:18:58] [SUCCESS] Form submitted successfully {
+    "contact_id": "33526356-af84-431c-aad2-1d3da4ca6adc",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 0.5555641651153564,
+    "timestamp": "2025-09-17 12:18:58"
+}
+[2025-09-17 12:19:37] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "ip_address": "127.0.0.1",
+    "post_data_size": 138,
+    "timestamp": "2025-09-17 12:19:37"
+}
+[2025-09-17 12:19:37] [SUCCESS] Required components loaded successfully
+[2025-09-17 12:19:37] [INFO] Configuration loading attempted
+[2025-09-17 12:19:37] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-17 12:19:37] [SUCCESS] Email handler initialized
+[2025-09-17 12:19:37] [INFO] Form data received and sanitized {
+    "full_name": "Booking Test Akshay",
+    "phone": "7506765434",
+    "email": "booking@testcontact.in",
+    "help_type": "enquiry",
+    "message": "Testi Booking Enbquiry",
+    "phone_verified_raw": "1",
+    "message_length": 22
+}
+[2025-09-17 12:19:37] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-17 12:19:37] [SUCCESS] Form validation passed successfully
+[2025-09-17 12:19:37] [INFO] DatabaseHandler initialized
+[2025-09-17 12:19:37] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "Booking Test Akshay",
+        "phone": "7506765434",
+        "email": "booking@testcontact.in",
+        "help_type": "enquiry",
+        "message": "Testi Booking Enbquiry",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-17 12:19:37] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "45"
+}
+[2025-09-17 12:19:37] [INFO] Contact ID processed {
+    "original_id": "1fea13be-834b-4ee3-b827-b2d4de39d736",
+    "uuid": "1fea13be-834b-4ee3-b827-b2d4de39d736",
+    "final_id": "1fea13be-834b-4ee3-b827-b2d4de39d736"
+}
+[2025-09-17 12:19:37] [INFO] Initializing Salesforce integration
+[2025-09-17 12:19:37] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "Booking Test Akshay",
+        "phone": "7506765434",
+        "email": "booking@testcontact.in",
+        "help_type": "enquiry",
+        "message": "Testi Booking Enbquiry",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-17 12:19:38] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "1fea13be-834b-4ee3-b827-b2d4de39d736",
+    "salesforce_result": {
+        "success": true,
+        "http_code": 200,
+        "response_body": "\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n<html>\n<head>\n<meta HTTP-EQUIV=\"PRAGMA\" CONTENT=\"NO-CACHE\">\n<meta http-equiv=\"Refresh\" content=\"0; URL=http://local.kineticev.in/contact-us?success=1\">\n</head>\n<script>function redirectOnLoad() {if (this.SfdcApp && this.SfdcApp.projectOneNavigator) { SfdcApp.projectOneNavigator.handleRedirect('http://local.kineticev.in/contact-us?success=1'); }  else if (window.location.replace){ window.location.replace('http://local.kineticev.in/contact-us?success=1');} else {window.location.href ='http://local.kineticev.in/contact-us?success=1';} } redirectOnLoad();</script></html>\n",
+        "response_time_ms": 978.1,
+        "submitted_data": {
+            "oid": "00DC1000002crkB",
+            "recordType": "012C1000000uk1lIAA",
+            "status": "Lead Created",
+            "lead_source": "Website",
+            "encoding": "UTF-8",
+            "first_name": "Booking",
+            "last_name": "Test Akshay",
+            "email": "booking@testcontact.in",
+            "phone": "7506765434",
+            "00NC1000001d7yq": "7506765434",
+            "00NC1000001qCe4": "Testi Booking Enbquiry",
+            "00NC1000001qDrp": "Booking Enquiry",
+            "retURL": "http://local.kineticev.in/contact-us?success=1"
+        }
+    }
+}
+[2025-09-17 12:19:38] [INFO] Starting email notification process {
+    "contact_id": "1fea13be-834b-4ee3-b827-b2d4de39d736",
+    "customer_name": "Booking Test Akshay",
+    "customer_email": "booking@testcontact.in",
+    "help_type": "enquiry",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-17 12:19:38] [INFO] Admin email send result {
+    "contact_id": "1fea13be-834b-4ee3-b827-b2d4de39d736",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-17 12:19:39] [INFO] Customer confirmation email result {
+    "contact_id": "1fea13be-834b-4ee3-b827-b2d4de39d736",
+    "customer_email": "booking@testcontact.in",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-17 12:19:39] [SUCCESS] Contact form processed successfully {
+    "contact_id": "1fea13be-834b-4ee3-b827-b2d4de39d736",
+    "customer_details": {
+        "name": "Booking Test Akshay",
+        "email": "booking@testcontact.in",
+        "phone": "7506765434",
+        "help_type": "enquiry"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-17 12:19:39] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "1fea13be-834b-4ee3-b827-b2d4de39d736",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-17 12:19:39] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "1fea13be-834b-4ee3-b827-b2d4de39d736",
+    "customer_email": "booking@testcontact.in",
+    "error": "Unknown error"
+}
+[2025-09-17 12:19:39] [SUCCESS] Form submitted successfully {
+    "contact_id": "1fea13be-834b-4ee3-b827-b2d4de39d736",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 1.4605069160461426,
+    "timestamp": "2025-09-17 12:19:39"
+}
+[2025-09-17 12:22:22] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "ip_address": "127.0.0.1",
+    "post_data_size": 129,
+    "timestamp": "2025-09-17 12:22:22"
+}
+[2025-09-17 12:22:22] [SUCCESS] Required components loaded successfully
+[2025-09-17 12:22:22] [INFO] Configuration loading attempted
+[2025-09-17 12:22:22] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-17 12:22:22] [SUCCESS] Email handler initialized
+[2025-09-17 12:22:22] [INFO] Form data received and sanitized {
+    "full_name": "booking test",
+    "phone": "7567543444",
+    "email": "booking@enquirytest.in",
+    "help_type": "enquiry",
+    "message": "Test booking enquiry",
+    "phone_verified_raw": "1",
+    "message_length": 20
+}
+[2025-09-17 12:22:22] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-17 12:22:22] [SUCCESS] Form validation passed successfully
+[2025-09-17 12:22:22] [INFO] DatabaseHandler initialized
+[2025-09-17 12:22:22] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "booking test",
+        "phone": "7567543444",
+        "email": "booking@enquirytest.in",
+        "help_type": "enquiry",
+        "message": "Test booking enquiry",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-17 12:22:22] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "46"
+}
+[2025-09-17 12:22:22] [INFO] Contact ID processed {
+    "original_id": "32ed9f4d-1976-4ac3-bd0c-4fbdf0326c45",
+    "uuid": "32ed9f4d-1976-4ac3-bd0c-4fbdf0326c45",
+    "final_id": "32ed9f4d-1976-4ac3-bd0c-4fbdf0326c45"
+}
+[2025-09-17 12:22:22] [INFO] Initializing Salesforce integration
+[2025-09-17 12:22:22] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "booking test",
+        "phone": "7567543444",
+        "email": "booking@enquirytest.in",
+        "help_type": "enquiry",
+        "message": "Test booking enquiry",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-17 12:22:23] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "32ed9f4d-1976-4ac3-bd0c-4fbdf0326c45",
+    "salesforce_result": {
+        "success": true,
+        "http_code": 200,
+        "response_body": "\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n<html>\n<head>\n<meta HTTP-EQUIV=\"PRAGMA\" CONTENT=\"NO-CACHE\">\n<meta http-equiv=\"Refresh\" content=\"0; URL=http://local.kineticev.in/contact-us?success=1\">\n</head>\n<script>function redirectOnLoad() {if (this.SfdcApp && this.SfdcApp.projectOneNavigator) { SfdcApp.projectOneNavigator.handleRedirect('http://local.kineticev.in/contact-us?success=1'); }  else if (window.location.replace){ window.location.replace('http://local.kineticev.in/contact-us?success=1');} else {window.location.href ='http://local.kineticev.in/contact-us?success=1';} } redirectOnLoad();</script></html>\n",
+        "response_time_ms": 966.59,
+        "submitted_data": {
+            "oid": "00DC1000002crkB",
+            "recordType": "012C1000000uk1lIAA",
+            "status": "Lead Created",
+            "lead_source": "Website",
+            "encoding": "UTF-8",
+            "first_name": "booking",
+            "last_name": "test",
+            "email": "booking@enquirytest.in",
+            "phone": "7567543444",
+            "00NC1000001d7yq": "7567543444",
+            "00NC1000001qCe4": "Test booking enquiry",
+            "00NC1000001qDrp": "Booking Enquiry",
+            "retURL": "http://local.kineticev.in/contact-us?success=1"
+        }
+    }
+}
+[2025-09-17 12:22:23] [INFO] Starting email notification process {
+    "contact_id": "32ed9f4d-1976-4ac3-bd0c-4fbdf0326c45",
+    "customer_name": "booking test",
+    "customer_email": "booking@enquirytest.in",
+    "help_type": "enquiry",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-17 12:22:23] [INFO] Admin email send result {
+    "contact_id": "32ed9f4d-1976-4ac3-bd0c-4fbdf0326c45",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-17 12:22:23] [INFO] Customer confirmation email result {
+    "contact_id": "32ed9f4d-1976-4ac3-bd0c-4fbdf0326c45",
+    "customer_email": "booking@enquirytest.in",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-17 12:22:23] [SUCCESS] Contact form processed successfully {
+    "contact_id": "32ed9f4d-1976-4ac3-bd0c-4fbdf0326c45",
+    "customer_details": {
+        "name": "booking test",
+        "email": "booking@enquirytest.in",
+        "phone": "7567543444",
+        "help_type": "enquiry"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-17 12:22:23] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "32ed9f4d-1976-4ac3-bd0c-4fbdf0326c45",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-17 12:22:23] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "32ed9f4d-1976-4ac3-bd0c-4fbdf0326c45",
+    "customer_email": "booking@enquirytest.in",
+    "error": "Unknown error"
+}
+[2025-09-17 12:22:23] [SUCCESS] Form submitted successfully {
+    "contact_id": "32ed9f4d-1976-4ac3-bd0c-4fbdf0326c45",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 1.4621329307556152,
+    "timestamp": "2025-09-17 12:22:23"
+}
+[2025-09-17 12:23:58] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "ip_address": "127.0.0.1",
+    "post_data_size": 132,
+    "timestamp": "2025-09-17 12:23:58"
+}
+[2025-09-17 12:23:58] [SUCCESS] Required components loaded successfully
+[2025-09-17 12:23:58] [INFO] Configuration loading attempted
+[2025-09-17 12:23:58] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-17 12:23:58] [SUCCESS] Email handler initialized
+[2025-09-17 12:23:58] [INFO] Form data received and sanitized {
+    "full_name": "DealershipEnq Test",
+    "phone": "7506754344",
+    "email": "dealership@testenq.in",
+    "help_type": "dealership",
+    "message": "Test dealership",
+    "phone_verified_raw": "1",
+    "message_length": 15
+}
+[2025-09-17 12:23:58] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-17 12:23:58] [SUCCESS] Form validation passed successfully
+[2025-09-17 12:23:58] [INFO] DatabaseHandler initialized
+[2025-09-17 12:23:58] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "DealershipEnq Test",
+        "phone": "7506754344",
+        "email": "dealership@testenq.in",
+        "help_type": "dealership",
+        "message": "Test dealership",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-17 12:23:58] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "47"
+}
+[2025-09-17 12:23:58] [INFO] Contact ID processed {
+    "original_id": "1cea66be-4652-463c-bf78-7b01c28deef3",
+    "uuid": "1cea66be-4652-463c-bf78-7b01c28deef3",
+    "final_id": "1cea66be-4652-463c-bf78-7b01c28deef3"
+}
+[2025-09-17 12:23:58] [INFO] Initializing Salesforce integration
+[2025-09-17 12:23:58] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "DealershipEnq Test",
+        "phone": "7506754344",
+        "email": "dealership@testenq.in",
+        "help_type": "dealership",
+        "message": "Test dealership",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-17 12:23:59] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "1cea66be-4652-463c-bf78-7b01c28deef3",
+    "salesforce_result": {
+        "success": true,
+        "http_code": 200,
+        "response_body": "\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n<html>\n<head>\n<meta HTTP-EQUIV=\"PRAGMA\" CONTENT=\"NO-CACHE\">\n<meta http-equiv=\"Refresh\" content=\"0; URL=http://local.kineticev.in/contact-us?success=1\">\n</head>\n<script>function redirectOnLoad() {if (this.SfdcApp && this.SfdcApp.projectOneNavigator) { SfdcApp.projectOneNavigator.handleRedirect('http://local.kineticev.in/contact-us?success=1'); }  else if (window.location.replace){ window.location.replace('http://local.kineticev.in/contact-us?success=1');} else {window.location.href ='http://local.kineticev.in/contact-us?success=1';} } redirectOnLoad();</script></html>\n",
+        "response_time_ms": 1001.01,
+        "submitted_data": {
+            "oid": "00DC1000002crkB",
+            "recordType": "012C1000000uk09IAA",
+            "status": "Lead Created",
+            "lead_source": "Website",
+            "encoding": "UTF-8",
+            "first_name": "DealershipEnq",
+            "last_name": "Test",
+            "email": "dealership@testenq.in",
+            "phone": "7506754344",
+            "00NC1000001d7yq": "7506754344",
+            "00NC1000001qCe4": "Test dealership",
+            "00NC1000001qDrp": "Dealership Enquiry",
+            "retURL": "http://local.kineticev.in/contact-us?success=1"
+        }
+    }
+}
+[2025-09-17 12:23:59] [INFO] Starting email notification process {
+    "contact_id": "1cea66be-4652-463c-bf78-7b01c28deef3",
+    "customer_name": "DealershipEnq Test",
+    "customer_email": "dealership@testenq.in",
+    "help_type": "dealership",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-17 12:23:59] [INFO] Admin email send result {
+    "contact_id": "1cea66be-4652-463c-bf78-7b01c28deef3",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-17 12:23:59] [INFO] Customer confirmation email result {
+    "contact_id": "1cea66be-4652-463c-bf78-7b01c28deef3",
+    "customer_email": "dealership@testenq.in",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-17 12:23:59] [SUCCESS] Contact form processed successfully {
+    "contact_id": "1cea66be-4652-463c-bf78-7b01c28deef3",
+    "customer_details": {
+        "name": "DealershipEnq Test",
+        "email": "dealership@testenq.in",
+        "phone": "7506754344",
+        "help_type": "dealership"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-17 12:23:59] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "1cea66be-4652-463c-bf78-7b01c28deef3",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-17 12:23:59] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "1cea66be-4652-463c-bf78-7b01c28deef3",
+    "customer_email": "dealership@testenq.in",
+    "error": "Unknown error"
+}
+[2025-09-17 12:23:59] [SUCCESS] Form submitted successfully {
+    "contact_id": "1cea66be-4652-463c-bf78-7b01c28deef3",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 1.5194389820098877,
+    "timestamp": "2025-09-17 12:23:59"
+}
+[2025-09-23 17:11:22] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "ip_address": "111.125.219.96",
+    "post_data_size": 124,
+    "timestamp": "2025-09-23 17:11:22"
+}
+[2025-09-23 17:11:22] [SUCCESS] Required components loaded successfully
+[2025-09-23 17:11:22] [INFO] Configuration loading attempted
+[2025-09-23 17:11:22] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-23 17:11:22] [SUCCESS] Email handler initialized
+[2025-09-23 17:11:22] [INFO] Form data received and sanitized {
+    "full_name": "dealer test",
+    "phone": "8879908086",
+    "email": "namrata.vallakati@crmlanding.in",
+    "help_type": "dealership",
+    "message": "test",
+    "phone_verified_raw": "1",
+    "message_length": 4
+}
+[2025-09-23 17:11:22] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-23 17:11:22] [SUCCESS] Form validation passed successfully
+[2025-09-23 17:11:22] [INFO] DatabaseHandler initialized
+[2025-09-23 17:11:22] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "dealer test",
+        "phone": "8879908086",
+        "email": "namrata.vallakati@crmlanding.in",
+        "help_type": "dealership",
+        "message": "test",
+        "phone_verified": 1,
+        "ip_address": "111.125.219.96",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-23 17:11:22] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "58"
+}
+[2025-09-23 17:11:22] [INFO] Contact ID processed {
+    "original_id": "88f7dbd3-22b3-4d34-9c54-14fc8ddb4c51",
+    "uuid": "88f7dbd3-22b3-4d34-9c54-14fc8ddb4c51",
+    "final_id": "88f7dbd3-22b3-4d34-9c54-14fc8ddb4c51"
+}
+[2025-09-23 17:11:22] [INFO] Initializing Salesforce integration
+[2025-09-23 17:11:22] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "dealer test",
+        "phone": "8879908086",
+        "email": "namrata.vallakati@crmlanding.in",
+        "help_type": "dealership",
+        "message": "test",
+        "phone_verified": 1,
+        "ip_address": "111.125.219.96",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-23 17:11:23] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "88f7dbd3-22b3-4d34-9c54-14fc8ddb4c51",
+    "salesforce_result": {
+        "success": true,
+        "http_code": 200,
+        "response_body": "\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n<html>\n<head>\n<meta HTTP-EQUIV=\"PRAGMA\" CONTENT=\"NO-CACHE\">\n<meta http-equiv=\"Refresh\" content=\"0; URL=http://182.48.201.133/contact-us\">\n</head>\n<script>function redirectOnLoad() {if (this.SfdcApp && this.SfdcApp.projectOneNavigator) { SfdcApp.projectOneNavigator.handleRedirect('http://182.48.201.133/contact-us'); }  else if (window.location.replace){ window.location.replace('http://182.48.201.133/contact-us');} else {window.location.href ='http://182.48.201.133/contact-us';} } redirectOnLoad();</script></html>\n",
+        "response_time_ms": 1134.37,
+        "submitted_data": {
+            "oid": "00DHE000001cCu1",
+            "recordType": "012HE000001LIpNYAW",
+            "status": "Lead Created",
+            "lead_source": "Website",
+            "encoding": "UTF-8",
+            "first_name": "dealer",
+            "last_name": "test",
+            "email": "namrata.vallakati@crmlanding.in",
+            "phone": "8879908086",
+            "retURL": "http://182.48.201.133/contact-us"
+        }
+    }
+}
+[2025-09-23 17:11:23] [INFO] Starting email notification process {
+    "contact_id": "88f7dbd3-22b3-4d34-9c54-14fc8ddb4c51",
+    "customer_name": "dealer test",
+    "customer_email": "namrata.vallakati@crmlanding.in",
+    "help_type": "dealership",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-23 17:11:23] [INFO] Admin email send result {
+    "contact_id": "88f7dbd3-22b3-4d34-9c54-14fc8ddb4c51",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-23 17:11:24] [INFO] Customer confirmation email result {
+    "contact_id": "88f7dbd3-22b3-4d34-9c54-14fc8ddb4c51",
+    "customer_email": "namrata.vallakati@crmlanding.in",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-23 17:11:24] [SUCCESS] Contact form processed successfully {
+    "contact_id": "88f7dbd3-22b3-4d34-9c54-14fc8ddb4c51",
+    "customer_details": {
+        "name": "dealer test",
+        "email": "namrata.vallakati@crmlanding.in",
+        "phone": "8879908086",
+        "help_type": "dealership"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-23 17:11:24] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "88f7dbd3-22b3-4d34-9c54-14fc8ddb4c51",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-23 17:11:24] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "88f7dbd3-22b3-4d34-9c54-14fc8ddb4c51",
+    "customer_email": "namrata.vallakati@crmlanding.in",
+    "error": "Unknown error"
+}
+[2025-09-23 17:11:24] [SUCCESS] Form submitted successfully {
+    "contact_id": "88f7dbd3-22b3-4d34-9c54-14fc8ddb4c51",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 1.821544885635376,
+    "timestamp": "2025-09-23 17:11:24"
+}
+[2025-09-23 18:31:16] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "ip_address": "127.0.0.1",
+    "post_data_size": 130,
+    "timestamp": "2025-09-23 18:31:16"
+}
+[2025-09-23 18:31:16] [SUCCESS] Required components loaded successfully
+[2025-09-23 18:31:16] [INFO] Configuration loading attempted
+[2025-09-23 18:31:16] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-23 18:31:16] [SUCCESS] Email handler initialized
+[2025-09-23 18:31:16] [INFO] Form data received and sanitized {
+    "full_name": "Akshay Khandelwal",
+    "phone": "7506754344",
+    "email": "akshay.since1987@gmail.com",
+    "help_type": "support",
+    "message": "Test support",
+    "phone_verified_raw": "1",
+    "message_length": 12
+}
+[2025-09-23 18:31:16] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-23 18:31:16] [SUCCESS] Form validation passed successfully
+[2025-09-23 18:31:16] [INFO] DatabaseHandler initialized
+[2025-09-23 18:31:16] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "Akshay Khandelwal",
+        "phone": "7506754344",
+        "email": "akshay.since1987@gmail.com",
+        "help_type": "support",
+        "message": "Test support",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-23 18:31:16] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "59"
+}
+[2025-09-23 18:31:17] [INFO] Contact ID processed {
+    "original_id": "024711f2-2973-4419-87ab-3713380c7bca",
+    "uuid": "024711f2-2973-4419-87ab-3713380c7bca",
+    "final_id": "024711f2-2973-4419-87ab-3713380c7bca"
+}
+[2025-09-23 18:31:17] [INFO] Initializing Salesforce integration
+[2025-09-23 18:31:17] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "Akshay Khandelwal",
+        "phone": "7506754344",
+        "email": "akshay.since1987@gmail.com",
+        "help_type": "support",
+        "message": "Test support",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-23 18:31:17] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "024711f2-2973-4419-87ab-3713380c7bca",
+    "salesforce_result": {
+        "error": null,
+        "success": {
+            "form": "Data not Sent To Salesforce as it is not Enquiry or Dealership Enquiry"
+        }
+    }
+}
+[2025-09-23 18:31:17] [INFO] Starting email notification process {
+    "contact_id": "024711f2-2973-4419-87ab-3713380c7bca",
+    "customer_name": "Akshay Khandelwal",
+    "customer_email": "akshay.since1987@gmail.com",
+    "help_type": "support",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-23 18:31:17] [INFO] Admin email send result {
+    "contact_id": "024711f2-2973-4419-87ab-3713380c7bca",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-23 18:31:17] [INFO] Customer confirmation email result {
+    "contact_id": "024711f2-2973-4419-87ab-3713380c7bca",
+    "customer_email": "akshay.since1987@gmail.com",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-23 18:31:17] [SUCCESS] Contact form processed successfully {
+    "contact_id": "024711f2-2973-4419-87ab-3713380c7bca",
+    "customer_details": {
+        "name": "Akshay Khandelwal",
+        "email": "akshay.since1987@gmail.com",
+        "phone": "7506754344",
+        "help_type": "support"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-23 18:31:17] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "024711f2-2973-4419-87ab-3713380c7bca",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-23 18:31:17] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "024711f2-2973-4419-87ab-3713380c7bca",
+    "customer_email": "akshay.since1987@gmail.com",
+    "error": "Unknown error"
+}
+[2025-09-23 18:31:17] [SUCCESS] Form submitted successfully {
+    "contact_id": "024711f2-2973-4419-87ab-3713380c7bca",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 0.797835111618042,
+    "timestamp": "2025-09-23 18:31:17"
+}
+[2025-09-24 09:56:33] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "ip_address": "127.0.0.1",
+    "post_data_size": 130,
+    "timestamp": "2025-09-24 09:56:33"
+}
+[2025-09-24 09:56:33] [SUCCESS] Required components loaded successfully
+[2025-09-24 09:56:33] [INFO] Configuration loading attempted
+[2025-09-24 09:56:33] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-24 09:56:33] [SUCCESS] Email handler initialized
+[2025-09-24 09:56:33] [INFO] Form data received and sanitized {
+    "full_name": "Akshay Khandelwal",
+    "phone": "7506754344",
+    "email": "akshay.since1987@gmail.com",
+    "help_type": "support",
+    "message": "Test message",
+    "phone_verified_raw": "1",
+    "message_length": 12
+}
+[2025-09-24 09:56:33] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-24 09:56:33] [SUCCESS] Form validation passed successfully
+[2025-09-24 09:56:33] [INFO] DatabaseHandler initialized
+[2025-09-24 09:56:33] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "Akshay Khandelwal",
+        "phone": "7506754344",
+        "email": "akshay.since1987@gmail.com",
+        "help_type": "support",
+        "message": "Test message",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-24 09:56:33] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "60"
+}
+[2025-09-24 09:56:33] [INFO] Contact ID processed {
+    "original_id": "6b6c2873-7ef8-434c-9066-6db5be91cd08",
+    "uuid": "6b6c2873-7ef8-434c-9066-6db5be91cd08",
+    "final_id": "6b6c2873-7ef8-434c-9066-6db5be91cd08"
+}
+[2025-09-24 09:56:33] [INFO] Initializing Salesforce integration
+[2025-09-24 09:56:33] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "Akshay Khandelwal",
+        "phone": "7506754344",
+        "email": "akshay.since1987@gmail.com",
+        "help_type": "support",
+        "message": "Test message",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-24 09:56:33] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "6b6c2873-7ef8-434c-9066-6db5be91cd08",
+    "salesforce_result": {
+        "error": null,
+        "success": {
+            "form": "Data not Sent To Salesforce as it is not Enquiry or Dealership Enquiry"
+        }
+    }
+}
+[2025-09-24 09:56:33] [INFO] Starting email notification process {
+    "contact_id": "6b6c2873-7ef8-434c-9066-6db5be91cd08",
+    "customer_name": "Akshay Khandelwal",
+    "customer_email": "akshay.since1987@gmail.com",
+    "help_type": "support",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-24 09:56:34] [INFO] Admin email send result {
+    "contact_id": "6b6c2873-7ef8-434c-9066-6db5be91cd08",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-24 09:56:34] [INFO] Customer confirmation email result {
+    "contact_id": "6b6c2873-7ef8-434c-9066-6db5be91cd08",
+    "customer_email": "akshay.since1987@gmail.com",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-24 09:56:34] [SUCCESS] Contact form processed successfully {
+    "contact_id": "6b6c2873-7ef8-434c-9066-6db5be91cd08",
+    "customer_details": {
+        "name": "Akshay Khandelwal",
+        "email": "akshay.since1987@gmail.com",
+        "phone": "7506754344",
+        "help_type": "support"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-24 09:56:34] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "6b6c2873-7ef8-434c-9066-6db5be91cd08",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-24 09:56:34] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "6b6c2873-7ef8-434c-9066-6db5be91cd08",
+    "customer_email": "akshay.since1987@gmail.com",
+    "error": "Unknown error"
+}
+[2025-09-24 09:56:34] [SUCCESS] Form submitted successfully {
+    "contact_id": "6b6c2873-7ef8-434c-9066-6db5be91cd08",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 0.677515983581543,
+    "timestamp": "2025-09-24 09:56:34"
+}
+[2025-09-24 10:55:13] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "ip_address": "111.125.219.96",
+    "post_data_size": 135,
+    "timestamp": "2025-09-24 10:55:13"
+}
+[2025-09-24 10:55:13] [SUCCESS] Required components loaded successfully
+[2025-09-24 10:55:13] [INFO] Configuration loading attempted
+[2025-09-24 10:55:13] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 3
+}
+[2025-09-24 10:55:13] [SUCCESS] Email handler initialized
+[2025-09-24 10:55:13] [INFO] Form data received and sanitized {
+    "full_name": "dealer test",
+    "phone": "8879908086",
+    "email": "namrata.vallakati@crmlanding.in",
+    "help_type": "dealership",
+    "message": "test dealership",
+    "phone_verified_raw": "1",
+    "message_length": 15
+}
+[2025-09-24 10:55:13] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-24 10:55:13] [SUCCESS] Form validation passed successfully
+[2025-09-24 10:58:09] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "ip_address": "111.125.219.96",
+    "post_data_size": 128,
+    "timestamp": "2025-09-24 10:58:09"
+}
+[2025-09-24 10:58:09] [SUCCESS] Required components loaded successfully
+[2025-09-24 10:58:09] [INFO] Configuration loading attempted
+[2025-09-24 10:58:09] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 3
+}
+[2025-09-24 10:58:09] [SUCCESS] Email handler initialized
+[2025-09-24 10:58:09] [INFO] Form data received and sanitized {
+    "full_name": "dealership test",
+    "phone": "8879908086",
+    "email": "namrata.vallakati@crmlanding.in",
+    "help_type": "dealership",
+    "message": "test",
+    "phone_verified_raw": "1",
+    "message_length": 4
+}
+[2025-09-24 10:58:09] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-24 10:58:09] [SUCCESS] Form validation passed successfully
+[2025-09-24 12:21:39] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0",
+    "ip_address": "103.159.183.58",
+    "post_data_size": 128,
+    "timestamp": "2025-09-24 12:21:39"
+}
+[2025-09-24 12:21:39] [SUCCESS] Required components loaded successfully
+[2025-09-24 12:21:39] [INFO] Configuration loading attempted
+[2025-09-24 12:21:39] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-24 12:21:39] [SUCCESS] Email handler initialized
+[2025-09-24 12:21:39] [INFO] Form data received and sanitized {
+    "full_name": "Shikhar Contact",
+    "phone": "8844221100",
+    "email": "harsh.natani@crmlanding.in",
+    "help_type": "enquiry",
+    "message": "Test BNHduje",
+    "phone_verified_raw": "1",
+    "message_length": 12
+}
+[2025-09-24 12:21:39] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-24 12:21:39] [SUCCESS] Form validation passed successfully
+[2025-09-24 12:21:39] [INFO] DatabaseHandler initialized
+[2025-09-24 12:21:39] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "Shikhar Contact",
+        "phone": "8844221100",
+        "email": "harsh.natani@crmlanding.in",
+        "help_type": "enquiry",
+        "message": "Test BNHduje",
+        "phone_verified": 1,
+        "ip_address": "103.159.183.58",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0"
+    }
+}
+[2025-09-24 12:21:39] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "61"
+}
+[2025-09-24 12:21:39] [INFO] Contact ID processed {
+    "original_id": "d60806ed-583c-4bde-80cc-6dc974cdd02e",
+    "uuid": "d60806ed-583c-4bde-80cc-6dc974cdd02e",
+    "final_id": "d60806ed-583c-4bde-80cc-6dc974cdd02e"
+}
+[2025-09-24 12:21:39] [INFO] Initializing Salesforce integration
+[2025-09-24 12:21:39] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "Shikhar Contact",
+        "phone": "8844221100",
+        "email": "harsh.natani@crmlanding.in",
+        "help_type": "enquiry",
+        "message": "Test BNHduje",
+        "phone_verified": 1,
+        "ip_address": "103.159.183.58",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0"
+    }
+}
+[2025-09-24 12:21:40] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "d60806ed-583c-4bde-80cc-6dc974cdd02e",
+    "salesforce_result": {
+        "success": true,
+        "http_code": 200,
+        "response_body": "\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n<html>\n<head>\n<meta HTTP-EQUIV=\"PRAGMA\" CONTENT=\"NO-CACHE\">\n<meta http-equiv=\"Refresh\" content=\"0; URL=http://182.48.201.133/contact-us\">\n</head>\n<script>function redirectOnLoad() {if (this.SfdcApp && this.SfdcApp.projectOneNavigator) { SfdcApp.projectOneNavigator.handleRedirect('http://182.48.201.133/contact-us'); }  else if (window.location.replace){ window.location.replace('http://182.48.201.133/contact-us');} else {window.location.href ='http://182.48.201.133/contact-us';} } redirectOnLoad();</script></html>\n",
+        "response_time_ms": 1019.96,
+        "submitted_data": {
+            "oid": "00DHE000001cCu1",
+            "recordType": "012HE000001LIpOYAW",
+            "status": "Lead Created",
+            "lead_source": "Website",
+            "encoding": "UTF-8",
+            "first_name": "Shikhar",
+            "last_name": "Contact",
+            "email": "harsh.natani@crmlanding.in",
+            "phone": "8844221100",
+            "00NHE000000mQbz": "8844221100",
+            "00NHE000000mQa3": "Test BNHduje",
+            "00NHE000000mQXR": "Enquiry",
+            "retURL": "http://182.48.201.133/contact-us"
+        }
+    }
+}
+[2025-09-24 12:21:40] [INFO] Starting email notification process {
+    "contact_id": "d60806ed-583c-4bde-80cc-6dc974cdd02e",
+    "customer_name": "Shikhar Contact",
+    "customer_email": "harsh.natani@crmlanding.in",
+    "help_type": "enquiry",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-24 12:21:41] [INFO] Admin email send result {
+    "contact_id": "d60806ed-583c-4bde-80cc-6dc974cdd02e",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-24 12:21:41] [INFO] Customer confirmation email result {
+    "contact_id": "d60806ed-583c-4bde-80cc-6dc974cdd02e",
+    "customer_email": "harsh.natani@crmlanding.in",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-24 12:21:41] [SUCCESS] Contact form processed successfully {
+    "contact_id": "d60806ed-583c-4bde-80cc-6dc974cdd02e",
+    "customer_details": {
+        "name": "Shikhar Contact",
+        "email": "harsh.natani@crmlanding.in",
+        "phone": "8844221100",
+        "help_type": "enquiry"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-24 12:21:41] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "d60806ed-583c-4bde-80cc-6dc974cdd02e",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-24 12:21:41] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "d60806ed-583c-4bde-80cc-6dc974cdd02e",
+    "customer_email": "harsh.natani@crmlanding.in",
+    "error": "Unknown error"
+}
+[2025-09-24 12:21:41] [SUCCESS] Form submitted successfully {
+    "contact_id": "d60806ed-583c-4bde-80cc-6dc974cdd02e",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 1.969285011291504,
+    "timestamp": "2025-09-24 12:21:41"
+}
+[2025-09-24 15:15:46] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "ip_address": "111.125.219.96",
+    "post_data_size": 123,
+    "timestamp": "2025-09-24 15:15:46"
+}
+[2025-09-24 15:15:46] [SUCCESS] Required components loaded successfully
+[2025-09-24 15:15:46] [INFO] Configuration loading attempted
+[2025-09-24 15:15:46] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-24 15:15:46] [SUCCESS] Email handler initialized
+[2025-09-24 15:15:46] [INFO] Form data received and sanitized {
+    "full_name": "dealer nam",
+    "phone": "8879908086",
+    "email": "namrata.vallakati@crmlanding.in",
+    "help_type": "dealership",
+    "message": "test",
+    "phone_verified_raw": "1",
+    "message_length": 4
+}
+[2025-09-24 15:15:46] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-24 15:15:46] [SUCCESS] Form validation passed successfully
+[2025-09-24 15:15:46] [INFO] DatabaseHandler initialized
+[2025-09-24 15:15:46] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "dealer nam",
+        "phone": "8879908086",
+        "email": "namrata.vallakati@crmlanding.in",
+        "help_type": "dealership",
+        "message": "test",
+        "phone_verified": 1,
+        "ip_address": "111.125.219.96",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-24 15:15:46] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "62"
+}
+[2025-09-24 15:15:46] [INFO] Contact ID processed {
+    "original_id": "4d5234be-3502-40ac-ae8c-b53d6480442b",
+    "uuid": "4d5234be-3502-40ac-ae8c-b53d6480442b",
+    "final_id": "4d5234be-3502-40ac-ae8c-b53d6480442b"
+}
+[2025-09-24 15:15:46] [INFO] Initializing Salesforce integration
+[2025-09-24 15:15:46] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "dealer nam",
+        "phone": "8879908086",
+        "email": "namrata.vallakati@crmlanding.in",
+        "help_type": "dealership",
+        "message": "test",
+        "phone_verified": 1,
+        "ip_address": "111.125.219.96",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-24 15:15:47] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "4d5234be-3502-40ac-ae8c-b53d6480442b",
+    "salesforce_result": {
+        "success": true,
+        "http_code": 200,
+        "response_body": "\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n<html>\n<head>\n<meta HTTP-EQUIV=\"PRAGMA\" CONTENT=\"NO-CACHE\">\n<meta http-equiv=\"Refresh\" content=\"0; URL=http://182.48.201.133/contact-us\">\n</head>\n<script>function redirectOnLoad() {if (this.SfdcApp && this.SfdcApp.projectOneNavigator) { SfdcApp.projectOneNavigator.handleRedirect('http://182.48.201.133/contact-us'); }  else if (window.location.replace){ window.location.replace('http://182.48.201.133/contact-us');} else {window.location.href ='http://182.48.201.133/contact-us';} } redirectOnLoad();</script></html>\n",
+        "response_time_ms": 1689.16,
+        "submitted_data": {
+            "oid": "00DHE000001cCu1",
+            "recordType": "012HE000001LIpNYAW",
+            "status": "Lead Created",
+            "lead_source": "Website",
+            "encoding": "UTF-8",
+            "first_name": "dealer",
+            "last_name": "nam",
+            "email": "namrata.vallakati@crmlanding.in",
+            "phone": "8879908086",
+            "00NHE000000mQbz": "8879908086",
+            "00NHE000000mQac": "24-09-2025",
+            "00NHE000000mQa3": "test",
+            "00NHE000000mQXR": "Enquiry",
+            "retURL": "http://182.48.201.133/contact-us"
+        }
+    }
+}
+[2025-09-24 15:15:47] [INFO] Starting email notification process {
+    "contact_id": "4d5234be-3502-40ac-ae8c-b53d6480442b",
+    "customer_name": "dealer nam",
+    "customer_email": "namrata.vallakati@crmlanding.in",
+    "help_type": "dealership",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-24 15:15:48] [INFO] Admin email send result {
+    "contact_id": "4d5234be-3502-40ac-ae8c-b53d6480442b",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-24 15:15:48] [INFO] Customer confirmation email result {
+    "contact_id": "4d5234be-3502-40ac-ae8c-b53d6480442b",
+    "customer_email": "namrata.vallakati@crmlanding.in",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-24 15:15:48] [SUCCESS] Contact form processed successfully {
+    "contact_id": "4d5234be-3502-40ac-ae8c-b53d6480442b",
+    "customer_details": {
+        "name": "dealer nam",
+        "email": "namrata.vallakati@crmlanding.in",
+        "phone": "8879908086",
+        "help_type": "dealership"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-24 15:15:48] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "4d5234be-3502-40ac-ae8c-b53d6480442b",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-24 15:15:48] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "4d5234be-3502-40ac-ae8c-b53d6480442b",
+    "customer_email": "namrata.vallakati@crmlanding.in",
+    "error": "Unknown error"
+}
+[2025-09-24 15:15:48] [SUCCESS] Form submitted successfully {
+    "contact_id": "4d5234be-3502-40ac-ae8c-b53d6480442b",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 2.5559439659118652,
+    "timestamp": "2025-09-24 15:15:48"
+}
+[2025-09-24 19:52:33] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0",
+    "ip_address": "103.159.183.58",
+    "post_data_size": 135,
+    "timestamp": "2025-09-24 19:52:33"
+}
+[2025-09-24 19:52:33] [SUCCESS] Required components loaded successfully
+[2025-09-24 19:52:33] [INFO] Configuration loading attempted
+[2025-09-24 19:52:33] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-24 19:52:33] [SUCCESS] Email handler initialized
+[2025-09-24 19:52:33] [INFO] Form data received and sanitized {
+    "full_name": "Harsh Natani",
+    "phone": "8855447744",
+    "email": "harsh.natani@crmlanding.in",
+    "help_type": "dealership",
+    "message": "Dealer Ship Testing",
+    "phone_verified_raw": "1",
+    "message_length": 19
+}
+[2025-09-24 19:52:33] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-24 19:52:33] [SUCCESS] Form validation passed successfully
+[2025-09-24 19:52:33] [INFO] DatabaseHandler initialized
+[2025-09-24 19:52:33] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "Harsh Natani",
+        "phone": "8855447744",
+        "email": "harsh.natani@crmlanding.in",
+        "help_type": "dealership",
+        "message": "Dealer Ship Testing",
+        "phone_verified": 1,
+        "ip_address": "103.159.183.58",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0"
+    }
+}
+[2025-09-24 19:52:33] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "63"
+}
+[2025-09-24 19:52:33] [INFO] Contact ID processed {
+    "original_id": "4decc52d-a6b0-48b5-9a8f-4721308925d1",
+    "uuid": "4decc52d-a6b0-48b5-9a8f-4721308925d1",
+    "final_id": "4decc52d-a6b0-48b5-9a8f-4721308925d1"
+}
+[2025-09-24 19:52:33] [INFO] Initializing Salesforce integration
+[2025-09-24 19:52:33] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "Harsh Natani",
+        "phone": "8855447744",
+        "email": "harsh.natani@crmlanding.in",
+        "help_type": "dealership",
+        "message": "Dealer Ship Testing",
+        "phone_verified": 1,
+        "ip_address": "103.159.183.58",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0"
+    }
+}
+[2025-09-24 19:52:35] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "4decc52d-a6b0-48b5-9a8f-4721308925d1",
+    "salesforce_result": {
+        "success": true,
+        "http_code": 200,
+        "response_body": "\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n<html>\n<head>\n<meta HTTP-EQUIV=\"PRAGMA\" CONTENT=\"NO-CACHE\">\n<meta http-equiv=\"Refresh\" content=\"0; URL=http://182.48.201.133/contact-us\">\n</head>\n<script>function redirectOnLoad() {if (this.SfdcApp && this.SfdcApp.projectOneNavigator) { SfdcApp.projectOneNavigator.handleRedirect('http://182.48.201.133/contact-us'); }  else if (window.location.replace){ window.location.replace('http://182.48.201.133/contact-us');} else {window.location.href ='http://182.48.201.133/contact-us';} } redirectOnLoad();</script></html>\n",
+        "response_time_ms": 1675.25,
+        "submitted_data": {
+            "oid": "00DHE000001cCu1",
+            "recordType": "012HE000001LIpNYAW",
+            "status": "Lead Created",
+            "lead_source": "Website",
+            "encoding": "UTF-8",
+            "first_name": "Harsh",
+            "last_name": "Natani",
+            "email": "harsh.natani@crmlanding.in",
+            "phone": "8855447744",
+            "00NHE000000mQbz": "8855447744",
+            "00NHE000000mQac": "24-09-2025",
+            "00NHE000000mQa3": "Dealer Ship Testing",
+            "00NHE000000mQXR": "Enquiry",
+            "retURL": "http://182.48.201.133/contact-us"
+        }
+    }
+}
+[2025-09-24 19:52:35] [INFO] Starting email notification process {
+    "contact_id": "4decc52d-a6b0-48b5-9a8f-4721308925d1",
+    "customer_name": "Harsh Natani",
+    "customer_email": "harsh.natani@crmlanding.in",
+    "help_type": "dealership",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-24 19:52:35] [INFO] Admin email send result {
+    "contact_id": "4decc52d-a6b0-48b5-9a8f-4721308925d1",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-24 19:52:35] [INFO] Customer confirmation email result {
+    "contact_id": "4decc52d-a6b0-48b5-9a8f-4721308925d1",
+    "customer_email": "harsh.natani@crmlanding.in",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-24 19:52:35] [SUCCESS] Contact form processed successfully {
+    "contact_id": "4decc52d-a6b0-48b5-9a8f-4721308925d1",
+    "customer_details": {
+        "name": "Harsh Natani",
+        "email": "harsh.natani@crmlanding.in",
+        "phone": "8855447744",
+        "help_type": "dealership"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-24 19:52:35] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "4decc52d-a6b0-48b5-9a8f-4721308925d1",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-24 19:52:35] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "4decc52d-a6b0-48b5-9a8f-4721308925d1",
+    "customer_email": "harsh.natani@crmlanding.in",
+    "error": "Unknown error"
+}
+[2025-09-24 19:52:35] [SUCCESS] Form submitted successfully {
+    "contact_id": "4decc52d-a6b0-48b5-9a8f-4721308925d1",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 2.4250590801239014,
+    "timestamp": "2025-09-24 19:52:35"
+}
+[2025-09-25 10:57:58] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "ip_address": "111.125.219.96",
+    "post_data_size": 124,
+    "timestamp": "2025-09-25 10:57:58"
+}
+[2025-09-25 10:57:58] [SUCCESS] Required components loaded successfully
+[2025-09-25 10:57:58] [INFO] Configuration loading attempted
+[2025-09-25 10:57:58] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-25 10:57:58] [SUCCESS] Email handler initialized
+[2025-09-25 10:57:58] [INFO] Form data received and sanitized {
+    "full_name": "dealer test",
+    "phone": "8879908086",
+    "email": "namrata.vallakati@crmlanding.in",
+    "help_type": "dealership",
+    "message": "test",
+    "phone_verified_raw": "1",
+    "message_length": 4
+}
+[2025-09-25 10:57:58] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-25 10:57:58] [SUCCESS] Form validation passed successfully
+[2025-09-25 10:57:58] [INFO] DatabaseHandler initialized
+[2025-09-25 10:57:58] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "dealer test",
+        "phone": "8879908086",
+        "email": "namrata.vallakati@crmlanding.in",
+        "help_type": "dealership",
+        "message": "test",
+        "phone_verified": 1,
+        "ip_address": "111.125.219.96",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-25 10:57:58] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "64"
+}
+[2025-09-25 10:57:58] [INFO] Contact ID processed {
+    "original_id": "10ea6568-5a54-447e-811b-3bafc5a88d0d",
+    "uuid": "10ea6568-5a54-447e-811b-3bafc5a88d0d",
+    "final_id": "10ea6568-5a54-447e-811b-3bafc5a88d0d"
+}
+[2025-09-25 10:57:58] [INFO] Initializing Salesforce integration
+[2025-09-25 10:57:58] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "dealer test",
+        "phone": "8879908086",
+        "email": "namrata.vallakati@crmlanding.in",
+        "help_type": "dealership",
+        "message": "test",
+        "phone_verified": 1,
+        "ip_address": "111.125.219.96",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-25 10:57:59] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "10ea6568-5a54-447e-811b-3bafc5a88d0d",
+    "salesforce_result": {
+        "success": true,
+        "http_code": 200,
+        "response_body": "\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n<html>\n<head>\n<meta HTTP-EQUIV=\"PRAGMA\" CONTENT=\"NO-CACHE\">\n<meta http-equiv=\"Refresh\" content=\"0; URL=http://182.48.201.133/contact-us\">\n</head>\n<script>function redirectOnLoad() {if (this.SfdcApp && this.SfdcApp.projectOneNavigator) { SfdcApp.projectOneNavigator.handleRedirect('http://182.48.201.133/contact-us'); }  else if (window.location.replace){ window.location.replace('http://182.48.201.133/contact-us');} else {window.location.href ='http://182.48.201.133/contact-us';} } redirectOnLoad();</script></html>\n",
+        "response_time_ms": 1064.49,
+        "submitted_data": {
+            "oid": "00DHE000001cCu1",
+            "recordType": "012HE000001LIpN",
+            "status": "Lead Created",
+            "lead_source": "Website",
+            "encoding": "UTF-8",
+            "first_name": "dealer",
+            "last_name": "test",
+            "email": "namrata.vallakati@crmlanding.in",
+            "phone": "8879908086",
+            "00NHE000000mQbz": "8879908086",
+            "00NHE000000mQac": "25-09-2025",
+            "00NHE000000mQa3": "test",
+            "00NHE000000mQXR": "Enquiry",
+            "retURL": "http://182.48.201.133/contact-us"
+        }
+    }
+}
+[2025-09-25 10:57:59] [INFO] Starting email notification process {
+    "contact_id": "10ea6568-5a54-447e-811b-3bafc5a88d0d",
+    "customer_name": "dealer test",
+    "customer_email": "namrata.vallakati@crmlanding.in",
+    "help_type": "dealership",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-25 10:57:59] [INFO] Admin email send result {
+    "contact_id": "10ea6568-5a54-447e-811b-3bafc5a88d0d",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-25 10:57:59] [INFO] Customer confirmation email result {
+    "contact_id": "10ea6568-5a54-447e-811b-3bafc5a88d0d",
+    "customer_email": "namrata.vallakati@crmlanding.in",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-25 10:57:59] [SUCCESS] Contact form processed successfully {
+    "contact_id": "10ea6568-5a54-447e-811b-3bafc5a88d0d",
+    "customer_details": {
+        "name": "dealer test",
+        "email": "namrata.vallakati@crmlanding.in",
+        "phone": "8879908086",
+        "help_type": "dealership"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-25 10:57:59] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "10ea6568-5a54-447e-811b-3bafc5a88d0d",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-25 10:57:59] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "10ea6568-5a54-447e-811b-3bafc5a88d0d",
+    "customer_email": "namrata.vallakati@crmlanding.in",
+    "error": "Unknown error"
+}
+[2025-09-25 10:57:59] [SUCCESS] Form submitted successfully {
+    "contact_id": "10ea6568-5a54-447e-811b-3bafc5a88d0d",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 1.8374080657958984,
+    "timestamp": "2025-09-25 10:57:59"
+}
+[2025-09-25 11:44:09] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "ip_address": "106.219.202.66",
+    "post_data_size": 112,
+    "timestamp": "2025-09-25 11:44:09"
+}
+[2025-09-25 11:44:09] [SUCCESS] Required components loaded successfully
+[2025-09-25 11:44:09] [INFO] Configuration loading attempted
+[2025-09-25 11:44:09] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-25 11:44:09] [SUCCESS] Email handler initialized
+[2025-09-25 11:44:09] [INFO] Form data received and sanitized {
+    "full_name": "Vishal Mishra",
+    "phone": "7877837773",
+    "email": "testing@gmail.com",
+    "help_type": "dealership",
+    "message": "test",
+    "phone_verified_raw": "1",
+    "message_length": 4
+}
+[2025-09-25 11:44:09] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-25 11:44:09] [SUCCESS] Form validation passed successfully
+[2025-09-25 11:44:09] [INFO] DatabaseHandler initialized
+[2025-09-25 11:44:09] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "Vishal Mishra",
+        "phone": "7877837773",
+        "email": "testing@gmail.com",
+        "help_type": "dealership",
+        "message": "test",
+        "phone_verified": 1,
+        "ip_address": "106.219.202.66",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-25 11:44:09] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "65"
+}
+[2025-09-25 11:44:09] [INFO] Contact ID processed {
+    "original_id": "9faf920d-cefe-419d-97a4-43b3af4103ae",
+    "uuid": "9faf920d-cefe-419d-97a4-43b3af4103ae",
+    "final_id": "9faf920d-cefe-419d-97a4-43b3af4103ae"
+}
+[2025-09-25 11:44:09] [INFO] Initializing Salesforce integration
+[2025-09-25 11:44:09] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "Vishal Mishra",
+        "phone": "7877837773",
+        "email": "testing@gmail.com",
+        "help_type": "dealership",
+        "message": "test",
+        "phone_verified": 1,
+        "ip_address": "106.219.202.66",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-25 11:44:10] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "9faf920d-cefe-419d-97a4-43b3af4103ae",
+    "salesforce_result": {
+        "success": true,
+        "http_code": 200,
+        "response_body": "\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n<html>\n<head>\n<meta HTTP-EQUIV=\"PRAGMA\" CONTENT=\"NO-CACHE\">\n<meta http-equiv=\"Refresh\" content=\"0; URL=http://182.48.201.133/contact-us\">\n</head>\n<script>function redirectOnLoad() {if (this.SfdcApp && this.SfdcApp.projectOneNavigator) { SfdcApp.projectOneNavigator.handleRedirect('http://182.48.201.133/contact-us'); }  else if (window.location.replace){ window.location.replace('http://182.48.201.133/contact-us');} else {window.location.href ='http://182.48.201.133/contact-us';} } redirectOnLoad();</script></html>\n",
+        "response_time_ms": 954.43,
+        "submitted_data": {
+            "oid": "00DHE000001cCu1",
+            "recordType": "012HE000001LIpN",
+            "status": "Lead Created",
+            "lead_source": "Website",
+            "encoding": "UTF-8",
+            "first_name": "Vishal",
+            "last_name": "Mishra",
+            "email": "testing@gmail.com",
+            "phone": "7877837773",
+            "00NHE000000mQbz": "7877837773",
+            "00NHE000000mQac": "25-09-2025",
+            "00NHE000000qqAb": "25-09-2025",
+            "00NHE000000mQa3": "test",
+            "00NHE000000mQXR": "Enquiry",
+            "retURL": "http://182.48.201.133/contact-us"
+        }
+    }
+}
+[2025-09-25 11:44:10] [INFO] Starting email notification process {
+    "contact_id": "9faf920d-cefe-419d-97a4-43b3af4103ae",
+    "customer_name": "Vishal Mishra",
+    "customer_email": "testing@gmail.com",
+    "help_type": "dealership",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-25 11:44:10] [INFO] Admin email send result {
+    "contact_id": "9faf920d-cefe-419d-97a4-43b3af4103ae",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-25 11:44:10] [INFO] Customer confirmation email result {
+    "contact_id": "9faf920d-cefe-419d-97a4-43b3af4103ae",
+    "customer_email": "testing@gmail.com",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-25 11:44:10] [SUCCESS] Contact form processed successfully {
+    "contact_id": "9faf920d-cefe-419d-97a4-43b3af4103ae",
+    "customer_details": {
+        "name": "Vishal Mishra",
+        "email": "testing@gmail.com",
+        "phone": "7877837773",
+        "help_type": "dealership"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-25 11:44:10] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "9faf920d-cefe-419d-97a4-43b3af4103ae",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-25 11:44:10] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "9faf920d-cefe-419d-97a4-43b3af4103ae",
+    "customer_email": "testing@gmail.com",
+    "error": "Unknown error"
+}
+[2025-09-25 11:44:10] [SUCCESS] Form submitted successfully {
+    "contact_id": "9faf920d-cefe-419d-97a4-43b3af4103ae",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 1.8297159671783447,
+    "timestamp": "2025-09-25 11:44:10"
+}
+[2025-09-29 15:48:05] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "ip_address": "127.0.0.1",
+    "post_data_size": 97,
+    "timestamp": "2025-09-29 15:48:05"
+}
+[2025-09-29 15:48:05] [SUCCESS] Required components loaded successfully
+[2025-09-29 15:48:05] [INFO] Configuration loading attempted
+[2025-09-29 15:48:05] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-29 15:48:05] [SUCCESS] Email handler initialized
+[2025-09-29 15:48:05] [INFO] Form data received and sanitized {
+    "full_name": "test",
+    "phone": "7506754344",
+    "email": "test@gmail.com",
+    "help_type": "enquiry",
+    "message": "test",
+    "phone_verified_raw": "1",
+    "message_length": 4
+}
+[2025-09-29 15:48:05] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-29 15:48:05] [SUCCESS] Form validation passed successfully
+[2025-09-29 15:48:05] [INFO] DatabaseHandler initialized
+[2025-09-29 15:48:05] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "test",
+        "phone": "7506754344",
+        "email": "test@gmail.com",
+        "help_type": "enquiry",
+        "message": "test",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-29 15:48:05] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "66"
+}
+[2025-09-29 15:48:05] [INFO] Contact ID processed {
+    "original_id": "2262c27f-192e-481f-915b-53e45c85405e",
+    "uuid": "2262c27f-192e-481f-915b-53e45c85405e",
+    "final_id": "2262c27f-192e-481f-915b-53e45c85405e"
+}
+[2025-09-29 15:48:05] [INFO] Initializing Salesforce integration
+[2025-09-29 15:48:05] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "test",
+        "phone": "7506754344",
+        "email": "test@gmail.com",
+        "help_type": "enquiry",
+        "message": "test",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-29 15:48:06] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "2262c27f-192e-481f-915b-53e45c85405e",
+    "salesforce_result": {
+        "success": true,
+        "http_code": 200,
+        "response_body": "\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n<html>\n<head>\n<meta HTTP-EQUIV=\"PRAGMA\" CONTENT=\"NO-CACHE\">\n<meta http-equiv=\"Refresh\" content=\"0; URL=http://dev.kineticev.in/contact-us\">\n</head>\n<script>function redirectOnLoad() {if (this.SfdcApp && this.SfdcApp.projectOneNavigator) { SfdcApp.projectOneNavigator.handleRedirect('http://dev.kineticev.in/contact-us'); }  else if (window.location.replace){ window.location.replace('http://dev.kineticev.in/contact-us');} else {window.location.href ='http://dev.kineticev.in/contact-us';} } redirectOnLoad();</script></html>\n",
+        "response_time_ms": 1150.79,
+        "submitted_data": {
+            "oid": "00DHE000001cCu1",
+            "recordType": "012HE000001LIpOYAW",
+            "status": "Lead Created",
+            "lead_source": "Website",
+            "encoding": "UTF-8",
+            "first_name": "test",
+            "email": "test@gmail.com",
+            "phone": "7506754344",
+            "00NHE000000mQbz": "7506754344",
+            "00NHE000000mQa3": "test",
+            "00NHE000000mQXR": "Enquiry",
+            "retURL": "http://dev.kineticev.in/contact-us"
+        }
+    }
+}
+[2025-09-29 15:48:06] [INFO] Starting email notification process {
+    "contact_id": "2262c27f-192e-481f-915b-53e45c85405e",
+    "customer_name": "test",
+    "customer_email": "test@gmail.com",
+    "help_type": "enquiry",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-29 15:48:07] [INFO] Admin email send result {
+    "contact_id": "2262c27f-192e-481f-915b-53e45c85405e",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-29 15:48:07] [INFO] Customer confirmation email result {
+    "contact_id": "2262c27f-192e-481f-915b-53e45c85405e",
+    "customer_email": "test@gmail.com",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-29 15:48:07] [SUCCESS] Contact form processed successfully {
+    "contact_id": "2262c27f-192e-481f-915b-53e45c85405e",
+    "customer_details": {
+        "name": "test",
+        "email": "test@gmail.com",
+        "phone": "7506754344",
+        "help_type": "enquiry"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-29 15:48:07] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "2262c27f-192e-481f-915b-53e45c85405e",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-29 15:48:07] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "2262c27f-192e-481f-915b-53e45c85405e",
+    "customer_email": "test@gmail.com",
+    "error": "Unknown error"
+}
+[2025-09-29 15:48:07] [SUCCESS] Form submitted successfully {
+    "contact_id": "2262c27f-192e-481f-915b-53e45c85405e",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 1.96616792678833,
+    "timestamp": "2025-09-29 15:48:07"
+}
+[2025-09-29 15:48:11] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "ip_address": "127.0.0.1",
+    "post_data_size": 97,
+    "timestamp": "2025-09-29 15:48:11"
+}
+[2025-09-29 15:48:11] [SUCCESS] Required components loaded successfully
+[2025-09-29 15:48:11] [INFO] Configuration loading attempted
+[2025-09-29 15:48:11] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-29 15:48:12] [SUCCESS] Email handler initialized
+[2025-09-29 15:48:12] [INFO] Form data received and sanitized {
+    "full_name": "test",
+    "phone": "7506754344",
+    "email": "test@gmail.com",
+    "help_type": "enquiry",
+    "message": "test",
+    "phone_verified_raw": "1",
+    "message_length": 4
+}
+[2025-09-29 15:48:12] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-29 15:48:12] [SUCCESS] Form validation passed successfully
+[2025-09-29 15:48:12] [INFO] DatabaseHandler initialized
+[2025-09-29 15:48:12] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "test",
+        "phone": "7506754344",
+        "email": "test@gmail.com",
+        "help_type": "enquiry",
+        "message": "test",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-29 15:48:12] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "67"
+}
+[2025-09-29 15:48:12] [INFO] Contact ID processed {
+    "original_id": "f0f6c2ce-80d9-43b5-85a9-d303d252f4a1",
+    "uuid": "f0f6c2ce-80d9-43b5-85a9-d303d252f4a1",
+    "final_id": "f0f6c2ce-80d9-43b5-85a9-d303d252f4a1"
+}
+[2025-09-29 15:48:12] [INFO] Initializing Salesforce integration
+[2025-09-29 15:48:12] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "test",
+        "phone": "7506754344",
+        "email": "test@gmail.com",
+        "help_type": "enquiry",
+        "message": "test",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-29 15:48:13] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "f0f6c2ce-80d9-43b5-85a9-d303d252f4a1",
+    "salesforce_result": {
+        "success": true,
+        "http_code": 200,
+        "response_body": "\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n<html>\n<head>\n<meta HTTP-EQUIV=\"PRAGMA\" CONTENT=\"NO-CACHE\">\n<meta http-equiv=\"Refresh\" content=\"0; URL=http://dev.kineticev.in/contact-us\">\n</head>\n<script>function redirectOnLoad() {if (this.SfdcApp && this.SfdcApp.projectOneNavigator) { SfdcApp.projectOneNavigator.handleRedirect('http://dev.kineticev.in/contact-us'); }  else if (window.location.replace){ window.location.replace('http://dev.kineticev.in/contact-us');} else {window.location.href ='http://dev.kineticev.in/contact-us';} } redirectOnLoad();</script></html>\n",
+        "response_time_ms": 972.28,
+        "submitted_data": {
+            "oid": "00DHE000001cCu1",
+            "recordType": "012HE000001LIpOYAW",
+            "status": "Lead Created",
+            "lead_source": "Website",
+            "encoding": "UTF-8",
+            "first_name": "test",
+            "email": "test@gmail.com",
+            "phone": "7506754344",
+            "00NHE000000mQbz": "7506754344",
+            "00NHE000000mQa3": "test",
+            "00NHE000000mQXR": "Enquiry",
+            "retURL": "http://dev.kineticev.in/contact-us"
+        }
+    }
+}
+[2025-09-29 15:48:13] [INFO] Starting email notification process {
+    "contact_id": "f0f6c2ce-80d9-43b5-85a9-d303d252f4a1",
+    "customer_name": "test",
+    "customer_email": "test@gmail.com",
+    "help_type": "enquiry",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-29 15:48:13] [INFO] Admin email send result {
+    "contact_id": "f0f6c2ce-80d9-43b5-85a9-d303d252f4a1",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-29 15:48:13] [INFO] Customer confirmation email result {
+    "contact_id": "f0f6c2ce-80d9-43b5-85a9-d303d252f4a1",
+    "customer_email": "test@gmail.com",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-29 15:48:13] [SUCCESS] Contact form processed successfully {
+    "contact_id": "f0f6c2ce-80d9-43b5-85a9-d303d252f4a1",
+    "customer_details": {
+        "name": "test",
+        "email": "test@gmail.com",
+        "phone": "7506754344",
+        "help_type": "enquiry"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-29 15:48:13] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "f0f6c2ce-80d9-43b5-85a9-d303d252f4a1",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-29 15:48:13] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "f0f6c2ce-80d9-43b5-85a9-d303d252f4a1",
+    "customer_email": "test@gmail.com",
+    "error": "Unknown error"
+}
+[2025-09-29 15:48:13] [SUCCESS] Form submitted successfully {
+    "contact_id": "f0f6c2ce-80d9-43b5-85a9-d303d252f4a1",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 1.756885051727295,
+    "timestamp": "2025-09-29 15:48:13"
+}
+[2025-09-29 15:49:05] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "ip_address": "127.0.0.1",
+    "post_data_size": 97,
+    "timestamp": "2025-09-29 15:49:05"
+}
+[2025-09-29 15:49:05] [SUCCESS] Required components loaded successfully
+[2025-09-29 15:49:05] [INFO] Configuration loading attempted
+[2025-09-29 15:49:05] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-09-29 15:49:05] [SUCCESS] Email handler initialized
+[2025-09-29 15:49:05] [INFO] Form data received and sanitized {
+    "full_name": "test",
+    "phone": "7506754344",
+    "email": "test@gmail.com",
+    "help_type": "enquiry",
+    "message": "test",
+    "phone_verified_raw": "1",
+    "message_length": 4
+}
+[2025-09-29 15:49:05] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-09-29 15:49:05] [SUCCESS] Form validation passed successfully
+[2025-09-29 15:49:05] [INFO] DatabaseHandler initialized
+[2025-09-29 15:49:05] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "test",
+        "phone": "7506754344",
+        "email": "test@gmail.com",
+        "help_type": "enquiry",
+        "message": "test",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-29 15:49:05] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "68"
+}
+[2025-09-29 15:49:05] [INFO] Contact ID processed {
+    "original_id": "f23f1253-c26a-476d-8a75-f0410b02d2fa",
+    "uuid": "f23f1253-c26a-476d-8a75-f0410b02d2fa",
+    "final_id": "f23f1253-c26a-476d-8a75-f0410b02d2fa"
+}
+[2025-09-29 15:49:05] [INFO] Initializing Salesforce integration
+[2025-09-29 15:49:05] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "test",
+        "phone": "7506754344",
+        "email": "test@gmail.com",
+        "help_type": "enquiry",
+        "message": "test",
+        "phone_verified": 1,
+        "ip_address": "127.0.0.1",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-09-29 15:49:06] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "f23f1253-c26a-476d-8a75-f0410b02d2fa",
+    "salesforce_result": {
+        "success": true,
+        "http_code": 200,
+        "response_body": "\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n<html>\n<head>\n<meta HTTP-EQUIV=\"PRAGMA\" CONTENT=\"NO-CACHE\">\n<meta http-equiv=\"Refresh\" content=\"0; URL=http://dev.kineticev.in/contact-us\">\n</head>\n<script>function redirectOnLoad() {if (this.SfdcApp && this.SfdcApp.projectOneNavigator) { SfdcApp.projectOneNavigator.handleRedirect('http://dev.kineticev.in/contact-us'); }  else if (window.location.replace){ window.location.replace('http://dev.kineticev.in/contact-us');} else {window.location.href ='http://dev.kineticev.in/contact-us';} } redirectOnLoad();</script></html>\n",
+        "response_time_ms": 995.34,
+        "submitted_data": {
+            "oid": "00DHE000001cCu1",
+            "recordType": "012HE000001LIpOYAW",
+            "status": "Lead Created",
+            "lead_source": "Website",
+            "encoding": "UTF-8",
+            "first_name": "test",
+            "email": "test@gmail.com",
+            "phone": "7506754344",
+            "00NHE000000mQbz": "7506754344",
+            "00NHE000000mQa3": "test",
+            "00NHE000000mQXR": "Enquiry",
+            "retURL": "http://dev.kineticev.in/contact-us"
+        }
+    }
+}
+[2025-09-29 15:49:06] [INFO] Starting email notification process {
+    "contact_id": "f23f1253-c26a-476d-8a75-f0410b02d2fa",
+    "customer_name": "test",
+    "customer_email": "test@gmail.com",
+    "help_type": "enquiry",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-09-29 15:49:06] [INFO] Admin email send result {
+    "contact_id": "f23f1253-c26a-476d-8a75-f0410b02d2fa",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-09-29 15:49:06] [INFO] Customer confirmation email result {
+    "contact_id": "f23f1253-c26a-476d-8a75-f0410b02d2fa",
+    "customer_email": "test@gmail.com",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-09-29 15:49:06] [SUCCESS] Contact form processed successfully {
+    "contact_id": "f23f1253-c26a-476d-8a75-f0410b02d2fa",
+    "customer_details": {
+        "name": "test",
+        "email": "test@gmail.com",
+        "phone": "7506754344",
+        "help_type": "enquiry"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-09-29 15:49:06] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "f23f1253-c26a-476d-8a75-f0410b02d2fa",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-09-29 15:49:06] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "f23f1253-c26a-476d-8a75-f0410b02d2fa",
+    "customer_email": "test@gmail.com",
+    "error": "Unknown error"
+}
+[2025-09-29 15:49:06] [SUCCESS] Form submitted successfully {
+    "contact_id": "f23f1253-c26a-476d-8a75-f0410b02d2fa",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 1.7734479904174805,
+    "timestamp": "2025-09-29 15:49:06"
+}
+[2025-10-06 05:43:25] [INFO] Contact form POST request received {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "ip_address": "110.226.183.171",
+    "post_data_size": 142,
+    "timestamp": "2025-10-06 05:43:25"
+}
+[2025-10-06 11:13:25] [SUCCESS] Required components loaded successfully
+[2025-10-06 11:13:25] [INFO] Configuration loading attempted
+[2025-10-06 11:13:25] [SUCCESS] Configuration loaded successfully {
+    "email_recipients_count": 2
+}
+[2025-10-06 11:13:25] [SUCCESS] Email handler initialized
+[2025-10-06 11:13:25] [INFO] Form data received and sanitized {
+    "full_name": "akshay khandelwal",
+    "phone": "7506754344",
+    "email": "akshay.since1987@gmail.com",
+    "help_type": "support",
+    "message": "Test UAT Support message",
+    "phone_verified_raw": "1",
+    "message_length": 24
+}
+[2025-10-06 11:13:25] [INFO] Phone verification status processed {
+    "phone_verified_final": 1
+}
+[2025-10-06 11:13:25] [SUCCESS] Form validation passed successfully
+[2025-10-06 11:13:25] [INFO] DatabaseHandler initialized
+[2025-10-06 11:13:25] [INFO] Attempting to save contact to database {
+    "contact_data": {
+        "full_name": "akshay khandelwal",
+        "phone": "7506754344",
+        "email": "akshay.since1987@gmail.com",
+        "help_type": "support",
+        "message": "Test UAT Support message",
+        "phone_verified": 1,
+        "ip_address": "110.226.183.171",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-10-06 11:13:25] [SUCCESS] Contact saved to database successfully {
+    "contact_id": "1"
+}
+[2025-10-06 11:13:25] [INFO] Contact ID processed {
+    "original_id": "8a642031-4e33-46f8-b7dc-66e05193abe0",
+    "uuid": "8a642031-4e33-46f8-b7dc-66e05193abe0",
+    "final_id": "8a642031-4e33-46f8-b7dc-66e05193abe0"
+}
+[2025-10-06 11:13:25] [INFO] Initializing Salesforce integration
+[2025-10-06 11:13:25] [INFO] Sending data to Salesforce {
+    "contact_data": {
+        "full_name": "akshay khandelwal",
+        "phone": "7506754344",
+        "email": "akshay.since1987@gmail.com",
+        "help_type": "support",
+        "message": "Test UAT Support message",
+        "phone_verified": 1,
+        "ip_address": "110.226.183.171",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    }
+}
+[2025-10-06 11:13:25] [SUCCESS] Successfully sent to Salesforce {
+    "contact_id": "8a642031-4e33-46f8-b7dc-66e05193abe0",
+    "salesforce_result": {
+        "success": true,
+        "error": null,
+        "form": "Data not sent to Salesforce - form type not eligible for Salesforce submission",
+        "http_code": 200
+    }
+}
+[2025-10-06 11:13:25] [INFO] Starting email notification process {
+    "contact_id": "8a642031-4e33-46f8-b7dc-66e05193abe0",
+    "customer_name": "akshay khandelwal",
+    "customer_email": "akshay.since1987@gmail.com",
+    "help_type": "support",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ]
+}
+[2025-10-06 11:13:26] [INFO] Admin email send result {
+    "contact_id": "8a642031-4e33-46f8-b7dc-66e05193abe0",
+    "recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "success": true,
+    "total_sent": 0,
+    "total_failed": 0,
+    "duration_ms": 0
+}
+[2025-10-06 11:13:26] [INFO] Customer confirmation email result {
+    "contact_id": "8a642031-4e33-46f8-b7dc-66e05193abe0",
+    "customer_email": "akshay.since1987@gmail.com",
+    "email_id": "unknown",
+    "success": false,
+    "duration_ms": 0
+}
+[2025-10-06 11:13:26] [SUCCESS] Contact form processed successfully {
+    "contact_id": "8a642031-4e33-46f8-b7dc-66e05193abe0",
+    "customer_details": {
+        "name": "akshay khandelwal",
+        "email": "akshay.since1987@gmail.com",
+        "phone": "7506754344",
+        "help_type": "support"
+    },
+    "email_results": {
+        "success": false,
+        "sent_count": 0,
+        "failed_count": 0,
+        "email_id": "unknown",
+        "error": null
+    },
+    "customer_email": {
+        "success": false,
+        "email_id": "unknown",
+        "error": null
+    },
+    "overall_success": false
+}
+[2025-10-06 11:13:26] [WARNING] Admin email notification failed but process continued {
+    "contact_id": "8a642031-4e33-46f8-b7dc-66e05193abe0",
+    "admin_recipients": [
+        "akshay.since1987@gmail.com",
+        "info@kineticev.in"
+    ],
+    "error": "Unknown error"
+}
+[2025-10-06 11:13:26] [WARNING] Customer confirmation email failed but process continued {
+    "contact_id": "8a642031-4e33-46f8-b7dc-66e05193abe0",
+    "customer_email": "akshay.since1987@gmail.com",
+    "error": "Unknown error"
+}
+[2025-10-06 11:13:26] [SUCCESS] Form submitted successfully {
+    "contact_id": "8a642031-4e33-46f8-b7dc-66e05193abe0",
+    "success_type": "database_saved_with_emails",
+    "email_status": {
+        "admin_email_success": false,
+        "customer_email_success": false,
+        "overall_email_success": false
+    },
+    "processing_time": 0.6776750087738037109375,
+    "timestamp": "2025-10-06 11:13:26"
+}

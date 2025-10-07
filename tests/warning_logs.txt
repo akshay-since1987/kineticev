@@ -1,0 +1,172 @@
+[2025-09-11 11:50:14] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"8aed0887-6476-4dd1-9392-c99b539bab82","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-11 11:50:14] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"8aed0887-6476-4dd1-9392-c99b539bab82","customer_email":"vikasjoshi4297@gmail.com","error":"Unknown error"}
+[2025-09-11 15:57:31] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"344a1952-07df-4fab-8536-67a491483448","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-11 15:57:31] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"344a1952-07df-4fab-8536-67a491483448","customer_email":"test022@gmail.com","error":"Unknown error"}
+[2025-09-11 15:58:44] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"d10852be-2a5b-4204-a6d7-93929b0bed11","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-11 15:58:44] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"d10852be-2a5b-4204-a6d7-93929b0bed11","customer_email":"Test@gmail.com","error":"Unknown error"}
+[2025-09-11 16:32:43] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"dc77843d-dfb9-4d27-aa6d-d6b7e70a431a","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-11 16:32:43] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"dc77843d-dfb9-4d27-aa6d-d6b7e70a431a","customer_email":"Test@gmail.com","error":"Unknown error"}
+[2025-09-11 16:33:54] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"78a4892e-d7f7-4ce8-b7ec-a957579a902c","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-11 16:33:54] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"78a4892e-d7f7-4ce8-b7ec-a957579a902c","customer_email":"Test@gmail.com","error":"Unknown error"}
+[2025-09-11 16:40:29] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"3052cb96-2352-4a4c-a68c-2aace88eb47d","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-11 16:40:29] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"3052cb96-2352-4a4c-a68c-2aace88eb47d","customer_email":"namrata.vallakati@crmlanding.in","error":"Unknown error"}
+[2025-09-11 16:58:03] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"46158590-c5ac-478e-9737-7fb6a38077e1","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-11 16:58:03] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"46158590-c5ac-478e-9737-7fb6a38077e1","customer_email":"namrata.vallakati@crmlanding.in","error":"Unknown error"}
+[2025-09-11 18:59:07] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"956a843a-6740-4372-a19f-f125f0b20778","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-11 18:59:07] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"956a843a-6740-4372-a19f-f125f0b20778","customer_email":"namrata.vallakati18@gmail.com","error":"Unknown error"}
+[2025-09-11 23:49:54] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"b59ad2b7-9626-42a6-9ed3-68db82bcd80e","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-11 23:49:54] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"b59ad2b7-9626-42a6-9ed3-68db82bcd80e","customer_email":"testride@akshay.com","error":"Unknown error"}
+[2025-09-11 23:50:52] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"6088840e-5eb3-4b57-9716-fdeed1091194","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-11 23:50:52] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"6088840e-5eb3-4b57-9716-fdeed1091194","customer_email":"testridebookinenquiry@akshay.com","error":"Unknown error"}
+[2025-09-11 23:51:46] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"f649804d-876c-4af4-b219-d89ae44e597d","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-11 23:51:46] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"f649804d-876c-4af4-b219-d89ae44e597d","customer_email":"testridedealershipenq@akshay.com","error":"Unknown error"}
+[2025-09-11 23:52:23] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"2074aeb6-8c7b-4331-8ea0-6a11ab59d670","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-11 23:52:23] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"2074aeb6-8c7b-4331-8ea0-6a11ab59d670","customer_email":"testriderejectothers@akshay.com","error":"Unknown error"}
+[2025-09-12 11:53:54] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"c67ce4e3-b270-4075-9cf5-ade7b8072579","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-12 11:53:54] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"c67ce4e3-b270-4075-9cf5-ade7b8072579","customer_email":"namrata.vallakati@crmlanding.in","error":"Unknown error"}
+[2025-09-12 11:59:31] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"d31ae62a-4a1d-4e5a-bf81-8ff70afa31af","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-12 11:59:31] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"d31ae62a-4a1d-4e5a-bf81-8ff70afa31af","customer_email":"namrata.vallakati@crmlanding.in","error":"Unknown error"}
+[2025-09-13 12:41:12] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"33284ea0-de91-41f2-ba29-1dd22383830f","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-13 12:41:12] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"33284ea0-de91-41f2-ba29-1dd22383830f","customer_email":"namrata.vallakati@crmlanding.in","error":"Unknown error"}
+[2025-09-13 12:44:27] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"1b487c5a-d085-4e4a-a815-a517cf8ac720","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-13 12:44:27] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"1b487c5a-d085-4e4a-a815-a517cf8ac720","customer_email":"namrata.vallakati@crmlanding.in","error":"Unknown error"}
+[2025-09-13 12:48:42] [WARNING]: 
+[CONTACT_FORM] Admin email notification failed but process continued {"contact_id":"56607365-3370-45f6-9992-6313ea93b533","admin_recipients":["akshay.since1987@gmail.com","info@kineticev.in"],"error":"Unknown error"}
+[2025-09-13 12:48:42] [WARNING]: 
+[CONTACT_FORM] Customer confirmation email failed but process continued {"contact_id":"56607365-3370-45f6-9992-6313ea93b533","customer_email":"test.support@example.com","error":"Unknown error"}
+[2025-09-17 17:18:13] [WARNING]: 
+[OTP_API] OTP verification failed {"phone":"8005545745","purpose":"booking_form","error":"Invalid or expired OTP","invalid_otp":true,"max_attempts_exceeded":false}
+[2025-09-17 17:21:46] [WARNING]: 
+[OTP_API] OTP verification failed {"phone":"8855445544","purpose":"booking_form","error":"Invalid or expired OTP","invalid_otp":true,"max_attempts_exceeded":false}
+[2025-09-20 15:33:09] [WARNING]: 
+[ADMIN_LOGIN] Failed login attempt {"username":"kineticadmin","ip":"127.0.0.1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"}
+[2025-09-20 15:35:18] [WARNING]: 
+[ADMIN_LOGIN] Failed login attempt {"username":"kineticadmin","ip":"127.0.0.1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"}
+[2025-09-22 13:27:18] [WARNING]: 
+Transaction not found {"transactionId":"1758522332055140","affected_rows":0}
+[2025-09-22 13:38:41] [WARNING]: 
+Transaction not found {"transactionId":"1758522332055140","affected_rows":0}
+[2025-09-22 13:38:43] [WARNING]: 
+Transaction not found {"transactionId":"1758522332055140","affected_rows":0}
+[2025-09-23 09:53:04] [WARNING]: 
+[ADMIN_LOGIN] Failed login attempt {"username":"kineticadmin","ip":"127.0.0.1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"}
+[2025-09-23 09:53:08] [WARNING]: 
+[ADMIN_LOGIN] Failed login attempt {"username":"kineticadmin","ip":"127.0.0.1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"}
+[2025-09-23 09:53:13] [WARNING]: 
+[ADMIN_LOGIN] Failed login attempt {"username":"kineticadmin","ip":"127.0.0.1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"}
+[2025-09-23 09:53:29] [WARNING]: 
+[ADMIN_LOGIN] Failed login attempt {"username":"kineticadmin","ip":"127.0.0.1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"}
+[2025-09-23 09:55:34] [WARNING]: 
+[ADMIN_LOGIN] Failed login attempt {"username":"kineticadmin","ip":"127.0.0.1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"}
+[2025-09-23 09:55:39] [WARNING]: 
+[ADMIN_LOGIN] Failed login attempt {"username":"kineticadmin","ip":"127.0.0.1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"}
+[2025-09-23 09:57:34] [WARNING]: 
+[ADMIN_LOGIN] Failed login attempt {"username":"kineticadmin","ip":"127.0.0.1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"}
+[2025-09-23 09:57:58] [WARNING]: 
+[ADMIN_LOGIN] Failed login attempt {"username":"kineticadmin","ip":"127.0.0.1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"}
+[2025-09-23 09:58:18] [WARNING]: 
+[ADMIN_LOGIN] Failed login attempt {"username":"kineticadmin","ip":"127.0.0.1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"}
+[2025-09-23 09:58:26] [WARNING]: 
+[ADMIN_LOGIN] Failed login attempt {"username":"kineticadmin","ip":"127.0.0.1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"}
+[2025-09-23 09:58:57] [WARNING]: 
+[ADMIN_LOGIN] Failed login attempt {"username":"kineticadmin","ip":"127.0.0.1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"}
+[2025-09-23 09:59:57] [WARNING]: 
+[ADMIN_LOGIN] Failed login attempt {"username":"kineticadmin","ip":"127.0.0.1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"}
+[2025-09-24 10:55:34] [WARNING]: 
+Database connection attempt failed {"attempt":1,"max_retries":3,"error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","error_code":2002,"dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-24 10:55:57] [WARNING]: 
+Database connection attempt failed {"attempt":2,"max_retries":3,"error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","error_code":2002,"dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-24 10:56:22] [WARNING]: 
+Database connection attempt failed {"attempt":3,"max_retries":3,"error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","error_code":2002,"dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-24 10:56:51] [WARNING]: 
+Database connection attempt failed {"attempt":4,"max_retries":3,"error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","error_code":2002,"dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-24 10:58:30] [WARNING]: 
+Database connection attempt failed {"attempt":1,"max_retries":3,"error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","error_code":2002,"dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-24 10:58:53] [WARNING]: 
+Database connection attempt failed {"attempt":2,"max_retries":3,"error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","error_code":2002,"dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-24 10:59:18] [WARNING]: 
+Database connection attempt failed {"attempt":3,"max_retries":3,"error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","error_code":2002,"dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-24 10:59:47] [WARNING]: 
+Database connection attempt failed {"attempt":4,"max_retries":3,"error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","error_code":2002,"dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-24 11:12:42] [WARNING]: 
+Database connection attempt failed {"attempt":1,"max_retries":3,"error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","error_code":2002,"dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-24 11:13:05] [WARNING]: 
+Database connection attempt failed {"attempt":2,"max_retries":3,"error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","error_code":2002,"dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-24 11:13:30] [WARNING]: 
+Database connection attempt failed {"attempt":3,"max_retries":3,"error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","error_code":2002,"dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-24 11:13:59] [WARNING]: 
+Database connection attempt failed {"attempt":4,"max_retries":3,"error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","error_code":2002,"dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-24 13:09:45] [WARNING]: 
+[OTP_API] OTP verification failed {"phone":"8879908086","purpose":"test_ride","error":"Invalid or expired OTP","invalid_otp":true,"max_attempts_exceeded":false}
+[2025-09-24 13:30:41] [WARNING]: 
+[OTP_API] OTP verification failed {"phone":"8855228855","purpose":"booking_form","error":"Invalid or expired OTP","invalid_otp":true,"max_attempts_exceeded":false}
+[2025-09-25 11:41:17] [WARNING]: 
+Transaction not found {"transactionId":"TEST123456","affected_rows":0}
+[2025-09-25 11:41:18] [WARNING]: 
+Transaction not found {"transactionId":"DUPLICATE123","affected_rows":0}
+[2025-09-25 11:41:19] [WARNING]: 
+Transaction not found {"transactionId":"DUPLICATE123","affected_rows":0}
+[2025-09-25 11:45:18] [WARNING]: 
+Transaction not found {"transactionId":"TEST123456","affected_rows":0}
+[2025-09-25 11:45:18] [WARNING]: 
+Transaction not found {"transactionId":"TEST123456","affected_rows":0}
+[2025-09-25 11:45:19] [WARNING]: 
+Transaction not found {"transactionId":"DUPLICATE123","affected_rows":0}
+[2025-09-25 11:45:19] [WARNING]: 
+Transaction not found {"transactionId":"DUPLICATE123","affected_rows":0}
+[2025-09-26 22:23:04] [WARNING]: 
+Transaction not found {"transactionId":"TEST_VERIFY_123","affected_rows":0}
+[2025-09-26 23:23:13] [WARNING]: 
+Transaction not found {"transactionId":"TEST_BOOK_1758909193","affected_rows":0}
+[2025-09-26 23:23:14] [WARNING]: 
+Transaction not found {"transactionId":"TEST_FAILED_1758909193","affected_rows":0}
+[2025-09-26 23:49:36] [WARNING]: 
+Transaction not found {"transactionId":"TEST_123","affected_rows":0}
+[2025-10-02 13:37:47] [WARNING]: 
+Database connection attempt failed {"attempt":1,"max_retries":3,"error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","error_code":1045,"dsn":"mysql:host=localhost"}
+[2025-10-02 13:37:49] [WARNING]: 
+Database connection attempt failed {"attempt":2,"max_retries":3,"error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","error_code":1045,"dsn":"mysql:host=localhost"}
+[2025-10-02 13:37:53] [WARNING]: 
+Database connection attempt failed {"attempt":3,"max_retries":3,"error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","error_code":1045,"dsn":"mysql:host=localhost"}
+[2025-10-02 13:38:01] [WARNING]: 
+Database connection attempt failed {"attempt":4,"max_retries":3,"error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","error_code":1045,"dsn":"mysql:host=localhost"}
+[2025-10-02 13:38:59] [WARNING]: 
+Database connection attempt failed {"attempt":1,"max_retries":3,"error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","error_code":1045,"dsn":"mysql:host=localhost"}
+[2025-10-02 13:39:01] [WARNING]: 
+Database connection attempt failed {"attempt":2,"max_retries":3,"error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","error_code":1045,"dsn":"mysql:host=localhost"}
+[2025-10-02 13:39:05] [WARNING]: 
+Database connection attempt failed {"attempt":3,"max_retries":3,"error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","error_code":1045,"dsn":"mysql:host=localhost"}
+[2025-10-02 13:39:13] [WARNING]: 
+Database connection attempt failed {"attempt":4,"max_retries":3,"error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","error_code":1045,"dsn":"mysql:host=localhost"}

@@ -20,6 +20,10 @@ load-testing/
 *.min.css
 *.min.js
 *.map
+**/*dump*
+**/*.zip
+**/*.rtf
+**/*backup*
 
 # Dependencies and Packages
 # -----------------------------------------------------------------------------

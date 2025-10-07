@@ -67,9 +67,7 @@ function renderFooter() {
             2025 &copy;Copyright Kinetic. All Rights Reserved.
         </p>
         <p class="footer-disclaimer">
-            Disclaimer: Specifications, features, and colors are subject to change without prior notice. Images are for
-            illustration only. Actual range and product may vary. Please check with the dealership for the latest
-            details.
+            Disclaimer: Specifications, features, and colours are subject to change without prior notice. Images are for illustration only. Actual range and product may vary. Please check with the dealership for the latest details. Formerly known as DX+, the variant is now called ZX.
         </p>
     </div>
 </footer>

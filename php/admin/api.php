@@ -155,6 +155,83 @@ try {
             echo json_encode($analytics);
             break;
 
+        case 'allowed_cities':
+            $requestMethod = $_SERVER['REQUEST_METHOD'];
+            
+            if ($requestMethod === 'GET') {
+                $action = $_GET['action'] ?? 'list';
+                
+                switch ($action) {
+                    case 'list':
+                        // Get cities for DataTables
+                        $start = intval($_GET['start'] ?? 0);
+                        $length = intval($_GET['length'] ?? 10);
+                        $search = $_GET['search']['value'] ?? '';
+                        $draw = intval($_GET['draw'] ?? 1);
+                        
+                        $result = $adminHandler->getAllowedCitiesPaginated($start, $length, $search);
+                        $total = $adminHandler->getAllowedCitiesCount();
+                        $filtered = $adminHandler->getAllowedCitiesCount($search);
+                        
+                        echo json_encode([
+                            'draw' => $draw,
+                            'recordsTotal' => $total,
+                            'recordsFiltered' => $filtered,
+                            'data' => $result
+                        ]);
+                        break;
+                        
+                    case 'get':
+                        $cityId = intval($_GET['id'] ?? 0);
+                        if ($cityId > 0) {
+                            $city = $adminHandler->getAllowedCity($cityId);
+                            echo json_encode(['success' => true, 'data' => $city]);
+                        } else {
+                            echo json_encode(['error' => 'Invalid city ID']);
+                        }
+                        break;
+                }
+            } elseif ($requestMethod === 'POST') {
+                $action = $_POST['action'] ?? '';
+                $cityId = intval($_POST['id'] ?? 0);
+                
+                switch ($action) {
+                    case 'update':
+                        if ($cityId > 0) {
+                            $data = [
+                                'city_name' => $_POST['city_name'] ?? '',
+                                'coordinates' => $_POST['coordinates'] ?? '',
+                                'is_allowed' => intval($_POST['is_allowed'] ?? 0)
+                            ];
+                            $result = $adminHandler->updateAllowedCity($cityId, $data);
+                            echo json_encode(['success' => $result]);
+                        } else {
+                            echo json_encode(['error' => 'Invalid city ID']);
+                        }
+                        break;
+                        
+                    case 'add':
+                        $data = [
+                            'city_name' => $_POST['city_name'] ?? '',
+                            'coordinates' => $_POST['coordinates'] ?? '',
+                            'is_allowed' => intval($_POST['is_allowed'] ?? 0)
+                        ];
+                        $result = $adminHandler->addAllowedCity($data);
+                        echo json_encode(['success' => $result]);
+                        break;
+                        
+                    case 'delete':
+                        if ($cityId > 0) {
+                            $result = $adminHandler->deleteAllowedCity($cityId);
+                            echo json_encode(['success' => $result]);
+                        } else {
+                            echo json_encode(['error' => 'Invalid city ID']);
+                        }
+                        break;
+                }
+            }
+            break;
+
         case 'logs':
             // Set execution time limit for log reading
             set_time_limit(30);

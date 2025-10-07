@@ -6,9 +6,9 @@ if (basename($_SERVER['PHP_SELF']) === basename(__FILE__)) {
     exit();
 }
 
-require_once '../Logger.php';
-require_once '../DatabaseMigration.php';
-require_once '../DatabaseUtils.php';
+require_once __DIR__ . '/../../php/Logger.php';
+require_once __DIR__ . '/../../php/DatabaseMigration.php';
+require_once __DIR__ . '/../../php/DatabaseUtils.php';
 
 class AdminHandler
 {
@@ -1697,6 +1697,171 @@ class AdminHandler
             }
         } catch (Exception $e) {
             $this->logger->error('[ADMIN_HANDLER] Failed to delete dealership', [
+                'error' => $e->getMessage(),
+                'id' => $id
+            ]);
+            throw $e;
+        }
+    }
+
+    /**
+     * Get a paginated list of allowed cities
+     */
+    public function getAllowedCitiesPaginated($start, $length, $search = '')
+    {
+        try {
+            $sql = "SELECT id, city_name, coordinates, is_allowed, updated_at 
+                   FROM allowed_cities 
+                   WHERE 1=1";
+            
+            $params = [];
+            if (!empty($search)) {
+                $sql .= " AND (city_name LIKE :search)";
+                $params[':search'] = "%$search%";
+            }
+            
+            $sql .= " ORDER BY city_name ASC LIMIT ?, ?";
+            
+            $stmt = $this->conn->prepare($sql);
+            
+            // Bind any search parameters first
+            if (!empty($search)) {
+                $stmt->bindValue(':search', "%$search%", PDO::PARAM_STR);
+            }
+            
+            // Bind LIMIT parameters
+            $startInt = (int)$start;
+            $lengthInt = (int)$length;
+            $stmt->bindValue(1, $startInt, PDO::PARAM_INT);
+            $stmt->bindValue(2, $lengthInt, PDO::PARAM_INT);
+            
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            $this->logger->error('[ADMIN] Error getting allowed cities', [
+                'error' => $e->getMessage(),
+                'start' => $start,
+                'length' => $length
+            ]);
+            throw $e;
+        }
+    }
+
+    /**
+     * Get total count of allowed cities
+     */
+    public function getAllowedCitiesCount($search = '')
+    {
+        try {
+            $sql = "SELECT COUNT(*) FROM allowed_cities WHERE 1=1";
+            $params = [];
+            
+            if (!empty($search)) {
+                $sql .= " AND (city_name LIKE :search)";
+                $params[':search'] = "%$search%";
+            }
+
+            $stmt = $this->conn->prepare($sql);
+            foreach ($params as $key => &$val) {
+                $stmt->bindParam($key, $val);
+            }
+            
+            $stmt->execute();
+            return $stmt->fetchColumn();
+        } catch (Exception $e) {
+            $this->logger->error('[ADMIN] Error counting allowed cities', [
+                'error' => $e->getMessage()
+            ]);
+            throw $e;
+        }
+    }
+
+    /**
+     * Get a single allowed city by ID
+     */
+    public function getAllowedCity($id)
+    {
+        try {
+            $stmt = $this->conn->prepare("SELECT * FROM allowed_cities WHERE id = :id");
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            $this->logger->error('[ADMIN] Error getting allowed city', [
+                'error' => $e->getMessage(),
+                'id' => $id
+            ]);
+            throw $e;
+        }
+    }
+
+    /**
+     * Add a new allowed city
+     */
+    public function addAllowedCity($data)
+    {
+        try {
+            $stmt = $this->conn->prepare(
+                "INSERT INTO allowed_cities (city_name, coordinates, is_allowed) 
+                 VALUES (:city_name, :coordinates, :is_allowed)"
+            );
+            
+            $stmt->bindParam(':city_name', $data['city_name']);
+            $stmt->bindParam(':coordinates', $data['coordinates']);
+            $stmt->bindParam(':is_allowed', $data['is_allowed'], PDO::PARAM_INT);
+            
+            return $stmt->execute();
+        } catch (Exception $e) {
+            $this->logger->error('[ADMIN] Error adding allowed city', [
+                'error' => $e->getMessage(),
+                'data' => $data
+            ]);
+            throw $e;
+        }
+    }
+
+    /**
+     * Update an existing allowed city
+     */
+    public function updateAllowedCity($id, $data)
+    {
+        try {
+            $stmt = $this->conn->prepare(
+                "UPDATE allowed_cities 
+                 SET city_name = :city_name,
+                     coordinates = :coordinates,
+                     is_allowed = :is_allowed,
+                     updated_at = CURRENT_TIMESTAMP
+                 WHERE id = :id"
+            );
+            
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->bindParam(':city_name', $data['city_name']);
+            $stmt->bindParam(':coordinates', $data['coordinates']);
+            $stmt->bindParam(':is_allowed', $data['is_allowed'], PDO::PARAM_INT);
+            
+            return $stmt->execute();
+        } catch (Exception $e) {
+            $this->logger->error('[ADMIN] Error updating allowed city', [
+                'error' => $e->getMessage(),
+                'id' => $id,
+                'data' => $data
+            ]);
+            throw $e;
+        }
+    }
+
+    /**
+     * Delete an allowed city
+     */
+    public function deleteAllowedCity($id)
+    {
+        try {
+            $stmt = $this->conn->prepare("DELETE FROM allowed_cities WHERE id = :id");
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            return $stmt->execute();
+        } catch (Exception $e) {
+            $this->logger->error('[ADMIN] Error deleting allowed city', [
                 'error' => $e->getMessage(),
                 'id' => $id
             ]);

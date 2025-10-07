@@ -1,0 +1,720 @@
+[2025-09-24 09:58:44] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-24 09:58:44","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36","ip_address":"127.0.0.1"}
+[2025-09-24 09:58:44] [INFO]: 
+POST data received {"phone":"7506754344","firstname":"Akshay Khandelwal","email":"akshay.since1987@gmail.com","address":"Test address","pincode":"410210","city":"Kharghar","state":"Maharashtra","variant":"dx-plus","color":"blue","terms":"on","txnid":"1758688095582097","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-24 09:58:44] [INFO]: 
+Input data extracted {"txnid":"1758688095582097","firstname":"Akshay Khandelwal","phone":"7506754344","email":"akshay.since1987@gmail.com","amount":1000,"variant":"dx-plus","color":"blue","terms":1}
+[2025-09-24 09:58:44] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/local.kineticev.in\/api\/check-status?txnid=1758688095582097"}
+[2025-09-24 09:58:44] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"Akshay Khandelwal","email":"akshay.since1987@gmail.com","amount":1000,"txnid":"1758688095582097"}
+[2025-09-24 09:58:44] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-24 09:58:44] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-24 09:58:44] [INFO]: 
+About to call createTransaction method {"txnid":"1758688095582097","allCustomerDetails":{"firstname":"Akshay Khandelwal","phone":"7506754344","email":"akshay.since1987@gmail.com","address":"Test address","city":"Kharghar","state":"Maharashtra","pincode":"410210","ownedBefore":0,"productinfo":"dx-plus","color":"blue","terms":1,"transaction_id":"1758688095582097","variant":"dx-plus","amount":1000,"status":"PENDING","merchant_id":"1758688095582097"},"amount":1000}
+[2025-09-24 09:58:44] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758688095582097"}
+[2025-09-24 09:58:44] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758688095582097","status":"PENDING"}
+[2025-09-24 09:58:44] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-24 09:58:44] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-24 09:58:44] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-24 09:58:44] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-24 09:58:44] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-24 09:58:44] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-24 09:58:44] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-24 09:58:44] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-24 09:58:44] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-24 09:58:44] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-24 10:00:21] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-24 10:00:21","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36","ip_address":"127.0.0.1"}
+[2025-09-24 10:00:21] [INFO]: 
+POST data received {"phone":"7506754344","firstname":"Akshay Khandelwal","email":"akshay.since1987@gmail.com","address":"Test address","pincode":"410210","city":"Kharghar","state":"Maharashtra","variant":"dx-plus","color":"red","terms":"on","txnid":"1758688197836501","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-24 10:00:21] [INFO]: 
+Input data extracted {"txnid":"1758688197836501","firstname":"Akshay Khandelwal","phone":"7506754344","email":"akshay.since1987@gmail.com","amount":1000,"variant":"dx-plus","color":"red","terms":1}
+[2025-09-24 10:00:21] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/local.kineticev.in\/api\/check-status?txnid=1758688197836501"}
+[2025-09-24 10:00:21] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"Akshay Khandelwal","email":"akshay.since1987@gmail.com","amount":1000,"txnid":"1758688197836501"}
+[2025-09-24 10:00:21] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-24 10:00:21] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-24 10:00:21] [INFO]: 
+About to call createTransaction method {"txnid":"1758688197836501","allCustomerDetails":{"firstname":"Akshay Khandelwal","phone":"7506754344","email":"akshay.since1987@gmail.com","address":"Test address","city":"Kharghar","state":"Maharashtra","pincode":"410210","ownedBefore":0,"productinfo":"dx-plus","color":"red","terms":1,"transaction_id":"1758688197836501","variant":"dx-plus","amount":1000,"status":"PENDING","merchant_id":"1758688197836501"},"amount":1000}
+[2025-09-24 10:00:21] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758688197836501"}
+[2025-09-24 10:00:21] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758688197836501","status":"PENDING"}
+[2025-09-24 10:00:21] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-24 10:00:21] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-24 10:00:21] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-24 10:00:21] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-24 10:00:21] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-24 10:00:21] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-24 10:00:21] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-24 10:00:21] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-24 10:00:21] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-24 10:00:21] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-24 11:23:58] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-24 11:23:58","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/139.0.0.0 Safari\/537.36","ip_address":"111.125.219.96"}
+[2025-09-24 11:23:58] [INFO]: 
+POST data received {"phone":"8879908086","firstname":"Namrata Vallakati","email":"namrata.vallakati@crmlanding.in","address":"samar heights mumbai","pincode":"400022","city":"Mumbai","state":"Maharashtra","variant":"dx","color":"black","terms":"on","txnid":"1758693202850209","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-24 11:23:58] [INFO]: 
+Input data extracted {"txnid":"1758693202850209","firstname":"Namrata Vallakati","phone":"8879908086","email":"namrata.vallakati@crmlanding.in","amount":1000,"variant":"dx","color":"black","terms":1}
+[2025-09-24 11:23:58] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/182.48.201.133\/api\/check-status?txnid=1758693202850209"}
+[2025-09-24 11:23:58] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"Namrata Vallakati","email":"namrata.vallakati@crmlanding.in","amount":1000,"txnid":"1758693202850209"}
+[2025-09-24 11:23:58] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-24 11:23:58] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-24 11:23:58] [INFO]: 
+About to call createTransaction method {"txnid":"1758693202850209","allCustomerDetails":{"firstname":"Namrata Vallakati","phone":"8879908086","email":"namrata.vallakati@crmlanding.in","address":"samar heights mumbai","city":"Mumbai","state":"Maharashtra","pincode":"400022","ownedBefore":0,"productinfo":"dx","color":"black","terms":1,"transaction_id":"1758693202850209","variant":"dx","amount":1000,"status":"PENDING","merchant_id":"1758693202850209"},"amount":1000}
+[2025-09-24 11:23:58] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758693202850209"}
+[2025-09-24 11:23:58] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758693202850209","status":"PENDING"}
+[2025-09-24 11:23:58] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-24 11:23:58] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-24 11:23:58] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-24 11:23:58] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-24 11:23:58] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-24 11:23:58] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-24 11:23:58] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-24 11:23:58] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-24 11:23:58] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-24 11:23:58] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-24 11:47:47] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-24 11:47:47","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/139.0.0.0 Safari\/537.36","ip_address":"111.125.219.96"}
+[2025-09-24 11:47:47] [INFO]: 
+POST data received {"phone":"8879908086","firstname":"Kavita Shah","email":"namrata.vallakati@crmlanding.in","address":"samar heights mumbai","pincode":"411001","city":"Pune","state":"Maharashtra","variant":"dx","color":"black","terms":"on","txnid":"1758694626059979","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-24 11:47:47] [INFO]: 
+Input data extracted {"txnid":"1758694626059979","firstname":"Kavita Shah","phone":"8879908086","email":"namrata.vallakati@crmlanding.in","amount":1000,"variant":"dx","color":"black","terms":1}
+[2025-09-24 11:47:47] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/182.48.201.133\/api\/check-status?txnid=1758694626059979"}
+[2025-09-24 11:47:47] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"Kavita Shah","email":"namrata.vallakati@crmlanding.in","amount":1000,"txnid":"1758694626059979"}
+[2025-09-24 11:47:47] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-24 11:47:50] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-24 11:47:50] [INFO]: 
+About to call createTransaction method {"txnid":"1758694626059979","allCustomerDetails":{"firstname":"Kavita Shah","phone":"8879908086","email":"namrata.vallakati@crmlanding.in","address":"samar heights mumbai","city":"Pune","state":"Maharashtra","pincode":"411001","ownedBefore":0,"productinfo":"dx","color":"black","terms":1,"transaction_id":"1758694626059979","variant":"dx","amount":1000,"status":"PENDING","merchant_id":"1758694626059979"},"amount":1000}
+[2025-09-24 11:47:50] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758694626059979"}
+[2025-09-24 11:47:50] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758694626059979","status":"PENDING"}
+[2025-09-24 11:47:50] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-24 11:47:50] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-24 11:47:50] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-24 11:47:50] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-24 11:47:50] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-24 11:47:50] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-24 11:47:50] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-24 11:47:50] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-24 11:47:50] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-24 11:47:50] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-24 12:09:26] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-24 12:09:26","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36 Edg\/140.0.0.0","ip_address":"103.159.183.58"}
+[2025-09-24 12:09:26] [INFO]: 
+POST data received {"phone":"8554455887","firstname":"Drishti rty","email":"harsh.natani@crmlanding.in","address":"Apollo hioeghts","pincode":"411001","city":"Pune","state":"Maharashtra","ownedBefore":"on","variant":"dx-plus","color":"white","terms":"on","txnid":"1758695583015954","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-24 12:09:26] [INFO]: 
+Input data extracted {"txnid":"1758695583015954","firstname":"Drishti rty","phone":"8554455887","email":"harsh.natani@crmlanding.in","amount":1000,"variant":"dx-plus","color":"white","terms":1}
+[2025-09-24 12:09:26] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/182.48.201.133\/api\/check-status?txnid=1758695583015954"}
+[2025-09-24 12:09:26] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"Drishti rty","email":"harsh.natani@crmlanding.in","amount":1000,"txnid":"1758695583015954"}
+[2025-09-24 12:09:26] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-24 12:09:26] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-24 12:09:26] [INFO]: 
+About to call createTransaction method {"txnid":"1758695583015954","allCustomerDetails":{"firstname":"Drishti rty","phone":"8554455887","email":"harsh.natani@crmlanding.in","address":"Apollo hioeghts","city":"Pune","state":"Maharashtra","pincode":"411001","ownedBefore":1,"productinfo":"dx-plus","color":"white","terms":1,"transaction_id":"1758695583015954","variant":"dx-plus","amount":1000,"status":"PENDING","merchant_id":"1758695583015954"},"amount":1000}
+[2025-09-24 12:09:26] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758695583015954"}
+[2025-09-24 12:09:26] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758695583015954","status":"PENDING"}
+[2025-09-24 12:09:26] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-24 12:09:26] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-24 12:09:26] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-24 12:09:26] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-24 12:09:26] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-24 12:09:26] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-24 12:09:26] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-24 12:09:26] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-24 12:09:26] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-24 12:09:26] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-24 12:19:17] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-24 12:19:17","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36 Edg\/140.0.0.0","ip_address":"103.159.183.58"}
+[2025-09-24 12:19:17] [INFO]: 
+POST data received {"phone":"7755884455","firstname":"Tamanna Book","email":"harsh.natani@crmlanding.in","address":"APollo","pincode":"411001","city":"Pune","state":"Maharashtra","ownedBefore":"on","variant":"dx-plus","color":"white","terms":"on","txnid":"1758696519823737","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-24 12:19:17] [INFO]: 
+Input data extracted {"txnid":"1758696519823737","firstname":"Tamanna Book","phone":"7755884455","email":"harsh.natani@crmlanding.in","amount":1000,"variant":"dx-plus","color":"white","terms":1}
+[2025-09-24 12:19:17] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/182.48.201.133\/api\/check-status?txnid=1758696519823737"}
+[2025-09-24 12:19:17] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"Tamanna Book","email":"harsh.natani@crmlanding.in","amount":1000,"txnid":"1758696519823737"}
+[2025-09-24 12:19:17] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-24 12:19:17] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-24 12:19:17] [INFO]: 
+About to call createTransaction method {"txnid":"1758696519823737","allCustomerDetails":{"firstname":"Tamanna Book","phone":"7755884455","email":"harsh.natani@crmlanding.in","address":"APollo","city":"Pune","state":"Maharashtra","pincode":"411001","ownedBefore":1,"productinfo":"dx-plus","color":"white","terms":1,"transaction_id":"1758696519823737","variant":"dx-plus","amount":1000,"status":"PENDING","merchant_id":"1758696519823737"},"amount":1000}
+[2025-09-24 12:19:17] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758696519823737"}
+[2025-09-24 12:19:17] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758696519823737","status":"PENDING"}
+[2025-09-24 12:19:17] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-24 12:19:17] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-24 12:19:17] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-24 12:19:17] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-24 12:19:17] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-24 12:19:17] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-24 12:19:17] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-24 12:19:17] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-24 12:19:17] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-24 12:19:17] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-24 13:27:10] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-24 13:27:10","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/139.0.0.0 Safari\/537.36","ip_address":"111.125.219.96"}
+[2025-09-24 13:27:10] [INFO]: 
+POST data received {"phone":"8879908086","firstname":"Book success","email":"namrata.vallakati@crmlanding.in","address":"samar heights mumbai","pincode":"411001","city":"Pune","state":"Maharashtra","variant":"dx-plus","color":"white","terms":"on","txnid":"1758700597072917","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-24 13:27:10] [INFO]: 
+Input data extracted {"txnid":"1758700597072917","firstname":"Book success","phone":"8879908086","email":"namrata.vallakati@crmlanding.in","amount":1000,"variant":"dx-plus","color":"white","terms":1}
+[2025-09-24 13:27:10] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/182.48.201.133\/api\/check-status?txnid=1758700597072917"}
+[2025-09-24 13:27:10] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"Book success","email":"namrata.vallakati@crmlanding.in","amount":1000,"txnid":"1758700597072917"}
+[2025-09-24 13:27:10] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-24 13:27:11] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-24 13:27:11] [INFO]: 
+About to call createTransaction method {"txnid":"1758700597072917","allCustomerDetails":{"firstname":"Book success","phone":"8879908086","email":"namrata.vallakati@crmlanding.in","address":"samar heights mumbai","city":"Pune","state":"Maharashtra","pincode":"411001","ownedBefore":0,"productinfo":"dx-plus","color":"white","terms":1,"transaction_id":"1758700597072917","variant":"dx-plus","amount":1000,"status":"PENDING","merchant_id":"1758700597072917"},"amount":1000}
+[2025-09-24 13:27:11] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758700597072917"}
+[2025-09-24 13:27:11] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758700597072917","status":"PENDING"}
+[2025-09-24 13:27:11] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-24 13:27:11] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-24 13:27:11] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-24 13:27:11] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-24 13:27:11] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-24 13:27:11] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-24 13:27:11] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-24 13:27:11] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-24 13:27:11] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-24 13:27:11] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-24 13:31:17] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-24 13:31:17","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36 Edg\/140.0.0.0","ip_address":"103.159.183.58"}
+[2025-09-24 13:31:17] [INFO]: 
+POST data received {"phone":"8855228854","firstname":"Harsh Natani","email":"harsh.natani@crmlanding.in","address":"Apollo heights Apartment Balaji marg","pincode":"411001","city":"Pune","state":"Maharashtra","ownedBefore":"on","variant":"dx-plus","color":"white","terms":"on","txnid":"1758700829991438","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-24 13:31:17] [INFO]: 
+Input data extracted {"txnid":"1758700829991438","firstname":"Harsh Natani","phone":"8855228854","email":"harsh.natani@crmlanding.in","amount":1000,"variant":"dx-plus","color":"white","terms":1}
+[2025-09-24 13:31:17] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/182.48.201.133\/api\/check-status?txnid=1758700829991438"}
+[2025-09-24 13:31:17] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"Harsh Natani","email":"harsh.natani@crmlanding.in","amount":1000,"txnid":"1758700829991438"}
+[2025-09-24 13:31:17] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-24 13:31:17] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-24 13:31:17] [INFO]: 
+About to call createTransaction method {"txnid":"1758700829991438","allCustomerDetails":{"firstname":"Harsh Natani","phone":"8855228854","email":"harsh.natani@crmlanding.in","address":"Apollo heights Apartment Balaji marg","city":"Pune","state":"Maharashtra","pincode":"411001","ownedBefore":1,"productinfo":"dx-plus","color":"white","terms":1,"transaction_id":"1758700829991438","variant":"dx-plus","amount":1000,"status":"PENDING","merchant_id":"1758700829991438"},"amount":1000}
+[2025-09-24 13:31:17] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758700829991438"}
+[2025-09-24 13:31:17] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758700829991438","status":"PENDING"}
+[2025-09-24 13:31:17] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-24 13:31:17] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-24 13:31:17] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-24 13:31:17] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-24 13:31:17] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-24 13:31:17] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-24 13:31:18] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-24 13:31:18] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-24 13:31:18] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-24 13:31:18] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-24 13:34:43] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-24 13:34:43","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/139.0.0.0 Safari\/537.36","ip_address":"111.125.219.96"}
+[2025-09-24 13:34:43] [INFO]: 
+POST data received {"phone":"8879908086","firstname":"Test book","email":"namrata.vallakati@crmlanding.in","address":"samar heights mumbai","pincode":"411001","city":"Pune","state":"Maharashtra","variant":"dx-plus","color":"white","terms":"on","txnid":"1758701045554825","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-24 13:34:43] [INFO]: 
+Input data extracted {"txnid":"1758701045554825","firstname":"Test book","phone":"8879908086","email":"namrata.vallakati@crmlanding.in","amount":1000,"variant":"dx-plus","color":"white","terms":1}
+[2025-09-24 13:34:43] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/182.48.201.133\/api\/check-status?txnid=1758701045554825"}
+[2025-09-24 13:34:43] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"Test book","email":"namrata.vallakati@crmlanding.in","amount":1000,"txnid":"1758701045554825"}
+[2025-09-24 13:34:43] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-24 13:34:43] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-24 13:34:43] [INFO]: 
+About to call createTransaction method {"txnid":"1758701045554825","allCustomerDetails":{"firstname":"Test book","phone":"8879908086","email":"namrata.vallakati@crmlanding.in","address":"samar heights mumbai","city":"Pune","state":"Maharashtra","pincode":"411001","ownedBefore":0,"productinfo":"dx-plus","color":"white","terms":1,"transaction_id":"1758701045554825","variant":"dx-plus","amount":1000,"status":"PENDING","merchant_id":"1758701045554825"},"amount":1000}
+[2025-09-24 13:34:43] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758701045554825"}
+[2025-09-24 13:34:43] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758701045554825","status":"PENDING"}
+[2025-09-24 13:34:43] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-24 13:34:43] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-24 13:34:43] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-24 13:34:43] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-24 13:34:43] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-24 13:34:43] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-24 13:34:43] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-24 13:34:43] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-24 13:34:43] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-24 13:34:43] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-24 13:38:11] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-24 13:38:11","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/139.0.0.0 Safari\/537.36","ip_address":"111.125.219.96"}
+[2025-09-24 13:38:11] [INFO]: 
+POST data received {"phone":"8879908086","firstname":"book fail","email":"namrata.vallakati@crmlanding.in","address":"samar heights mumbai","pincode":"411001","city":"Pune","state":"Maharashtra","variant":"dx","color":"black","terms":"on","txnid":"1758701269110643","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-24 13:38:11] [INFO]: 
+Input data extracted {"txnid":"1758701269110643","firstname":"book fail","phone":"8879908086","email":"namrata.vallakati@crmlanding.in","amount":1000,"variant":"dx","color":"black","terms":1}
+[2025-09-24 13:38:11] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/182.48.201.133\/api\/check-status?txnid=1758701269110643"}
+[2025-09-24 13:38:11] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"book fail","email":"namrata.vallakati@crmlanding.in","amount":1000,"txnid":"1758701269110643"}
+[2025-09-24 13:38:11] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-24 13:38:11] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-24 13:38:11] [INFO]: 
+About to call createTransaction method {"txnid":"1758701269110643","allCustomerDetails":{"firstname":"book fail","phone":"8879908086","email":"namrata.vallakati@crmlanding.in","address":"samar heights mumbai","city":"Pune","state":"Maharashtra","pincode":"411001","ownedBefore":0,"productinfo":"dx","color":"black","terms":1,"transaction_id":"1758701269110643","variant":"dx","amount":1000,"status":"PENDING","merchant_id":"1758701269110643"},"amount":1000}
+[2025-09-24 13:38:12] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758701269110643"}
+[2025-09-24 13:38:12] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758701269110643","status":"PENDING"}
+[2025-09-24 13:38:12] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-24 13:38:12] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-24 13:38:12] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-24 13:38:12] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-24 13:38:12] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-24 13:38:12] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-24 13:38:12] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-24 13:38:12] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-24 13:38:12] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-24 13:38:12] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-24 13:45:23] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-24 13:45:23","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/139.0.0.0 Safari\/537.36","ip_address":"111.125.219.96"}
+[2025-09-24 13:45:23] [INFO]: 
+POST data received {"phone":"8879908086","firstname":"book pending","email":"namrata.vallakati@crmlanding.in","address":"samar heights mumbai","pincode":"411001","city":"Pune","state":"Maharashtra","variant":"dx","color":"black","terms":"on","txnid":"1758701694224589","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-24 13:45:23] [INFO]: 
+Input data extracted {"txnid":"1758701694224589","firstname":"book pending","phone":"8879908086","email":"namrata.vallakati@crmlanding.in","amount":1000,"variant":"dx","color":"black","terms":1}
+[2025-09-24 13:45:23] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/182.48.201.133\/api\/check-status?txnid=1758701694224589"}
+[2025-09-24 13:45:23] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"book pending","email":"namrata.vallakati@crmlanding.in","amount":1000,"txnid":"1758701694224589"}
+[2025-09-24 13:45:23] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-24 13:45:23] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-24 13:45:23] [INFO]: 
+About to call createTransaction method {"txnid":"1758701694224589","allCustomerDetails":{"firstname":"book pending","phone":"8879908086","email":"namrata.vallakati@crmlanding.in","address":"samar heights mumbai","city":"Pune","state":"Maharashtra","pincode":"411001","ownedBefore":0,"productinfo":"dx","color":"black","terms":1,"transaction_id":"1758701694224589","variant":"dx","amount":1000,"status":"PENDING","merchant_id":"1758701694224589"},"amount":1000}
+[2025-09-24 13:45:23] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758701694224589"}
+[2025-09-24 13:45:23] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758701694224589","status":"PENDING"}
+[2025-09-24 13:45:23] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-24 13:45:23] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-24 13:45:23] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-24 13:45:23] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-24 13:45:23] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-24 13:45:23] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-24 13:45:23] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-24 13:45:23] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-24 13:45:23] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-24 13:45:23] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-25 12:34:43] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-25 12:34:43","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/139.0.0.0 Safari\/537.36","ip_address":"111.125.219.96"}
+[2025-09-25 12:34:43] [INFO]: 
+POST data received {"phone":"8879908086","firstname":"Namrata Shetty","email":"namrata.vallakati@crmlanding.in","address":"samar heights mumbai","pincode":"411001","city":"Pune","state":"Maharashtra","variant":"dx","color":"black","terms":"on","txnid":"1758782117562067","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-25 12:34:43] [INFO]: 
+Input data extracted {"txnid":"1758782117562067","firstname":"Namrata Shetty","phone":"8879908086","email":"namrata.vallakati@crmlanding.in","amount":1000,"variant":"dx","color":"black","terms":1}
+[2025-09-25 12:34:43] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/182.48.201.133\/api\/check-status?txnid=1758782117562067"}
+[2025-09-25 12:34:43] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"Namrata Shetty","email":"namrata.vallakati@crmlanding.in","amount":1000,"txnid":"1758782117562067"}
+[2025-09-25 12:34:43] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-25 12:34:44] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-25 12:34:44] [INFO]: 
+About to call createTransaction method {"txnid":"1758782117562067","allCustomerDetails":{"firstname":"Namrata Shetty","phone":"8879908086","email":"namrata.vallakati@crmlanding.in","address":"samar heights mumbai","city":"Pune","state":"Maharashtra","pincode":"411001","ownedBefore":0,"productinfo":"dx","color":"black","terms":1,"transaction_id":"1758782117562067","variant":"dx","amount":1000,"status":"PENDING","merchant_id":"1758782117562067"},"amount":1000}
+[2025-09-25 12:34:44] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758782117562067"}
+[2025-09-25 12:34:44] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758782117562067","status":"PENDING"}
+[2025-09-25 12:34:44] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-25 12:34:44] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-25 12:34:44] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-25 12:34:44] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-25 12:34:44] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-25 12:34:44] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-25 12:34:44] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-25 12:34:44] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-25 12:34:44] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-25 12:34:44] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-25 13:27:37] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-25 13:27:37","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36 Edg\/140.0.0.0","ip_address":"103.159.183.58"}
+[2025-09-25 13:27:37] [INFO]: 
+POST data received {"phone":"7755445522","firstname":"Harsh Test Ride CRM","email":"harsh.natani@crmlanding.in","address":"Apollo heights","pincode":"411001","city":"Pune","state":"Maharashtra","variant":"dx-plus","color":"white","terms":"on","txnid":"1758787027703267","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-25 13:27:37] [INFO]: 
+Input data extracted {"txnid":"1758787027703267","firstname":"Harsh Test Ride CRM","phone":"7755445522","email":"harsh.natani@crmlanding.in","amount":1000,"variant":"dx-plus","color":"white","terms":1}
+[2025-09-25 13:27:37] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/182.48.201.133\/api\/check-status?txnid=1758787027703267"}
+[2025-09-25 13:27:37] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"Harsh Test Ride CRM","email":"harsh.natani@crmlanding.in","amount":1000,"txnid":"1758787027703267"}
+[2025-09-25 13:27:37] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-25 13:27:37] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-25 13:27:37] [INFO]: 
+About to call createTransaction method {"txnid":"1758787027703267","allCustomerDetails":{"firstname":"Harsh Test Ride CRM","phone":"7755445522","email":"harsh.natani@crmlanding.in","address":"Apollo heights","city":"Pune","state":"Maharashtra","pincode":"411001","ownedBefore":0,"productinfo":"dx-plus","color":"white","terms":1,"transaction_id":"1758787027703267","variant":"dx-plus","amount":1000,"status":"PENDING","merchant_id":"1758787027703267"},"amount":1000}
+[2025-09-25 13:27:37] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758787027703267"}
+[2025-09-25 13:27:37] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758787027703267","status":"PENDING"}
+[2025-09-25 13:27:37] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-25 13:27:37] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-25 13:27:37] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-25 13:27:37] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-25 13:27:37] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-25 13:27:37] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-25 13:27:37] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-25 13:27:37] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-25 13:27:37] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-25 13:27:37] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-26 11:44:51] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-26 11:44:51","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36 Edg\/140.0.0.0","ip_address":"103.159.183.58"}
+[2025-09-26 11:44:51] [INFO]: 
+POST data received {"phone":"8003326124","firstname":"Harsh Test Book checjk","email":"harsh.natani@crmlanding.in","address":"apollo heights","pincode":"411001","city":"Pune","state":"Maharashtra","ownedBefore":"on","variant":"dx-plus","color":"white","terms":"on","txnid":"1758867256615013","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-26 11:44:51] [INFO]: 
+Input data extracted {"txnid":"1758867256615013","firstname":"Harsh Test Book checjk","phone":"8003326124","email":"harsh.natani@crmlanding.in","amount":1000,"variant":"dx-plus","color":"white","terms":1}
+[2025-09-26 11:44:51] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/182.48.201.133\/api\/check-status?txnid=1758867256615013"}
+[2025-09-26 11:44:51] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"Harsh Test Book checjk","email":"harsh.natani@crmlanding.in","amount":1000,"txnid":"1758867256615013"}
+[2025-09-26 11:44:51] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-26 11:44:52] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-26 11:44:52] [INFO]: 
+About to call createTransaction method {"txnid":"1758867256615013","allCustomerDetails":{"firstname":"Harsh Test Book checjk","phone":"8003326124","email":"harsh.natani@crmlanding.in","address":"apollo heights","city":"Pune","state":"Maharashtra","pincode":"411001","ownedBefore":1,"productinfo":"dx-plus","color":"white","terms":1,"transaction_id":"1758867256615013","variant":"dx-plus","amount":1000,"status":"PENDING","merchant_id":"1758867256615013"},"amount":1000}
+[2025-09-26 11:44:52] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758867256615013"}
+[2025-09-26 11:44:52] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758867256615013","status":"PENDING"}
+[2025-09-26 11:44:52] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-26 11:44:52] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-26 11:44:52] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-26 11:44:52] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-26 11:44:52] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-26 11:44:52] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-26 11:44:52] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-26 11:44:52] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-26 11:44:52] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-26 11:44:52] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-26 11:47:30] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-26 11:47:30","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36 Edg\/140.0.0.0","ip_address":"103.159.183.58"}
+[2025-09-26 11:47:30] [INFO]: 
+POST data received {"phone":"8003326124","firstname":"Harsh Natani Book test","email":"harsh.natani@crmlanding.in","address":"apollo heights","pincode":"411001","city":"Pune","state":"Maharashtra","ownedBefore":"on","variant":"dx-plus","color":"white","terms":"on","txnid":"1758867397233878","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-26 11:47:30] [INFO]: 
+Input data extracted {"txnid":"1758867397233878","firstname":"Harsh Natani Book test","phone":"8003326124","email":"harsh.natani@crmlanding.in","amount":1000,"variant":"dx-plus","color":"white","terms":1}
+[2025-09-26 11:47:30] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/182.48.201.133\/api\/check-status?txnid=1758867397233878"}
+[2025-09-26 11:47:30] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"Harsh Natani Book test","email":"harsh.natani@crmlanding.in","amount":1000,"txnid":"1758867397233878"}
+[2025-09-26 11:47:30] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-26 11:47:30] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-26 11:47:30] [INFO]: 
+About to call createTransaction method {"txnid":"1758867397233878","allCustomerDetails":{"firstname":"Harsh Natani Book test","phone":"8003326124","email":"harsh.natani@crmlanding.in","address":"apollo heights","city":"Pune","state":"Maharashtra","pincode":"411001","ownedBefore":1,"productinfo":"dx-plus","color":"white","terms":1,"transaction_id":"1758867397233878","variant":"dx-plus","amount":1000,"status":"PENDING","merchant_id":"1758867397233878"},"amount":1000}
+[2025-09-26 11:47:30] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758867397233878"}
+[2025-09-26 11:47:30] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758867397233878","status":"PENDING"}
+[2025-09-26 11:47:30] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-26 11:47:30] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-26 11:47:30] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-26 11:47:30] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-26 11:47:30] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-26 11:47:30] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-26 11:47:30] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-26 11:47:30] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-26 11:47:30] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-26 11:47:30] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-26 11:51:03] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-26 11:51:03","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36 Edg\/140.0.0.0","ip_address":"103.159.183.58"}
+[2025-09-26 11:51:03] [INFO]: 
+POST data received {"phone":"9988554455","firstname":"Harsh CRM","email":"harsh.natani@crmlanding.in","address":"Shastri Nagar","pincode":"411001","city":"Pune","state":"Maharashtra","ownedBefore":"on","variant":"dx-plus","color":"white","terms":"on","txnid":"1758867626389053","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-26 11:51:03] [INFO]: 
+Input data extracted {"txnid":"1758867626389053","firstname":"Harsh CRM","phone":"9988554455","email":"harsh.natani@crmlanding.in","amount":1000,"variant":"dx-plus","color":"white","terms":1}
+[2025-09-26 11:51:03] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/182.48.201.133\/api\/check-status?txnid=1758867626389053"}
+[2025-09-26 11:51:03] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"Harsh CRM","email":"harsh.natani@crmlanding.in","amount":1000,"txnid":"1758867626389053"}
+[2025-09-26 11:51:03] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-26 11:51:03] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-26 11:51:03] [INFO]: 
+About to call createTransaction method {"txnid":"1758867626389053","allCustomerDetails":{"firstname":"Harsh CRM","phone":"9988554455","email":"harsh.natani@crmlanding.in","address":"Shastri Nagar","city":"Pune","state":"Maharashtra","pincode":"411001","ownedBefore":1,"productinfo":"dx-plus","color":"white","terms":1,"transaction_id":"1758867626389053","variant":"dx-plus","amount":1000,"status":"PENDING","merchant_id":"1758867626389053"},"amount":1000}
+[2025-09-26 11:51:03] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758867626389053"}
+[2025-09-26 11:51:03] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758867626389053","status":"PENDING"}
+[2025-09-26 11:51:03] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-26 11:51:03] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-26 11:51:03] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-26 11:51:03] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-26 11:51:03] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-26 11:51:03] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-26 11:51:03] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-26 11:51:03] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-26 11:51:03] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-26 11:51:03] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-26 12:01:52] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-26 12:01:52","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36 Edg\/140.0.0.0","ip_address":"103.159.183.58"}
+[2025-09-26 12:01:52] [INFO]: 
+POST data received {"phone":"8855445588","firstname":"harsh jaipur","email":"harsh.natani@crmlanding.in","address":"APollo heights","pincode":"411001","city":"Pune","state":"Maharashtra","ownedBefore":"on","variant":"dx","color":"black","terms":"on","txnid":"1758868282559027","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-26 12:01:52] [INFO]: 
+Input data extracted {"txnid":"1758868282559027","firstname":"harsh jaipur","phone":"8855445588","email":"harsh.natani@crmlanding.in","amount":1000,"variant":"dx","color":"black","terms":1}
+[2025-09-26 12:01:52] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/182.48.201.133\/api\/check-status?txnid=1758868282559027"}
+[2025-09-26 12:01:52] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"harsh jaipur","email":"harsh.natani@crmlanding.in","amount":1000,"txnid":"1758868282559027"}
+[2025-09-26 12:01:52] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-26 12:01:52] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-26 12:01:52] [INFO]: 
+About to call createTransaction method {"txnid":"1758868282559027","allCustomerDetails":{"firstname":"harsh jaipur","phone":"8855445588","email":"harsh.natani@crmlanding.in","address":"APollo heights","city":"Pune","state":"Maharashtra","pincode":"411001","ownedBefore":1,"productinfo":"dx","color":"black","terms":1,"transaction_id":"1758868282559027","variant":"dx","amount":1000,"status":"PENDING","merchant_id":"1758868282559027"},"amount":1000}
+[2025-09-26 12:01:52] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1758868282559027"}
+[2025-09-26 12:01:52] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1758868282559027","status":"PENDING"}
+[2025-09-26 12:01:52] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-26 12:01:52] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-26 12:01:52] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-26 12:01:52] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-26 12:01:52] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-26 12:01:52] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-26 12:01:52] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-26 12:01:52] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-26 12:01:52] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-26 12:01:52] [INFO]: 
+Starting payment request to PhonePe 
+[2025-09-29 15:49:27] [INFO]: 
+=== PAYMENT PROCESS STARTED === {"timestamp":"2025-09-29 15:49:27","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36","ip_address":"127.0.0.1"}
+[2025-09-29 15:49:27] [INFO]: 
+POST data received {"phone":"7506754344","firstname":"test","email":"test@gmail.com","address":"testing APIs","pincode":"410210","city":"Kharghar","state":"Maharashtra","variant":"dx-plus","color":"white","terms":"on","txnid":"1759141043160017","amount":"1000.00","help_type":"book-now","phone_verified":"1"}
+[2025-09-29 15:49:27] [INFO]: 
+Input data extracted {"txnid":"1759141043160017","firstname":"test","phone":"7506754344","email":"test@gmail.com","amount":1000,"variant":"dx-plus","color":"white","terms":1}
+[2025-09-29 15:49:27] [INFO]: 
+PhonePe credentials loaded from config {"clientId":"TEST-M23WRA57WVMWL_25072","env":"UAT","redirect_url":"http:\/\/dev.kineticev.in\/api\/check-status?txnid=1759141043160017"}
+[2025-09-29 15:49:27] [INFO]: 
+Customer details array prepared {"array_keys":["firstname","phone","email","address","city","state","pincode","ownedBefore","productinfo","color","terms","transaction_id","variant","amount","status","merchant_id"],"firstname":"test","email":"test@gmail.com","amount":1000,"txnid":"1759141043160017"}
+[2025-09-29 15:49:27] [INFO]: 
+About to create DatabaseHandler instance 
+[2025-09-29 15:49:27] [INFO]: 
+DatabaseHandler instance created successfully 
+[2025-09-29 15:49:27] [INFO]: 
+About to call createTransaction method {"txnid":"1759141043160017","allCustomerDetails":{"firstname":"test","phone":"7506754344","email":"test@gmail.com","address":"testing APIs","city":"Kharghar","state":"Maharashtra","pincode":"410210","ownedBefore":0,"productinfo":"dx-plus","color":"white","terms":1,"transaction_id":"1759141043160017","variant":"dx-plus","amount":1000,"status":"PENDING","merchant_id":"1759141043160017"},"amount":1000}
+[2025-09-29 15:49:27] [INFO]: 
+createTransaction method returned {"result":true,"txnid":"1759141043160017"}
+[2025-09-29 15:49:27] [SUCCESS]: 
+Transaction created in database successfully {"txnid":"1759141043160017","status":"PENDING"}
+[2025-09-29 15:49:27] [INFO]: 
+Continuing to PhonePe OAuth authentication process 
+[2025-09-29 15:49:27] [INFO]: 
+=== CHECKPOINT: Script execution continuing after database operations === 
+[2025-09-29 15:49:27] [INFO]: 
+=== STARTING PHONEPE OAUTH PROCESS === 
+[2025-09-29 15:49:27] [INFO]: 
+Starting PhonePe OAuth authentication request 
+[2025-09-29 15:49:27] [INFO]: 
+Initializing cURL for OAuth request 
+[2025-09-29 15:49:27] [INFO]: 
+cURL initialized successfully, setting up OAuth request options 
+[2025-09-29 15:49:28] [INFO]: 
+OAuth authentication response received {"httpCode":200,"responseLength":494,"hasResponse":true}
+[2025-09-29 15:49:28] [INFO]: 
+OAuth authentication successful, processing response 
+[2025-09-29 15:49:28] [INFO]: 
+Access token retrieved successfully {"tokenLength":163}
+[2025-09-29 15:49:28] [INFO]: 
+Starting payment request to PhonePe 

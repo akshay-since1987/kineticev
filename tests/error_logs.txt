@@ -1,0 +1,92 @@
+[2025-09-17 16:45:30] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-09-23 10:35:14] [ERROR]: 
+[ADMIN_HANDLER] Configuration error {"error":"Invalid configuration: Configuration is not an array"}
+[2025-09-23 10:40:33] [ERROR]: 
+[ADMIN_HANDLER] Configuration error {"error":"Invalid configuration: Configuration is not an array"}
+[2025-09-23 11:46:42] [ERROR]: 
+[ADMIN_HANDLER] Configuration error {"error":"Invalid configuration: Configuration is not an array"}
+[2025-09-24 00:13:41] [ERROR]: 
+Failed to create test drive request {"error_info":["23000",1048,"Column 'date' cannot be null"],"sql_state":"23000","error_code":1048,"error_message":"Column 'date' cannot be null"}
+[2025-09-24 00:13:41] [ERROR]: 
+[TEST_RIDE] Database insertion failed {"customer_details":{"name":"Test User No Date","email":"test@example.com","phone":"9876543210","pincode":"110001"},"database_result":false}
+[2025-09-24 00:15:41] [ERROR]: 
+Failed to create test drive request {"error_info":["23000",1048,"Column 'date' cannot be null"],"sql_state":"23000","error_code":1048,"error_message":"Column 'date' cannot be null"}
+[2025-09-24 00:15:41] [ERROR]: 
+[TEST_RIDE] Database insertion failed {"customer_details":{"name":"Test User No Date","email":"test@example.com","phone":"9876543210","pincode":"110001"},"database_result":false}
+[2025-09-24 00:31:55] [ERROR]: 
+Failed to create test drive request {"error_info":["23000",1048,"Column 'date' cannot be null"],"sql_state":"23000","error_code":1048,"error_message":"Column 'date' cannot be null"}
+[2025-09-24 00:31:55] [ERROR]: 
+[TEST_RIDE] Database insertion failed {"customer_details":{"name":"Akshay Khandelwal","email":"akshay.since1987@gmail.com","phone":"7506754344","pincode":"410210"},"database_result":false}
+[2025-09-24 00:32:05] [ERROR]: 
+Failed to create test drive request {"error_info":["23000",1048,"Column 'date' cannot be null"],"sql_state":"23000","error_code":1048,"error_message":"Column 'date' cannot be null"}
+[2025-09-24 00:32:05] [ERROR]: 
+[TEST_RIDE] Database insertion failed {"customer_details":{"name":"Akshay Khandelwal","email":"akshay.since1987@gmail.com","phone":"7506754344","pincode":"410210"},"database_result":false}
+[2025-09-24 10:56:51] [ERROR]: 
+Database connection failed after all retries {"total_attempts":4,"final_error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-24 10:56:51] [ERROR]: 
+Database connection failed {"error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","code":2002,"file":"D:\\K2\\php\\DatabaseUtils.php","line":89}
+[2025-09-24 10:56:51] [ERROR]: 
+Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond"}
+[2025-09-24 10:59:47] [ERROR]: 
+Database connection failed after all retries {"total_attempts":4,"final_error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-24 10:59:47] [ERROR]: 
+Database connection failed {"error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","code":2002,"file":"D:\\K2\\php\\DatabaseUtils.php","line":89}
+[2025-09-24 10:59:47] [ERROR]: 
+Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond"}
+[2025-09-24 11:13:59] [ERROR]: 
+Database connection failed after all retries {"total_attempts":4,"final_error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","dsn":"mysql:host=kinetic-prod-rds.c38osuioe4ar.ap-south-1.rds.amazonaws.com"}
+[2025-09-24 11:13:59] [ERROR]: 
+Database connection failed {"error":"SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond","code":2002,"file":"D:\\K2\\php\\DatabaseUtils.php","line":89}
+[2025-09-24 11:13:59] [ERROR]: 
+Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond"}
+[2025-09-24 13:27:41] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-09-24 13:38:39] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-09-25 12:35:13] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-09-25 13:28:24] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-09-26 11:45:26] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-09-26 11:47:59] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-09-26 11:51:32] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-09-26 12:02:30] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-09-26 21:54:22] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-09-26 21:54:24] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-09-26 21:54:26] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-09-26 21:55:44] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-09-26 21:55:46] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-09-26 21:55:48] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-09-29 15:49:51] [ERROR]: 
+Failed to record Salesforce submission - no rows affected 
+[2025-10-02 13:38:01] [ERROR]: 
+Database connection failed after all retries {"total_attempts":4,"final_error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","dsn":"mysql:host=localhost"}
+[2025-10-02 13:38:01] [ERROR]: 
+Database connection failed {"error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","code":1045,"file":"\/home\/blogadminkinetic\/public_html\/Kinetic-web\/DatabaseUtils.php","line":89}
+[2025-10-02 13:38:01] [ERROR]: 
+Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)"}
+[2025-10-02 13:39:13] [ERROR]: 
+Database connection failed after all retries {"total_attempts":4,"final_error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","dsn":"mysql:host=localhost"}
+[2025-10-02 13:39:13] [ERROR]: 
+Database connection failed {"error":"SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)","code":1045,"file":"\/home\/blogadminkinetic\/public_html\/Kinetic-web\/DatabaseUtils.php","line":89}
+[2025-10-02 13:39:13] [ERROR]: 
+Fatal error - terminating execution {"error_message":"Database connection failed: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)"}
+[2025-10-06 11:10:53] [ERROR]: 
+Failed to create test drive request {"error_info":["23000",1048,"Column 'date' cannot be null"],"sql_state":"23000","error_code":1048,"error_message":"Column 'date' cannot be null"}
+[2025-10-06 11:10:53] [ERROR]: 
+[TEST_RIDE] Database insertion failed {"customer_details":{"name":"Akshay","email":"akshay.since1987@gmail.com","phone":"7506754344","pincode":"410210"},"database_result":false}
+[2025-10-06 11:11:03] [ERROR]: 
+Failed to create test drive request {"error_info":["23000",1048,"Column 'date' cannot be null"],"sql_state":"23000","error_code":1048,"error_message":"Column 'date' cannot be null"}
+[2025-10-06 11:11:03] [ERROR]: 
+[TEST_RIDE] Database insertion failed {"customer_details":{"name":"Akshay","email":"akshay.since1987@gmail.com","phone":"7506754344","pincode":"410210"},"database_result":false}

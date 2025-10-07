@@ -49,6 +49,10 @@ try {
         throw new Exception("Invalid configuration. Database settings are missing.");
     }
 
+    // Include AllowedCitiesHandler
+    require_once 'includes/AllowedCitiesHandler.php';
+    $citiesHandler = new AllowedCitiesHandler($config);
+
     // Make sure database credentials are present
     if (
         !isset($config['database']['host']) || !isset($config['database']['dbname']) ||
@@ -76,9 +80,11 @@ try {
     <meta http-equiv="Expires" content="0">
     <title>KineticEV Admin Panel</title>
     <link rel="icon" type="image/x-icon" href="/-/images/logo.svg">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
     <link href="assets/admin.css?v=<?php echo getFileVersion('assets/admin.css'); ?>" rel="stylesheet">
 </head>
 
@@ -106,6 +112,9 @@ try {
                         </a>
                         <a class="nav-link" href="#dealerships" data-section="dealerships">
                             <i class="fas fa-store me-2"></i> Dealerships
+                        </a>
+                        <a class="nav-link" href="#allowed-cities" data-section="allowed_cities">
+                            <i class="fas fa-map-marker-alt me-2"></i> Allowed Cities
                         </a>
                         <a class="nav-link" href="#analytics" data-section="analytics">
                             <i class="fas fa-chart-bar me-2"></i> Analytics
@@ -378,6 +387,42 @@ try {
                     </div>
                 </div>
 
+                <!-- Allowed Cities Section -->
+                <div id="allowed_cities-section" class="content-section" style="display: none;">
+                    <div class="table-card">
+                        <div class="table-header d-flex justify-content-between align-items-center">
+                            <h5><i class="fas fa-map-marker-alt me-2"></i>Allowed Cities</h5>
+                            <div>
+                                <button class="btn btn-success" onclick="adminPanel.showAddCityModal()">
+                                    <i class="fas fa-plus me-1"></i> Add City
+                                </button>
+                                <button class="btn btn-kinetic btn-sm ms-2" onclick="adminPanel.refreshCitiesTable()">
+                                    <i class="fas fa-sync-alt me-1"></i> Refresh
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="table-responsive">
+                                <table id="citiesTable" class="table table-striped table-hover" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>City Name</th>
+                                            <th>Coordinates</th>
+                                            <th>Status</th>
+                                            <th>Last Updated</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Cities will be loaded via DataTables -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Email Logs Section -->
                 <div id="email_logs-section" class="content-section" style="display: none;">
                     <div class="table-card">
@@ -386,6 +431,81 @@ try {
                         </div>
                         <div class="p-4">
                             <div id="email-logs-content">Loading email logs...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transactions Section -->
+                <div id="transactions-section" class="content-section" style="display: none;">
+                    <div class="table-card">
+                        <div class="table-header d-flex justify-content-between align-items-center">
+                            <h5><i class="fas fa-money-bill-wave me-2"></i>Transactions</h5>
+                        </div>
+                        <div class="p-4">
+                            <div class="table-responsive">
+                                <table id="transactions-table" class="table table-striped table-hover" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Date</th>
+                                            <th>Customer</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Test Drives Section -->
+                <div id="test_drives-section" class="content-section" style="display: none;">
+                    <div class="table-card">
+                        <div class="table-header d-flex justify-content-between align-items-center">
+                            <h5><i class="fas fa-car me-2"></i>Test Drive Bookings</h5>
+                        </div>
+                        <div class="p-4">
+                            <div class="table-responsive">
+                                <table id="test_drives-table" class="table table-striped table-hover" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Booking Date</th>
+                                            <th>Customer</th>
+                                            <th>Vehicle</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contacts Section -->
+                <div id="contacts-section" class="content-section" style="display: none;">
+                    <div class="table-card">
+                        <div class="table-header d-flex justify-content-between align-items-center">
+                            <h5><i class="fas fa-envelope me-2"></i>Contact Form Submissions</h5>
+                        </div>
+                        <div class="p-4">
+                            <div class="table-responsive">
+                                <table id="contacts-table" class="table table-striped table-hover" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Date</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Subject</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -566,11 +686,15 @@ try {
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Dependencies -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script>
         // Force clear any old cached admin panel instance
         if (window.adminPanel) {
@@ -734,6 +858,53 @@ try {
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                     <button type="button" class="btn btn-primary" id="updateDealershipBtn">Update Dealership</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit City Modal -->
+    <div class="modal fade" id="cityModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cityModalTitle">Add New City</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="cityForm">
+                        <input type="hidden" id="cityId" name="city_id">
+                        <div class="mb-3">
+                            <label for="cityName" class="form-label">City Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="cityName" name="city_name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="state" class="form-label">State <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="state" name="state" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="coordinates" class="form-label">Coordinates</label>
+                            <input type="text" class="form-control" id="coordinates" name="coordinates" placeholder="e.g. 19.0760,72.8777">
+                        </div>
+                        <div class="mb-3">
+                            <label for="maxDistance" class="form-label">Maximum Distance (KM)</label>
+                            <input type="number" class="form-control" id="maxDistance" name="max_distance_km" value="50">
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="isAllowed" name="is_allowed" checked>
+                                <label class="form-check-label" for="isAllowed">City is Active</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-kinetic" id="saveCityBtn">Save City</button>
                 </div>
             </div>
         </div>

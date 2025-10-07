@@ -1,0 +1,294 @@
+[2025-09-23 17:08:40] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"813100"}
+[2025-09-23 17:11:09] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"919952"}
+[2025-09-23 17:59:18] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"886861"}
+[2025-09-23 18:31:00] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"261596"}
+[2025-09-24 00:31:37] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"753215"}
+[2025-09-24 00:41:16] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"496768"}
+[2025-09-24 00:45:03] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917526541524","otp":"903102"}
+[2025-09-24 09:43:53] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"401498"}
+[2025-09-24 09:56:18] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"568518"}
+[2025-09-24 09:58:20] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"430434"}
+[2025-09-24 09:59:09] [INFO]: 
+Preparing to send thank you SMS {"phone":"+917506754344","sms_phone":"7506754344","booking_id":"1758688095582097","template_id":"1707175334199594554"}
+[2025-09-24 09:59:09] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=7506754344&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758688095582097.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 09:59:09] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"ebf7-260-3b90-2669\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 10:00:01] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"805877"}
+[2025-09-24 10:54:55] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"720278"}
+[2025-09-24 10:57:54] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"968944"}
+[2025-09-24 11:12:02] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"713476"}
+[2025-09-24 11:21:05] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"593384"}
+[2025-09-24 11:23:26] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"696165"}
+[2025-09-24 11:24:30] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918879908086","sms_phone":"8879908086","booking_id":"1758693202850209","template_id":"1707175334199594554"}
+[2025-09-24 11:24:30] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8879908086&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758693202850209.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 11:24:30] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"7a6a-7dc-d1a5-d6c8\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 11:24:32] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918879908086","sms_phone":"8879908086","booking_id":"1758693202850209","template_id":"1707175334199594554"}
+[2025-09-24 11:24:32] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8879908086&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758693202850209.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 11:24:32] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"feb6-cc6-c709-fd8e\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 11:47:09] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"592064"}
+[2025-09-24 11:48:17] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918879908086","sms_phone":"8879908086","booking_id":"1758694626059979","template_id":"1707175334199594554"}
+[2025-09-24 11:48:17] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8879908086&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758694626059979.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 11:48:17] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"2131-982-0eec-ab1d\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 11:48:19] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918879908086","sms_phone":"8879908086","booking_id":"1758694626059979","template_id":"1707175334199594554"}
+[2025-09-24 11:48:19] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8879908086&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758694626059979.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 11:48:19] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"d613-a8a-becf-fe97\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 11:58:49] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918554455887","otp":"970257"}
+[2025-09-24 12:00:46] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918003366225","otp":"371399"}
+[2025-09-24 12:02:04] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918556655225","otp":"584003"}
+[2025-09-24 12:03:06] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918554455887","otp":"845876"}
+[2025-09-24 12:05:50] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918855445522","otp":"614080"}
+[2025-09-24 12:10:09] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918554455887","sms_phone":"8554455887","booking_id":"1758695583015954","template_id":"1707175334199594554"}
+[2025-09-24 12:10:09] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8554455887&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758695583015954.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 12:10:09] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"6257-47c-9182-8360\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 12:10:14] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918554455887","sms_phone":"8554455887","booking_id":"1758695583015954","template_id":"1707175334199594554"}
+[2025-09-24 12:10:14] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8554455887&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758695583015954.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 12:10:14] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"9cb2-191-d68e-9eda\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 12:18:47] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917755884455","otp":"621006"}
+[2025-09-24 12:19:42] [INFO]: 
+Preparing to send thank you SMS {"phone":"+917755884455","sms_phone":"7755884455","booking_id":"1758696519823737","template_id":"1707175334199594554"}
+[2025-09-24 12:19:42] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=7755884455&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758696519823737.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 12:19:46] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"b6de-f13-1f5f-8913\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 12:19:49] [INFO]: 
+Preparing to send thank you SMS {"phone":"+917755884455","sms_phone":"7755884455","booking_id":"1758696519823737","template_id":"1707175334199594554"}
+[2025-09-24 12:19:49] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=7755884455&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758696519823737.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 12:19:49] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"30fb-c3a-c7d5-75d6\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 12:20:52] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918844221100","otp":"732336"}
+[2025-09-24 12:41:04] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"689206"}
+[2025-09-24 13:10:52] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"749349"}
+[2025-09-24 13:13:18] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"533516"}
+[2025-09-24 13:17:36] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918855225544","otp":"614511"}
+[2025-09-24 13:20:07] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918855445522","otp":"633758"}
+[2025-09-24 13:22:18] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"483387"}
+[2025-09-24 13:26:40] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"467465"}
+[2025-09-24 13:27:41] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918879908086","sms_phone":"8879908086","booking_id":"1758700597072917","template_id":"1707175334199594554"}
+[2025-09-24 13:27:41] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8879908086&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758700597072917.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 13:27:41] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"a5c9-7af-1c83-8ae5\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 13:27:41] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918879908086","sms_phone":"8879908086","booking_id":"1758700597072917","template_id":"1707175334199594554"}
+[2025-09-24 13:27:41] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8879908086&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758700597072917.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 13:27:42] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"40f6-60d-9b6d-c81f\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 13:28:06] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917755887755","otp":"403258"}
+[2025-09-24 13:30:38] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918855228855","otp":"112947"}
+[2025-09-24 13:30:46] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918855228854","otp":"374750"}
+[2025-09-24 13:31:58] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918855228854","sms_phone":"8855228854","booking_id":"1758700829991438","template_id":"1707175334199594554"}
+[2025-09-24 13:31:58] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8855228854&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758700829991438.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 13:31:58] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"ca5b-84a-fe4a-5adb\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 13:32:01] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918855228854","sms_phone":"8855228854","booking_id":"1758700829991438","template_id":"1707175334199594554"}
+[2025-09-24 13:32:01] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8855228854&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758700829991438.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 13:32:01] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"615d-a12-94bf-7242\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 13:33:48] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918879908086","sms_phone":"8879908086","booking_id":"1758700597072917","template_id":"1707175334199594554"}
+[2025-09-24 13:33:48] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8879908086&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758700597072917.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 13:33:49] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"da78-a1f-97c8-a866\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 13:34:15] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"819066"}
+[2025-09-24 13:35:15] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918879908086","sms_phone":"8879908086","booking_id":"1758701045554825","template_id":"1707175334199594554"}
+[2025-09-24 13:35:15] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8879908086&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758701045554825.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 13:35:15] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"c591-ab7-4fe8-fd4f\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 13:35:15] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918879908086","sms_phone":"8879908086","booking_id":"1758701045554825","template_id":"1707175334199594554"}
+[2025-09-24 13:35:15] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8879908086&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758701045554825.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-24 13:35:15] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"0886-050-412a-404b\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-24 13:37:52] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"319945"}
+[2025-09-24 13:44:57] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"645667"}
+[2025-09-24 15:15:32] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"414910"}
+[2025-09-24 19:52:07] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918855447744","otp":"351144"}
+[2025-09-24 19:52:07] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918855447744","otp":"168472"}
+[2025-09-25 10:57:41] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"546050"}
+[2025-09-25 11:42:14] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"810574"}
+[2025-09-25 11:43:51] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917877837773","otp":"352104"}
+[2025-09-25 11:43:51] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917877837773","otp":"555005"}
+[2025-09-25 12:34:22] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"718253"}
+[2025-09-25 12:35:15] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918879908086","sms_phone":"8879908086","booking_id":"1758782117562067","template_id":"1707175334199594554"}
+[2025-09-25 12:35:15] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8879908086&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758782117562067.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-25 12:35:15] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"0b50-b59-6a2e-6d45\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-25 12:35:16] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918879908086","sms_phone":"8879908086","booking_id":"1758782117562067","template_id":"1707175334199594554"}
+[2025-09-25 12:35:16] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8879908086&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758782117562067.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-25 12:35:16] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"9afc-946-6d50-0e1f\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-25 13:26:12] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918855442255","otp":"540015"}
+[2025-09-25 13:27:13] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917755445522","otp":"445329"}
+[2025-09-25 13:28:25] [INFO]: 
+Preparing to send thank you SMS {"phone":"+917755445522","sms_phone":"7755445522","booking_id":"1758787027703267","template_id":"1707175334199594554"}
+[2025-09-25 13:28:25] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=7755445522&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758787027703267.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-25 13:28:26] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"4333-6c1-4674-3e56\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-26 11:42:31] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918855445522","otp":"549909"}
+[2025-09-26 11:44:26] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918003326124","otp":"695675"}
+[2025-09-26 11:45:27] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918003326124","sms_phone":"8003326124","booking_id":"1758867256615013","template_id":"1707175334199594554"}
+[2025-09-26 11:45:27] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8003326124&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758867256615013.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-26 11:45:27] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"28f9-02d-42e6-52a3\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-26 11:45:27] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918003326124","sms_phone":"8003326124","booking_id":"1758867256615013","template_id":"1707175334199594554"}
+[2025-09-26 11:45:27] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8003326124&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758867256615013.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-26 11:45:28] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"5225-b03-1139-8045\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-26 11:46:41] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918003326124","otp":"347766"}
+[2025-09-26 11:48:00] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918003326124","sms_phone":"8003326124","booking_id":"1758867397233878","template_id":"1707175334199594554"}
+[2025-09-26 11:48:00] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8003326124&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758867397233878.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-26 11:48:00] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"de71-e2f-e1c5-8849\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-26 11:48:04] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918003326124","sms_phone":"8003326124","booking_id":"1758867397233878","template_id":"1707175334199594554"}
+[2025-09-26 11:48:04] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8003326124&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758867397233878.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-26 11:48:05] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"bf29-97a-ab2a-4bde\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-26 11:50:33] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+919988554455","otp":"822055"}
+[2025-09-26 11:51:33] [INFO]: 
+Preparing to send thank you SMS {"phone":"+919988554455","sms_phone":"9988554455","booking_id":"1758867626389053","template_id":"1707175334199594554"}
+[2025-09-26 11:51:33] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=9988554455&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758867626389053.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-26 11:51:33] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"01f4-df1-c228-2799\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-26 11:51:33] [INFO]: 
+Preparing to send thank you SMS {"phone":"+919988554455","sms_phone":"9988554455","booking_id":"1758867626389053","template_id":"1707175334199594554"}
+[2025-09-26 11:51:33] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=9988554455&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758867626389053.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-26 11:51:33] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"ea58-a94-477c-3f39\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-26 12:01:25] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918855445588","otp":"543103"}
+[2025-09-26 12:02:31] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918855445588","sms_phone":"8855445588","booking_id":"1758868282559027","template_id":"1707175334199594554"}
+[2025-09-26 12:02:31] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8855445588&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758868282559027.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-26 12:02:31] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"d62f-4f2-986b-70da\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-26 12:02:32] [INFO]: 
+Preparing to send thank you SMS {"phone":"+918855445588","sms_phone":"8855445588","booking_id":"1758868282559027","template_id":"1707175334199594554"}
+[2025-09-26 12:02:32] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=8855445588&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231758868282559027.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-26 12:02:32] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"cd7d-6d7-cdad-2f0d\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-29 10:03:55] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"668887"}
+[2025-09-29 12:45:45] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+918879908086","otp":"949860"}
+[2025-09-29 15:40:50] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"926742"}
+[2025-09-29 15:47:30] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"491263"}
+[2025-09-29 15:49:52] [INFO]: 
+Preparing to send thank you SMS {"phone":"+917506754344","sms_phone":"7506754344","booking_id":"1759141043160017","template_id":"1707175334199594554"}
+[2025-09-29 15:49:52] [INFO]: 
+SMS API URL prepared for GET request {"original_url":"https:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","forced_protocol":"http","final_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php","full_url":"http:\/\/123.108.46.13\/sms-panel\/api\/http\/index.php?username=kineticev&apikey=5F598-12B58&apirequest=Text&sender=KINEV&route=TRANS&mobile=7506754344&message=Your+Kinetic+DX+scooter+booking+is+confirmed%21+Booking+ID+%231759141043160017.+Call+us+at+86000+96800.+-+KINETIC+WATTS+AND+VOLTS+LIMITED&TemplateID=1707175334199594554&format=JSON"}
+[2025-09-29 15:49:52] [SUCCESS]: 
+SMS API response received successfully {"http_code":200,"response":"{\"status\":\"success\",\"message-id\":[\"2aa7-649-a2f8-a748\"],\"message\":\"SMS Sent Successfully\"}"}
+[2025-09-29 15:50:09] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+915265123258","otp":"742649"}
+[2025-09-29 15:50:43] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917418520963","otp":"100661"}
+[2025-09-29 15:57:04] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"414309"}
+[2025-09-29 18:33:18] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"874814"}
+[2025-09-29 18:33:35] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"667522"}
+[2025-10-06 11:10:30] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"870273"}
+[2025-10-06 11:13:07] [INFO]: 
+Development mode: Skipping actual SMS sending {"phone":"+917506754344","otp":"896823"}
