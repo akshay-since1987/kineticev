@@ -11,9 +11,25 @@ A modern electric vehicle company website with booking system, dealership finder
 
 ## 📚 Documentation
 
-📋 **[PHP_FILES_CATEGORIZATION.md](./PHP_FILES_CATEGORIZATION.md)** - Comprehensive understanding of the PHP codebase structure
+### Core Documentation
+📋 **[TECHNICAL_SPECIFICATION.md](./docs/TSD.md)** - Complete technical specification and system architecture
+🔧 **[DEVELOPMENT_GUIDE.md](./docs/DEVELOPMENT_GUIDE.md)** - Developer setup and workflow guidelines
+📘 **[API_DOCUMENTATION.md](./docs/API_DOCUMENTATION.md)** - Comprehensive API reference
 
-🚀 **[PRODUCTION_DEPLOYMENT.md](./PRODUCTION_DEPLOYMENT.md)** - Production deployment requirements and guidelines
+### System Operations
+🔍 **[MONITORING_GUIDE.md](./docs/MONITORING_GUIDE.md)** - System monitoring and alerting procedures
+⚡ **[PERFORMANCE_TUNING.md](./docs/PERFORMANCE_TUNING.md)** - Performance optimization guidelines
+💾 **[BACKUP_PROCEDURES.md](./docs/BACKUP_PROCEDURES.md)** - Backup and recovery procedures
+
+### Security & Deployment
+🔒 **[SECURITY_GUIDE.md](./docs/SECURITY_GUIDE.md)** - Security measures and best practices
+🚀 **[PRODUCTION_DEPLOYMENT.md](./PRODUCTION_DEPLOYMENT.md)** - Production deployment requirements
+🗂️ **[PHP_FILES_CATEGORIZATION.md](./PHP_FILES_CATEGORIZATION.md)** - PHP codebase structure
+
+### Additional Resources
+- **[Quick Security Test](./QUICK_SECURITY_TEST.md)** - Security testing checklist
+- **[Security Testing Guide](./SECURITY_TESTING_GUIDE.md)** - Detailed security testing procedures
+- **[Task Tracker](./Task-Tracker.md)** - Project task tracking
 
 ## 🏗️ Project Architecture
 
