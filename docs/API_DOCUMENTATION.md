@@ -1,61 +1,97 @@
 # API Documentation
 
 ## Overview
-This document provides comprehensive documentation for the Kinetic Education Platform's API endpoints.
+This document provides comprehensive documentation for the Kinetic EV Platform's API endpoints.
+
+## API Routing
+All API endpoints are automatically routed through Apache's mod_rewrite rules in `.htaccess`:
+```apache
+RewriteRule ^api/(.+)$ api/$1.php [L]
+```
 
 ## Authentication
-
-### OAuth2 Authentication
-```php
-POST /api/v1/auth/token
-Content-Type: application/json
-
-{
-    "grant_type": "password",
-    "username": "user@example.com",
-    "password": "your_password",
-    "client_id": "your_client_id",
-    "client_secret": "your_client_secret"
-}
-```
-
-Response:
-```json
-{
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9...",
-    "token_type": "Bearer",
-    "expires_in": 3600,
-    "refresh_token": "def50200641f136..."
-}
-```
-
+The public website API endpoints do not require authentication as they serve public-facing forms and features. The admin portal uses session-based authentication with proper security measures.
 ## API Endpoints
 
-### User Management
+### Form Submissions
 
-#### Create User
-```php
-POST /api/v1/users
-Authorization: Bearer {token}
+#### Submit Contact Form
+```http
+POST /api/submit-contact
+Content-Type: application/x-www-form-urlencoded
+
+full_name=John Doe
+&email=john@example.com
+&phone=1234567890
+&help_type=General
+&message=Test message
+```
+
+#### Submit Test Drive Request
+```http
+POST /api/submit-test-drive
+Content-Type: application/x-www-form-urlencoded
+
+name=John Doe
+&email=john@example.com
+&phone=1234567890
+&preferred_date=2025-10-10
+&preferred_time=10:00
+&location=Mumbai
+```
+
+### OTP Verification
+
+#### Verify OTP
+```http
+POST /api/verify-otp
 Content-Type: application/json
 
 {
-    "email": "user@example.com",
-    "password": "secure_password",
-    "name": "John Doe",
-    "role": "student"
+    "phone": "1234567890",
+    "otp": "123456"
 }
 ```
 
+### Error Handling
+All API endpoints include proper error handling:
+- Input validation
+- Error response formatting
+- Logging of errors
+- Security headers
+
+### Admin Portal API Endpoints
+
+Note: All admin endpoints require session-based authentication.
+
+#### Dashboard Analytics
+```http
+GET /api/admin/dashboard/analytics
+Content-Type: application/json
+
 Response:
-```json
 {
-    "id": 123,
-    "email": "user@example.com",
-    "name": "John Doe",
-    "role": "student",
-    "created_at": "2025-10-08T12:00:00Z"
+    "total_bookings": 150,
+    "recent_activities": [...],
+    "dealer_stats": [...],
+    "monthly_metrics": [...]
 }
+```
+
+#### User Management
+```http
+GET /api/admin/users
+POST /api/admin/users
+PUT /api/admin/users/{id}
+DELETE /api/admin/users/{id}
+```
+
+#### Dealership Management
+```http
+GET /api/admin/dealerships
+POST /api/admin/dealerships
+PUT /api/admin/dealerships/{id}
+DELETE /api/admin/dealerships/{id}
 ```
 
 #### Get User Profile
@@ -82,36 +118,17 @@ Response:
 }
 ```
 
-### Course Management
+### Response Formats
 
-#### List Courses
-```php
-GET /api/v1/courses
-Authorization: Bearer {token}
-```
-
-Response:
+#### Success Response
 ```json
 {
-    "data": [
-        {
-            "id": 1,
-            "title": "Introduction to Mathematics",
-            "description": "Basic mathematics course",
-            "instructor": {
-                "id": 456,
-                "name": "Dr. Smith"
-            },
-            "duration": "12 weeks",
-            "start_date": "2025-11-01T00:00:00Z"
-        }
-    ],
-    "meta": {
-        "total": 50,
-        "per_page": 10,
-        "current_page": 1
+    "status": "success",
+    "data": {
+        // Response data here
     }
 }
+```
 ```
 
 #### Create Course
@@ -130,32 +147,27 @@ Content-Type: application/json
 }
 ```
 
-### Content Management
-
-#### Upload Content
-```php
-POST /api/v1/content
-Authorization: Bearer {token}
-Content-Type: multipart/form-data
-
-{
-    "title": "Lecture 1",
-    "description": "Introduction to the course",
-    "course_id": 1,
-    "file": [binary_data],
-    "type": "video"
-}
-```
-
-Response:
+### Dashboard Analytics Response Example
 ```json
 {
-    "id": 789,
-    "title": "Lecture 1",
-    "url": "https://content.kineticeducation.com/videos/789.mp4",
-    "type": "video",
-    "duration": "01:30:00",
-    "size": 256000000
+    "status": "success",
+    "data": {
+        "total_bookings": 150,
+        "recent_activities": [
+            {
+                "type": "booking",
+                "timestamp": "2025-10-08T10:30:00Z",
+                "details": "New test drive booking from Mumbai"
+            }
+        ],
+        "dealer_stats": [
+            {
+                "dealer_id": 1,
+                "name": "Mumbai Central",
+                "total_bookings": 45
+            }
+        ]
+    }
 }
 ```
 

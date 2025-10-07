@@ -8,6 +8,20 @@ src/dist/
 src/public/
 php/css/
 php/js/
+
+# Development Files
+# -----------------------------------------------------------------------------
+DEVELOPMENT_STATUS.md
+.env
+.env.*
+!.env.example
+
+# IDE and Editor Files
+# -----------------------------------------------------------------------------
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
 build/
 dist/
 blogs/
