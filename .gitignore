@@ -11,7 +11,6 @@ php/js/
 
 # Development Files
 # -----------------------------------------------------------------------------
-DEVELOPMENT_STATUS.md
 .env
 .env.*
 !.env.example
@@ -37,7 +36,6 @@ load-testing/
 **/*dump*
 **/*.zip
 **/*.rtf
-**/*backup*
 
 # Dependencies and Packages
 # -----------------------------------------------------------------------------
