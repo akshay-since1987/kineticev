@@ -48,6 +48,9 @@ graph TB
 | Backend | PHP | 8.1+ | Application logic |
 | Database | MySQL | 5.7+ | Data storage |
 | Cache | File Cache | - | Session/Data caching |
+| SMS | OTP Service | - | Mobile verification |
+| Email | Multiple Handlers | - | Email notifications |
+| CRM | Salesforce | - | Customer management |
 | Web Server | Apache | 2.4+ | HTTP server |
 
 #### 1.2.2 Frontend Technologies

@@ -3,11 +3,36 @@
 ## Overview
 This document provides comprehensive documentation for the Kinetic EV Platform's API endpoints.
 
+## Available API Endpoints
+
+1. Test Drive Management
+   - `submit-test-drive.php`: Process test drive requests
+   - `check-status.php`: Check test drive request status
+   
+2. Location Services
+   - `distance-check.php`: Calculate distances between locations
+   - `get-allowed-cities.php`: Get list of serviceable cities
+
+3. OTP Verification
+   - `generate-otp.php`: Generate OTP for mobile verification
+   - `verify-otp.php`: Verify submitted OTP
+
+4. Contact & Payment
+   - `save-contact.php`: Save contact form submissions
+   - `process-payment.php`: Handle payment processing
+
 ## API Routing
 All API endpoints are automatically routed through Apache's mod_rewrite rules in `.htaccess`:
 ```apache
 RewriteRule ^api/(.+)$ api/$1.php [L]
 ```
+
+## Security Implementation
+All API endpoints implement:
+- Security headers (X-Content-Type-Options, X-Frame-Options, X-XSS-Protection)
+- Input validation
+- Error handling
+- Logging
 
 ## Authentication
 The public website API endpoints do not require authentication as they serve public-facing forms and features. The admin portal uses session-based authentication with proper security measures.
