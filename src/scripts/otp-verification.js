@@ -392,9 +392,16 @@ const OtpVerification = {
         const phone = phoneField.value.trim();
         const cleanPhone = phone.replace(/[^0-9]/g, '');
         
-        // Check if current phone matches previously verified phone
+        // Check if current phone matches previously verified phone and is valid
         const verifiedPhone = form.getAttribute('data-verified-phone');
-        const isCurrentPhoneVerified = verifiedPhone && verifiedPhone === cleanPhone;
+        const isValidPhoneFormat = /^(\+91|0)?[6789]\d{9}$/.test(cleanPhone); // Indian mobile number validation
+        const isCurrentPhoneVerified = verifiedPhone && verifiedPhone === cleanPhone && isValidPhoneFormat;
+        
+        if (!isValidPhoneFormat && cleanPhone.length >= 10) {
+            this.showError(otpContainer, 'Please enter a valid Indian mobile number');
+            this.hideOtpContainer(otpContainer);
+            return;
+        }
         
         if (isCurrentPhoneVerified) {
             // Phone matches previously verified number - restore verification state
