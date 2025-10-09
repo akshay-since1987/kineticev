@@ -9,7 +9,7 @@ $preload_images = [
     "/-/images/new/black/000044.png"
 ];
 
-startLayout("About Us", [
+startLayout("Privacy Policy", [
     'preload_images' => $preload_images
 ]);
 ?>
