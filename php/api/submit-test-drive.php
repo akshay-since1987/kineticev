@@ -237,27 +237,6 @@ try {
                 return ob_get_clean();
             })($full_name, $test_ride_id, $pincode, $emailConfig);
 
-            $customer_text = "
-Dear {$full_name},
-
-Thank you for your interest in KineticEV! We have received your test ride request.
-
-Your Test Ride Details:
-Reference ID: {$test_ride_id}
-Location: Pin Code {$pincode}
-
-{$emailConfig['showroom_contact']}
-
-Our team will contact you within {$emailConfig['response_time']} to confirm the test ride details and schedule.
-
-If you have any urgent questions, please feel free to call us at {$emailConfig['support_phone']}.
-
-We look forward to giving you an amazing test ride experience!
-
-Best regards,
-KineticEV Test Ride Team
-            ";
-
             // Send customer confirmation email
             $customer_from = $emailConfig['customer_from_email'] ?? ($config['aws_ses']['from_email'] ?? 'info@kineticev.in');
             $logger->info('[DEBUG] About to send customer email', [
