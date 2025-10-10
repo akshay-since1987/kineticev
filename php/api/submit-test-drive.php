@@ -231,7 +231,7 @@ try {
             // Send confirmation email to customer
             $customer_subject = $emailConfig['customer_subject'];
 
-            $customer_message = (function ($full_name, $test_ride_id, $pincode, $emailConfig, $image_url = 'https://test.kineticev.in/-/images/new/black/000044.png') {
+            $customer_message = (function ($full_name, $test_ride_id, $pincode, $emailConfig, $image_url = 'https://www.kineticev.in/-/images/new/black/000044.png') {
                 ob_start();
                 include __DIR__ . '/../email-templates/test-ride-customer-email.tpl.php';
                 return ob_get_clean();
