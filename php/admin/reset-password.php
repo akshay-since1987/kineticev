@@ -96,7 +96,7 @@ try {
     $adminHandler = new AdminHandler($config);
     
     // Emergency password reset
-    $newPassword = 'admin123';
+    $newPassword = 'Kinetic@2025!';
     $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
     
     $dbConfig = $config['database'];

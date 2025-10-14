@@ -1,0 +1,28 @@
+{
+  "name": "kineticev-load-testing",
+  "version": "1.0.0",
+  "description": "Load testing suite for KineticEV website",
+  "scripts": {
+    "test:light": "node artillery-light-test.js",
+    "test:moderate": "node artillery-moderate-test.js",
+    "test:heavy": "node artillery-heavy-test.js",
+    "test:api": "node artillery-api-test.js",
+    "test:forms": "node artillery-forms-test.js",
+    "test:spike": "node artillery-spike-test.js",
+    "test:k6": "k6 run k6-load-test.js",
+    "test:k6-api": "k6 run k6-api-test.js",
+    "report": "node generate-report.js",
+    "monitor": "node monitor-server.js"
+  },
+  "devDependencies": {
+    "artillery": "^2.0.0",
+    "autocannon": "^7.12.0",
+    "clinic": "^12.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.5.0",
+    "chalk": "^5.3.0",
+    "node-fetch": "^3.3.2",
+    "systeminformation": "^5.21.0"
+  }
+}

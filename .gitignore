@@ -29,7 +29,6 @@ php-backup/
 php/css/
 php/-
 php/js/
-load-testing/
 *.min.css
 *.min.js
 *.map
